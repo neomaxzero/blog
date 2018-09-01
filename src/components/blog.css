@@ -1,0 +1,23 @@
+* {
+  font-family: Roboto, Arial;
+}
+h1 {
+  text-align: center;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: Montserrat, serif;
+  font-weight: bold;
+}
+
+a {
+  font-family: Montserrat;
+  color: #3568ff;
+}
+
+p {
+  color: #262626;
+}

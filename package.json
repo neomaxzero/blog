@@ -12,6 +12,8 @@
     "gatsby-plugin-offline": "next",
     "gatsby-plugin-react-helmet": "next",
     "gatsby-plugin-web-font-loader": "^1.0.4",
+    "gatsby-source-filesystem": "^1.5.39",
+    "gatsby-transformer-remark": "^1.7.44",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-emotion": "^9.2.8",

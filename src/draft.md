@@ -31,7 +31,7 @@ Javascript does not have private properties per se [(yet)](https://github.com/tc
 In this approach we are going to use closures as a way to hide methods and properties of a class and only reveal what is neccessary. Also known as a [Revealing module pattern](https://addyosmani.com/resources/essentialjsdesignpatterns/book/#revealingmodulepatternjavascript).
 
 ```javascript
-let Magic = (() => {
+const Magic = (() => {
   let privateMethods = new WeakMap();
 
   return class Magic {
@@ -56,3 +56,7 @@ magician.sayMagic(); //  ohhh!! private Magic!!
 
 magician.sayHi(); // is not a function
 ```
+
+I'm not a fan of throwing code at your face and leave it to you to figure things out. So, I will try to join you and see what the hell is going on here.
+
+The first thing is happening in this code is that we are assigning a [IIFE](https://medium.com/@vvkchandra/essential-javascript-mastering-immediately-invoked-function-expressions-67791338ddc6) to a variable. That allow us to 

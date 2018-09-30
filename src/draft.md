@@ -59,4 +59,22 @@ magician.sayHi(); // is not a function
 
 I'm not a fan of throwing code at your face and leave it to you to figure things out. So, I will try to join you and see what the hell is going on here.
 
-The first thing is happening in this code is that we are assigning a [IIFE](https://medium.com/@vvkchandra/essential-javascript-mastering-immediately-invoked-function-expressions-67791338ddc6) to a variable. That allow us to 
+The first thing is happening in this code is that we are assigning a [IIFE](https://medium.com/@vvkchandra/essential-javascript-mastering-immediately-invoked-function-expressions-67791338ddc6) to a variable. That allow us to create a new scope where we can save our private methods.
+
+Then we are creating our [WeakMap](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap). A WeakMap is a new data structure introduced on ES6 that holds a key/value pair and is weak referenced, as it name said. In this case we are using it to hold reference to the private methods we define in our class.
+
+Immediately after that, we return our actual ```magic``` Class.
+
+In the constructor we also create some private property that then we will return when calling the private method.
+
+we call the `set` method in our WeakMap with our own instance as a key, and an object with the private methods as second parameter.
+
+`sayMagic` is the public method we are exposing that is only executing the private method.
+
+Then right after we have an example of how is being used.
+
+In the next post I will be showing a different approach for dealing with private properties.
+
+<p style={{text-align: 'center'}}>
+Stay alert, stay moving 
+</p>

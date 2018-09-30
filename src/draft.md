@@ -75,6 +75,6 @@ Then right after we have an example of how is being used.
 
 In the next post I will be showing a different approach for dealing with private properties.
 
-<p style={{text-align: 'center'}}>
-Stay alert, stay moving 
-</p>
+<h4 align="center" styles="text-weight: bold">
+  Stay alert, stay moving
+</h4>

@@ -15,4 +15,22 @@ export const Logo = styled('img')`
   opacity: 0.3;
 `
 
+export const Title = styled('h1')`
+  font-weight: 100;
+  font-size: 0.9rem;
+  text-align: right;
+  margin-right: 0.6rem;
+`
+
+export const SubTitle = styled(`span`)`
+  color: black;
+`
+
+export const Author = styled('span')`
+  margin-right: 0.1rem;
+
+  color: black;
+  font-weight: bold;
+`
+
 export default Header

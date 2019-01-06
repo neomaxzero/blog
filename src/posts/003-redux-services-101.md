@@ -1,6 +1,6 @@
 ---
-title: '003 - Redux: Introduction to services'
-date: '08-09-2018'
+title: 'Redux: Introduction to services'
+date: '2018-09-08'
 ---
 
 # 003 - Redux: Introduction to services.

@@ -1,6 +1,6 @@
 ---
-title: '001 - Everything has a start'
-date: '01-09-2018'
+title: 'Everything has a start'
+date: '2018-09-01'
 ---
 
 # 001 - Everything has a start

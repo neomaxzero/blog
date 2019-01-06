@@ -1,23 +1,20 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import ScHeader, { Logo } from './styled'
+import ScHeader, { Logo, Title, Author, SubTitle } from './styled'
 import { OutboundLink } from 'gatsby-plugin-google-analytics'
 import logoSrc from '../../images/nmz-logo-black.png'
-const Header = ({ siteTitle }) => (
+
+const Header = ({ siteTitle, author }) => (
   <ScHeader>
     <OutboundLink href="https://z3ro.com.ar">
       <Logo src={logoSrc} />
     </OutboundLink>
-    <h1>
-      <Link
-        to="/"
-        style={{
-          textDecoration: 'none',
-        }}
-      >
-        {siteTitle}
+    <Title>
+      <Link to="/">
+        <Author>Z3RO</Author>
+        <SubTitle>{siteTitle}</SubTitle>
       </Link>
-    </h1>
+    </Title>
   </ScHeader>
 )
 

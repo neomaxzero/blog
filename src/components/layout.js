@@ -29,7 +29,10 @@ const Layout = ({ children }) => (
         >
           <html lang="en" />
         </Helmet>
-        <Header siteTitle={data.site.siteMetadata.title} />
+        <Header
+          author={data.site.siteMetadata.author}
+          siteTitle={data.site.siteMetadata.title}
+        />
         <div
           style={{
             margin: '0 auto',

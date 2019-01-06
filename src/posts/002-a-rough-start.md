@@ -1,6 +1,6 @@
 ---
-title: '002 - A rough start'
-date: '02-09-2018'
+title: 'A rough start'
+date: '2018-09-02'
 ---
 
 # 002 - A Rough start

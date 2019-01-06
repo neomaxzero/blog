@@ -9,12 +9,12 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: Montserrat, serif;
-  font-weight: bold;
+  font-family: Inter UI, serif;
+  font-weight: 500;
 }
 
 a {
-  font-family: Montserrat;
+  font-family: Inter UI;
   color: #3568ff;
 }
 

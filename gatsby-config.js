@@ -5,7 +5,9 @@ const g_plugin_ga = require('./config/gatsby/gastby-plugin-ga')
 
 module.exports = {
   siteMetadata: {
-    title: 'z3ro thoughts',
+    author: 'Z3RO',
+    title: 'blog',
+    description: 'asdiuqwuheihquew',
   },
   plugins: [
     g_plugin_ga,

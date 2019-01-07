@@ -1,9 +1,10 @@
 ---
-title: 'Everything has a start'
+title: 'everything has a start'
 date: '2018-09-01'
+topic: 'Hi!'
 ---
 
-# 001 - Everything has a start
+# Everything has a start
 
 This is my first blog post. The first "iteration". I constraint myself to
 build a blog in less than 2 hours, now It's 93 min and I need to publish

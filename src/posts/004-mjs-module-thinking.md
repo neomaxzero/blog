@@ -1,6 +1,8 @@
 ---
-title: 'Mastering Modular Javascript: Chapter 1 - Part 1/2'
+title: 'mastering modular javascript: chapter 1'
+subtitle: 'part I'
 date: '2018-09-15'
+topic: 'book review'
 ---
 
 # Let's review: Mastering Modular Javascript - Chapter 1 - 1/2.

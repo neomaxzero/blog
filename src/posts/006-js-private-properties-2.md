@@ -1,5 +1,7 @@
 ---
-title: 'Javascript - private properties in classes. Part 2.'
+title: 'private properties in classes'
+subtitle: 'part II'
+topic: 'Javascript'
 date: '2018-12-23'
 ---
 

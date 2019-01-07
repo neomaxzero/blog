@@ -1,22 +1,22 @@
 import React from 'react'
 import Layout from '../components/layout'
-import Link from 'gatsby-link'
+import PostItem from '../components/PostList/PostItem'
 
 export default ({ data }) => {
   return (
     <Layout>
-      {data.allMarkdownRemark.edges.map(({ node }) => (
-        <div key={node.id}>
-          <Link
-            to={node.fields.slug}
-            css={{ textDecoration: `none`, color: `inherit` }}
-          >
-            <h3>
-              {node.frontmatter.title} <span>— {node.frontmatter.date}</span>
-            </h3>
-          </Link>
-        </div>
-      ))}
+      <ul>
+        {data.allMarkdownRemark.edges.map(({ node }) => (
+          <PostItem
+            key={node.id}
+            slug={node.fields.slug}
+            title={node.frontmatter.title}
+            subtitle={node.frontmatter.subtitle}
+            topic={node.frontmatter.topic}
+            date={node.frontmatter.date}
+          />
+        ))}
+      </ul>
     </Layout>
   )
 }
@@ -30,7 +30,9 @@ export const query = graphql`
           id
           frontmatter {
             title
-            date
+            date(formatString: "DD/MM/YYYY")
+            topic
+            subtitle
           }
           fields {
             slug

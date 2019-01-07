@@ -1,9 +1,10 @@
 ---
-title: 'Redux: Introduction to services'
+title: 'introduction to services'
 date: '2018-09-08'
+topic: 'redux'
 ---
 
-# 003 - Redux: Introduction to services.
+# Redux: Introduction to services.
 
 ## Redux-thunk
 

@@ -1,5 +1,5 @@
 * {
-  font-family: Roboto, Arial;
+  font-family: Inter UI, Arial;
 }
 h1 {
   text-align: center;
@@ -15,9 +15,16 @@ h4 {
 
 a {
   font-family: Inter UI;
-  color: #3568ff;
 }
 
 p {
   color: #262626;
+}
+
+li {
+  list-style-type: none;
+}
+
+ul {
+  padding: 0;
 }

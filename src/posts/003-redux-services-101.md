@@ -31,3 +31,7 @@ export default thunk
 
 In an essence Redux-thunks is a middleware. (maybe I need to clarify what is a middleware, before talking about thunks).
 This middleware grabs an action and in the case the action is a function, it will append dispatch and getState allowing the original action to trigger new actions. In a way, this middleware solve the problem of calling services since now we have the chance to dispatch further actions after a call is successful or not.
+
+```javascript
+const a = true
+```

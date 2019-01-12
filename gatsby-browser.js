@@ -5,3 +5,5 @@
  */
 
 // You can delete this file if you're not using it
+
+require('./src/components/js-zero-theme.css')

@@ -7,13 +7,12 @@ date: '2018-12-23'
 
 # Javascript - private properties in classes Part 2
 
-Before we talked about how important private properties are and I show you a way to solve this with WeakMaps, now I'm going to show you
-an alternative using `Symbols`.
+Before, we talked about how important private properties are and I show you a way to implement it with WeakMaps, now I'm going to show you an alternative using `Symbols`.
 
 ## Symbol
 
-Is a relatively new feature introduced in [ES6](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Symbol).
-More accurately Symbol is a new type that can be use as an identifier.
+Symbol is a relatively new feature introduced in [ES6](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Symbol).
+More accurately Symbol is a new type that can be use primarily as an identifier.
 
 ## Symbol in private properties
 
@@ -23,9 +22,9 @@ It is good to warn you before you dive into the code:
 > Symbols are not support on Internet explorer.
  
  The use case that we have here is about a class that has three methods.
-    - `sayHi()`.
-    - `sayMagic()`.
-    - `sayFromPrivate()`.
+   - `sayHi()`.
+   - `sayMagic()`.
+   - `sayFromPrivate()`.
     
 What we want to achieve is to expose  only `sayFromPrivate()` and `sayMagic()`. In our implementation we make sure that `sayHi()` is not exposed on the API we are returning.
 
@@ -72,3 +71,18 @@ We immediately declare the class where we declare our private method in the cons
 Now that we have the map with the private functions available in our class we can use it as we wish. (like in `sayFromPrivate()`).
 
 At the end of the snippet we can see that `sayHi()` is not available directly from the exported class.
+
+## Let's wrap this article up
+
+After investigating about Symbols, I'd like to conclude that this approach is not desirable for a few reasons.
+ - Polluted Code. If we want to make our collegues and also ourselves a little bit confused about the implementation of private properties this is a nice way. In my opinion this adds a lot of complexity and there are other ways of doing the same without increasing a lot the complexity of the code.
+ 
+ - Browser Support. IE is not supported. :O This could be a pretty big deal.
+ 
+ - Private Method?. It's still possible to retrieve all the symbols of the class and then access the "private" methods. It's still a little bit tricky, but possible.
+ 
+ <h4 align="center" styles="text-weight: bold">
+  Stay alert, stay moving
+</h4>
+ 
+ 

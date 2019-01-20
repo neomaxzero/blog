@@ -1,11 +1,11 @@
 ---
 title: 'mastering modular javascript: chapter 1'
 subtitle: 'part II'
-date: '2019-01-18'
+date: '2019-01-20'
 topic: 'book review'
 ---
 
-# [WIP] Let's review: Mastering Modular Javascript - Chapter 1 - 2/2.
+# Let's review: Mastering Modular Javascript - Chapter 1 - 2/2.
 
 Based on my [highlights](https://github.com/neomaxzero/m-quickreview/blob/master/mastering-modular-js/chapter-01.md)
 
@@ -31,4 +31,38 @@ Modular design has its own pros and cons, but the book of course concentrate mor
 
 The most important part of a module is its _Interface_ and it should be treat it like such.
 
-WIP.
+## Modular Granularity
+
+Although the book doesn't actually explains what is modular granularity but mostly try to give right away insights design an implementation considerations. I was trying to connect all the tips/facts/quotes that I found it more relevant to this concept. First of all I ask my self, *What is Modular granularity ?*.
+
+My friends, I think we all have an idea, or we can easily try to define it. I will also take my shot here. 
+
+> Modular granularity is a "property" that describe how granular a module is. 
+
+Granular has not only to be seen from the point of view of size, but also complexity.
+
+According to the book, we have to make our modules granular enough. The "why's" are very well explained in the paragraph of the book but I'll leave here my top selection:
+
+- The key to proper modular design is in having an utmost respect for all interfaces, and that includes the interfaces exposed by internal functions.
+
+- When we don’t plan in such a long-term form, an interesting thing occurs: our systems grow more naturally.
+
+- Bad abstractions force us to bend entire applications to their will, and once we’ve realized that the abstraction is bad and ought to be removed, we might be so heavily invested in it that pulling out might be costly.
+
+For me, until today, how granular a module has to be depends on your experience and knowledge about the system you are building.
+
+I feel like granularity is not to be spotted right from the first time. As your system is evolving, new requirements will come to you and you'll have to decide wether is worth to modify your modules and attach that complexity to one of those or create a new module where that new feature should live. Either way, there is **always** a trade off. 
+
+If you make your modules way too granular, you'll end up with a bunch of one-line functions that are so granular that basically you are creating a layer of indirection for every little peace of code. (going to the extreme)
+
+We all know what happen when a module is big. Is really hard to read, you feel like you are reading a book instead of code.
+
+Modular granularity is hard, the book does not say the contrary and my personal opinion is,
+
+**keep the size of your modules manageable, not only for you, but also for your teammates**. 
+
+Coding is a shared effort, and smaller modules should be on the benefit of the whole team.
+
+<h4 align="center" styles="text-weight: bold">
+  Stay alert, stay moving
+</h4>

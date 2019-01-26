@@ -23,6 +23,9 @@ Why we want modularity was mostly answered in the previous chapter. If still, th
 
 According to several blog posts, books, articles and this book if a module have only one responsability there is only one reason to change thus, the footprint of the changes are small, isolated and controlled. This is easier said than to make it happen. Defining the responsability of a component is a really hard task. The book recommend to keep the semantic consistency of the API. If we pay special attention to how the exported methods and properties of the modules are related we can have a better hint of the responsability the component has. When a module is used by other modules, the interface becomes more rigid because we need to mantain the API as it is, or create a major release, which could case pain on the consumers.
 
+## API First
+
+Thinking in terms of the consumer is always convenenient since it put us in the perspective of how the users are going to interact with our API. When we take an API first approach we have to be sure that we expose what is neccessary and in a way it make sense to the current surface the API currently holds.
 
 
 <h4 align="center" styles="text-weight: bold">

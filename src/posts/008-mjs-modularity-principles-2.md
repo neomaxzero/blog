@@ -31,7 +31,11 @@ When our system grows on complexity, we'll create layers that will serve certain
 
 ## Resiliency
 
-When things are not used in the way we expect, issues start arising. Depending how much we have invested on preventing those off the box scenarios we are going to be able to deliver a better quality module.
+When things are not used in the way we expect, issues start arising. Depending how much we have invested on preventing those "off the box" scenarios we are going to be able to deliver a better quality module. This means we need to consider the inputs the user could entry to our API. In the case our API breaks with the slightly change on the type/length of the input. We should add some validations not only to support a predictable behaviour but mostly to help the user troubleshoot any issue that might be done by mistake.
+
+Nico also give a tip on avoid having more than 4/5 parameters on a function and consider converting to an object with options.
+
+Although I admit I've done this and is pretty handy for several reasons. I would say the ammount of parameters its a clear signal that your function is doing more than one thing. It might be time to consider splitting the function in different variations.
 
 <h4 align="center" styles="text-weight: bold">
   Stay alert, stay moving

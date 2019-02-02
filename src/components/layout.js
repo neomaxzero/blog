@@ -24,8 +24,18 @@ const Layout = ({ children }) => (
         <Helmet
           title={data.site.siteMetadata.title}
           meta={[
-            { name: 'description', content: 'Sample' },
-            { name: 'keywords', content: 'sample, something' },
+            {
+              name: 'description',
+              content: "z3ro's thoughts, mainly javascript",
+            },
+            {
+              name: 'keywords',
+              content: 'javascript, blog, z3ro, react, redux, frontend, css',
+            },
+            {
+              name: 'google-site-verification',
+              content: 'FulLBj-z66uFRD2jQhKyIiwKHfpP2jzALOoh4oc60rU',
+            },
           ]}
         >
           <html lang="en" />

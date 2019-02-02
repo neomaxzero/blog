@@ -3,9 +3,11 @@ const g_plugin_font_loader = require('./config/gatsby/gatsby-plugin-web-font-loa
 const g_plugin_source_filesystem = require('./config/gatsby/gatsby-plugin-source-filesystem')
 const g_plugin_ga = require('./config/gatsby/gastby-plugin-ga')
 const g_plugin_prismjs = require('./config/gatsby/gatsby-plugin-prismjs')
+const g_plugin_sitemap = require('./config/gatsby/gatsby-plugin-sitemap')
 
 module.exports = {
   siteMetadata: {
+    siteUrl: `https://www.z3ro.com.ar`,
     author: 'Z3RO',
     title: 'blog',
   },
@@ -19,5 +21,6 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-emotion',
     'gatsby-plugin-offline',
+    g_plugin_sitemap,
   ],
 }

@@ -1,11 +1,11 @@
 ---
-title: '[WIP] mastering modular javascript: chapter 2'
+title: 'mastering modular javascript: chapter 2'
 subtitle: 'part 2'
-date: '2019-01-29'
+date: '2019-02-02'
 topic: 'book review'
 ---
 
-# [WIP] Let's review: Mastering Modular Javascript - Chapter 2 - 2/2.
+# Let's review: Mastering Modular Javascript - Chapter 2 - 2/2.
 
 Based on my [highlights](https://github.com/neomaxzero/m-quickreview/blob/master/mastering-modular-js/chapter-02.md)
 
@@ -20,7 +20,7 @@ This requirements apply to **any** layer of a system we are crafting(package, fi
 
 ## Consistency
 
-If something is consistency at some extends it means that is compatible and follow the same shape than the rest of the system. In the terms of our API that means that we should guarantee we follow the same guidelines at the time to decide the name, parameters, default, etc that compounds our API.
+If something is consistency at some extends it means that is compatible and follow the same shape than the rest of the system. In the terms of our API that means that we should guarantee we follow the same guidelines at the time of deciding the name, parameters, defaults, etc that compounds our API.
 
 > When we follow a consistent API our consumers are going to start indentifying the patterns and It will get easier with time to start using the system.
 
@@ -31,11 +31,26 @@ When our system grows on complexity, we'll create layers that will serve certain
 
 ## Resiliency
 
-When things are not used in the way we expect, issues start arising. Depending how much we have invested on preventing those "off the box" scenarios we are going to be able to deliver a better quality module. This means we need to consider the inputs the user could entry to our API. In the case our API breaks with the slightly change on the type/length of the input. We should add some validations not only to support a predictable behaviour but mostly to help the user troubleshoot any issue that might be done by mistake.
+When things are not used in the way we expect, issues start arising. Depending on how much we have invested on preventing those "off the box" scenarios we are going to deliver a better quality module. This means we need to consider the inputs the user could entry to our API. In the case our API breaks with a slightly variance on the type/length of the input, we should add some validations not only to support a predictable behaviour but mostly to help the user troubleshoot any issue that might be provoked by mistake.
 
-Nico also give a tip on avoid having more than 4/5 parameters on a function and consider converting to an object with options.
+Nico also give the tip of avoid having more than 4 parameters on a function and consider converting to an object with options.
 
-Although I admit I've done this and is pretty handy for several reasons. I would say the ammount of parameters its a clear signal that your function is doing more than one thing. It might be time to consider splitting the function in different variations.
+Although I admit I've done this and is pretty handy for several reasons. I would say the ammount of parameters its a clear signal that your function is doing more than one thing. When this happens it might be time to consider splitting the function.
+
+## Unambiguity
+
+This concept is very much related to uniformity, with unambiguity, we aim to have a consistent output at the time our module is executed. The difference between this consistency and the one explained above rely on that now we are evaluating it from the perspective of the artifact produced. If the shape of the output is consistent for successful use cases (no errors) it's going to be very easy for the consumer to handle the result of our module, furthermore is going to be alike or exactly the same as any other successful case from our API. When for example we need to throw an error from our API, there is no need to have the same shape as the successful scenario yet has to be equal to any other error shape throw by our module.
+
+## Simplicity
+
+One way of hiding complexity is keeping our API simple. In general, when we are referring to a simple API, we mean that using it was from trivial to no effort involved. For that to happen the user who is not familiar with the API need to provide minimal information to be able to use it. To achieve that the module can decide things for the consumer. When doing that we are defining defaults for our module. It's fine to have defaults, are useful but can also be detrimental for the developer experience. Carefully consider the naming of the defaults because negative defaults can be cumbersome to work with. Also, defaults help with discoverability of our API surface. The developer doesn't need to know the entire shape of an API beforehand. Along the same line, we should add extensibility points so the user also has the flexibility to override those defaults if necessary. 
+
+Every time we add an extensibility point is extra complexity to handle inside our module. Take your time and let real use cases grow your API surface before doing every little thing extensible.
+
+## Tiny Surface area
+
+So, this should be very easy to understand, small API shape, small modules. While writing these lines, I'm laughing because is not easy at all! The idea here is to keep small APIs and aim to solve the underlying problem. Sometimes we append several slightly different solutions to a problem in a single API. We can split that API into several variations and then we will have repetitive code to maintain (that is always an option). Another option is finding the common problem between several APIs, and extract that on a different core API level and then build a layer on top of that with tiny APIs.
+
 
 <h4 align="center" styles="text-weight: bold">
   Stay alert, stay moving

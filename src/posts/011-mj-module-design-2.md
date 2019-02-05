@@ -19,7 +19,11 @@ My notes are fully based on the text, so, if you want to check exactly what the 
 
 We are going to discuss a little bit more what else we need to think about when applying the principles for modularity.
 
-Now I'm really tired, today I'll continue with this.
+### Do repeat yourself, occasionally
+
+In many occassions we have read that duplicating code is wrong because it means you need to mantain the same code in multiple places. Like with many things, everything that is taken to the extreme can be detrimental. DRY is not the exception to this rule, if we take this practice to the extreme we can harmful ourselves. In cases we are increasing the complexity of a module because of applying the "DRY" method to a point a module is illegible, we are surpassing the benefits and we should reconsider.
+
+still very tired, tomorrow I'll continue with this, It is going to be a better day.
 
 Thanks Team, peace out
 

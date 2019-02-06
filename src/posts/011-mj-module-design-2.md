@@ -23,9 +23,23 @@ We are going to discuss a little bit more what else we need to think about when 
 
 In many occassions we have read that duplicating code is wrong because it means you need to mantain the same code in multiple places. Like with many things, everything that is taken to the extreme can be detrimental. DRY is not the exception to this rule, if we take this practice to the extreme we can harmful ourselves. In cases we are increasing the complexity of a module because of applying the "DRY" method to a point a module is illegible, we are surpassing the benefits and we should reconsider.
 
-still very tired, tomorrow I'll continue with this, It is going to be a better day.
+## Feature Isolation
 
-Thanks Team, peace out
+The process of taking apart a big module on different submodules is an art that is achieve through experience. When we split a module we are making a feature isolated thus, we are letting a children component leave its own life. That means this submodule is not aware of its parent anymore.
+
+When we divide a component we are spreading the complexity on different files with the cost of adding a level of indirection. This trade off is most of the time worth it because this means the level of energy we need to understand a module is related to how much code we have to read on a glance when we inspect a module. Since we spend more time reading code than writing it, this is something we could benefit from quite often.
+
+Like with the previous consideration, taking feature isolation to the extreme will mean that for every little function we create a module, that is not desirable. Isolate your features when the benefit is clear and outweight the disadvantages. 
+
+When creating the modules is also a good addition to create layers, this will help from the developer perspective to quickly identify how the information flow and where to place the components.
+
+It might not be clear at the beginning how to split your component. Wait until patterns start emerging or, trial and error.
+
+> **feature isolation** is something that I always see it defers from project to project and although we might want to use the same architecture and pattern on all projects this is something that is not really something you should aim to. 
+
+...Still tired, but manage to focus for 20 mins :D
+
+Thanks Team, peace out...
 
 <h4 align="center" styles="text-weight: bold">
   Stay alert, stay moving

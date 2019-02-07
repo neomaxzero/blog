@@ -1,11 +1,11 @@
 ---
-title: '[WIP] mastering modular javascript: chapter 3'
+title: 'mastering modular javascript: chapter 3'
 subtitle: 'part II'
 date: '2019-02-05'
 topic: 'book review'
 ---
 
-# [WIP] Let's review: Mastering Modular Javascript - Chapter 3 - 2/3.
+# Let's review: Mastering Modular Javascript - Chapter 3 - 2/3.
 
 Based on my [highlights](https://github.com/neomaxzero/m-quickreview/blob/master/mastering-modular-js/chapter-03.md)
 
@@ -37,9 +37,9 @@ It might not be clear at the beginning how to split your component. Wait until p
 
 > **feature isolation** is something that I always see it defers from project to project and although we might want to use the same architecture and pattern on all projects this is something that is not really something you should aim to. 
 
-...Still tired, but manage to focus for 20 mins :D
+## Trade-offs when designing internals
 
-Thanks Team, peace out...
+While implementing the requirements of our consumers and having the right API for them to use it, there are a few considerations that might arise that are not quite obvious to estimate. Flexibility is always desire but not required. We have to manage to deliver the minimal, easiest API while providing a mantainable module. Always favor readability over speed since in a few weeks you or someone in your team will have to start over with understanding what it was done.
 
 <h4 align="center" styles="text-weight: bold">
   Stay alert, stay moving

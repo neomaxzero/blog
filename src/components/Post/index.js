@@ -1,11 +1,26 @@
 import React from 'react'
+import Helmet from 'react-helmet'
 import Layout from '../layout'
 import markdownParser from '../Utils/markdownParser/markdownParser'
 
 export default ({ data }) => {
   const post = data.markdownRemark
 
-  return <Layout>{markdownParser(post.htmlAst)}</Layout>
+  return (
+    <Layout>
+      <Helmet
+        title={`${post.frontmatter.title} - z3ro blog`}
+        meta={[
+          {
+            name: 'title',
+            content: `${post.frontmatter.title} - z3ro blog`,
+          },
+        ]}
+      />
+
+      {markdownParser(post.htmlAst)}
+    </Layout>
+  )
 }
 
 export const query = graphql`

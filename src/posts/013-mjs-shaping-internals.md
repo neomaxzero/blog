@@ -1,7 +1,7 @@
 ---
 title: '[WIP] mastering modular javascript: chapter 4'
-subtitle: 'part III'
-date: '2019-02-09'
+subtitle: 'part I'
+date: '2019-02-10'
 topic: 'book review'
 ---
 

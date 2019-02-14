@@ -65,22 +65,26 @@ When we endup with several functions that are on the same level and we don't kno
 
 ## Extracting functions
 
-functions encapsulates behaviour. Use that in our favor. When you have an statement or conditionals that are growing to the point understanding is hard, consider create a function and place the code inside of that. The main advantage of that is that we have the extra "named" indirection level with the possibility for the reader to decide wheter he wants to read about the details or not. The function can affect the context from which is invoked in two ways. The first approach is in an "impure" way. This means that the function is going either to mutate its inputs or variables from the context. The second approach is "pure" this means the function is going to use its input as a configuration object and its going to return a determinstic result.
+functions encapsulates behaviour. Use that in your favor. When you have an statement or conditionals that are growing to the point understanding is hard, consider creating a function and placing the code inside of it. The main advantage of that is that we have the extra "named" indirection level with the possibility for the reader to decide wether he wants to read about the details or not. The function can affect the context from which is invoked in two ways. 
 
-A pure function has many advantages and I prefer to use it. I recommend you to read more about this subject because its really a very nice alternative.
+The first approach is in an "impure" way. This means that the function is going either to mutate its inputs or variables from the context. 
+
+The second approach is "pure". This means the function is going to use its input as a configuration object and its going to return a determinstic result.
+
+A pure function has many advantages and I prefer to use it most of the times. I recommend you to read more about this subject because its really a very nice alternative.
 
 ## Flattening nested callbacks
 
 Many functions that expect callbacks can lead to an undesired state of callback "hell" if we don't pay close attention to it.
-Its way better to flatten all the callbacks by extracting the callback function. This will help readability and will help you identify the possibility to extract a callback function in case a pattern arise.
+Its way better to flatten all the callbacks by extracting the callback function. This will help on readability and will help you identify the possibility to reuse a callback function in case a pattern arise.
 
 ## Factoring similar tasks
 
-When flattening, we can end up with hyper modularity which again goes against a desirable state. Factoring similar tasks when is truly obvious. Your intuition will help you in this, and if you don't trust your intuition (and you shouldn't). Explain the problem to your team, and ask them for their opinion so its a join effort. This late approach will likely give you a better result.
+When flattening, we could end up with hyper modularity which again goes against a desirable state. Factoring similar tasks when is truly obvious. Your intuition will help you in this, and if you don't trust your intuition (and you shouldn't). Explain the problem to your team, and ask them for their opinion so its a join effort. This late approach will likely give you a better result.
 
 ## Slicing Large Functions
 
-Large functions are not good for way too many reasons. You can easily ensure you have short functions by linting rules and you should do it. When you slice parts of a large function on isolated named parts make sure you group the statements by resposability. What its helpful to me most of the time is think about an hipothetical change and how much places I have to modify to deliver that functionality. This is a practice that is extremely hard because we are terrible at predicting the future.
+Large functions are not good for way too many reasons. You can easily ensure you have short functions by linting rules and you should do it. When you slice parts of a large function on isolated named parts make sure you group the statements by resposability. What its helpful to me most of the time is think about an hipothetical change and how much places I have to modify to deliver that functionality. If you need to touch several different functions for a very small change, this is not a good sign. This is a practice that is extremely hard because we are terrible at predicting the future.
 
 Any way that can help you think about how your module grows/shrinks organically will push you forward. 
 

@@ -1,7 +1,7 @@
 ---
 title: 'mastering modular javascript: chapter 4'
 subtitle: 'part III'
-date: '2019-02-16'
+date: '2019-02-17'
 topic: 'book review'
 ---
 
@@ -43,6 +43,21 @@ There is also the case that we have state because base on the input we store dat
 
 Immutability means that the state is rigid and it does not change. Every time we need to change something in the state we create a new state from the scratch with the changes append it. We say that the state is immutable and there are not side effects. This solve the issue above because we can provide the state in which our inputs are base their results on to have a predictable behaviour.
 
+## Data Structures are king
+
+Choosing the right data structures its something not trivial at all. When we store the data with the incorrect structure we are going to notice that we need to shape it a lot inside our module to produce the expected output. When we have the correct data structure for our module you are going to just query your structure and maybe aggregate the data if neccessary. 
+
+Being this said, a data structure should be agnostic of whats being done with it. If we need to couple our data structure to multiple modules this could be a challenge and something we should avoid. Even if the data is slightly similar you might consider create a derivate data structure suited for a different module so you don't pollute the same data structure with complex use cases.
+
+## Isolating data and logic
+
+We can not foresee all scenarios in the early stage of our module and also in an advance stage we are going to be mistaken. Create intermediate data structures with isolated responsability is a nice practice to have easily removal and mantainable code.
+
+## Restricting and Clustering logic
+
+The same approach that we use for our API to expose only what is essential and minimal, we should use when talking about data structures. The data structure inside your module is a tool for your module to explote, when you decide to export that you are now tight to the current shape because you loose control of it. The shape of the output should always be fixed (unless you release a major versioned change). If possible avoid having multiple ways of outputting values from your module so its up to the consumer to add extra sauce to it if needed. 
+
+Remember that the ultimate goal on modularity is to end up with a simple, easy to use module
 
 <h4 align="center" styles="text-weight: bold">
   Stay alert, stay moving

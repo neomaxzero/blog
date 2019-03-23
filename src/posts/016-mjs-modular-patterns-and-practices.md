@@ -15,7 +15,7 @@ My notes are fully based on the text, so, if you want to check exactly what the 
 
 ## Modular patterns and practices: Leveraging Modern JavaScript
 
-As the language grows, we have better tools and a more extensive set of statements to express what we want. In the case of modular javascripts, we also have new ways of representing modular code. Especially from ES6 which brought several new additions to the standart and later to the browsers. In this 3 parts, articles I'm going to transmit what I think the book give as good features to use when building modules.
+As the language grows, we have better tools and a more extensive set of statements to express what we want. In the case of modular javascripts, we also have new ways of representing modular code. Especially from ES6 which brought several new additions to the standart and later to the browsers. In this 3 parts articles, I'm going to transmit what I think the book gives as good features to use when building modules.
 
 Syntax sugar is not only to shorten the code, drop a few words, and make it look more aestetically pleasant. The end goal is to have more concise and hopefully less clutter code at the end of the day.
 
@@ -25,15 +25,15 @@ Template literals are incredible powerful, it gives you a way to express strings
 
 ### [Destructuring, Rest and spread](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Operadores/Destructuring_assignment)
 
-Is very likely that you are going to handle data from data structures. In Javascript, we tend to use Arrays and Objects all the time. Especially now that we are in an era of immutability and functional programming, getting to know and understanding how spread operator works can be very beneficial to your day to day coding sessions. 
+Is very likely that you are going to handle data from data structures. In Javascript, we use Arrays and Objects all the time. Especially now that we are in an era of immutability and functional programming, getting to know and understand how spread operator works can be very beneficial to your day to day coding sessions. 
 
 ### [Block scoped variables](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let)
 
-`var` is mutable and function scope and lead to a lot of issues in the past. With ES6, `const` and `let` was introduced and there is no reason to use `var` ever again. `let` and `const` are block scoped, its behaviour is way more predictable and they don't suffer of several problems that `var` has. Even if you are an IE8 fan, you can rely on babel to transpile your code. 
+`var` is mutable, "function scoped" and lead to a lot of issues in the past. With ES6, `const` - `let` was introduced and there is no reason to use `var` ever again. `let` and `const` are block scoped, its behaviour is way more predictable and they don't suffer of several problems that `var` has. Even if you are an IE8 fan, you can rely on babel to transpile your code. 
 
 ### [Async functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await)
 
-There are a few flavors to choose in order to implement async behavior on your modules. If it is possible I'd say go for async/await that is really easy to understand because it takes the asynchronicity out of the way (while reading the code). On the other hand if you are in a project that by default use callback functions, consider doing a first migration to Promise. Its well worth the effort to learn the ins and outs of Promises which is not easy at the beginning and then if you think is neccessary migrate to `async/await`.
+There are a few flavors to choose in order to implement async behavior on your modules. If its possible I'd say go for async/await that is really easy to understand because it takes the asynchronicity out of the way (while reading the code). On the other hand if you are in a project that by default use callback functions, consider doing a first migration to [promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises). Its well worth the effort to learn the ins and outs of Promises which is not easy at the beginning and then if you think is neccessary migrate to `async/await`.
 
 If you interact with 3rd party libraries, I'd recommend you to build a wrapper around the library so if the library use callbacks you use the same async invocation pattern throughout your project.
 

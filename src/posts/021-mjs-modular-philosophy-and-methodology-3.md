@@ -1,11 +1,12 @@
 ---
-title: '[WIP] - mastering modular javascript: chapter 6 - final'
+title: 'mastering modular javascript: chapter 6 - final'
 subtitle: 'part III'
 date: '2019-03-29'
 topic: 'book review'
+description: 'Modular Javascript, philosophy: Applying modularity in the build process and outside of your core systems'
 ---
 
-# [WIP] - Let's review: Mastering Modular Javascript - Chapter 6 - 3/3.
+# Let's review: Mastering Modular Javascript - Chapter 6 - 3/3.
 
 Based on my [highlights](https://github.com/neomaxzero/m-quickreview/blob/master/mastering-modular-js/chapter-06.md)
 
@@ -28,6 +29,14 @@ Don't solve problems that don't exists yet. There are plenty of reasons why deve
 > *View rendering logic should be separated from business logic.*
 
 In hindsight, this last paragraph is a little bit off topic and I should create a dedicated blog post about business logic in the frontend.
+
+### Abstraction matters
+
+Picking the right abstraction is something that can be considered as a craftmanship job. In fact, the chances that you picked the wrong abstraction are quite high. Picking the wrong abstraction will harm you and your consumer if doing incorrectly. So, sorry to say but, you are going to harm your consumer :P. With an abstraction you always favor people who think alike. Compromises needs to be done. Dependending on how core to the system you are building the component is, you should involved the majority of the involved parties and gather information. 
+
+Building modular javascript is not about a set of rules and knowing all the technical aspect about how the language works. Although having an strong knowledge of the language will definetely help. 
+
+> Modularity is more of a decision making process rather than a technicality.
 
 <h4 align="center" styles="text-weight: bold">
   Stay alert, stay moving

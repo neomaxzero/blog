@@ -1,5 +1,4 @@
 ---
----
 title: 'mastering modular javascript: end words'
 subtitle: 'iThink'
 date: '2019-03-02'

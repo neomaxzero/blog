@@ -22,6 +22,3 @@ At my eyes is a double edge sword. Applyed to an extreme it can be really bad. U
 <h4 align="center" styles="text-weight: bold">
   Stay alert, stay moving
 </h4>
-<h4 align="center" styles="text-weight: bold">
-  Stay alert, stay moving
-</h4>

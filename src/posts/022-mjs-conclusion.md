@@ -1,7 +1,7 @@
 ---
 title: 'mastering modular javascript: end words'
 subtitle: 'iThink'
-date: '2019-03-02'
+date: '2019-03-04'
 topic: 'book review'
 description: 'Modular Javascript, book conclusion: modularity is a doable edge sword'
 ---

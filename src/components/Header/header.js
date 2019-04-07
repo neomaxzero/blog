@@ -4,7 +4,7 @@ import ScHeader, { Logo, Title, Author, SubTitle } from './styled'
 import { OutboundLink } from 'gatsby-plugin-google-analytics'
 import logoSrc from '../../images/nmz-logo-black.png'
 
-const Header = ({ siteTitle, author }) => (
+const Header = () => (
   <ScHeader>
     <OutboundLink href="https://z3ro.com.ar">
       <Logo src={logoSrc} />
@@ -12,7 +12,7 @@ const Header = ({ siteTitle, author }) => (
     <Title>
       <Link to="/">
         <Author>Z3RO</Author>
-        <SubTitle>{siteTitle}</SubTitle>
+        <SubTitle>blog</SubTitle>
       </Link>
     </Title>
   </ScHeader>

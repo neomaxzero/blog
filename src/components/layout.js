@@ -7,6 +7,7 @@ import { LayoutSy } from './styled'
 import Header from './Header'
 import './layout.css'
 import './blog.css'
+import { DEFAULT_DESCRIPTION_HEADER } from './Utils/constants'
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -26,7 +27,7 @@ const Layout = ({ children }) => (
           meta={[
             {
               name: 'description',
-              content: "z3ro's thoughts, mainly javascript",
+              content: DEFAULT_DESCRIPTION_HEADER,
             },
             {
               name: 'keywords',

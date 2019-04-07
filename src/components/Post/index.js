@@ -2,6 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import Layout from '../layout'
 import markdownParser from '../Utils/markdownParser/markdownParser'
+import { DEFAULT_DESCRIPTION_HEADER } from '../Utils/constants'
 
 export default ({ data }) => {
   const post = data.markdownRemark
@@ -14,6 +15,12 @@ export default ({ data }) => {
           {
             name: 'title',
             content: `${post.frontmatter.title} - z3ro blog`,
+          },
+          {
+            name: 'description',
+            content: ` ${
+              post.frontmatter.description
+            } - ${DEFAULT_DESCRIPTION_HEADER}`,
           },
         ]}
       />
@@ -29,6 +36,7 @@ export const query = graphql`
       htmlAst
       frontmatter {
         title
+        description
       }
     }
   }

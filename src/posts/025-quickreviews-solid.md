@@ -89,7 +89,7 @@ I will bring the elephant in the room here... hello _Preact_, a 3kb v-dom, decla
 
 It seems that this was an intent to learn how to build a UI library, I saw that he have also written a blog post serie on how he did this library and I think that is a great contribution to the community. Other than an educational driver I'd say that untill now this library does not offer a lot. Could be enough for you!
 
-# Scores (higher is better)
+## Scores (higher is better)
 
 - Usefulness: 6/10.
 - Code quality: 7/10.

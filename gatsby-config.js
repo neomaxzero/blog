@@ -9,7 +9,7 @@ module.exports = {
   siteMetadata: {
     siteUrl: `https://www.z3ro.com.ar`,
     author: 'Z3RO',
-    title: 'blog',
+    title: 'z3r0 blog, Maxi opinions, frontend and JS!',
   },
   plugins: [
     'gatsby-transformer-remark',

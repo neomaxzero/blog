@@ -7,7 +7,7 @@ const g_plugin_sitemap = require('./config/gatsby/gatsby-plugin-sitemap')
 
 module.exports = {
   siteMetadata: {
-    siteUrl: `https://www.z3ro.com.ar`,
+    siteUrl: `https://blog.z3ro.com.ar`,
     author: 'Z3RO',
     title: 'z3r0 blog, Maxi opinions, frontend and JS!',
   },

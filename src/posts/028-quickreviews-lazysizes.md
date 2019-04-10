@@ -3,7 +3,7 @@ title: 'lazysizes'
 subtitle: 'library'
 date: '2019-04-10'
 topic: 'quickreviews'
-description: 'quickreviews: a must have lazy load library for your images. It's so advanced is confusing.'
+description: 'quickreviews: a must have lazy load library for your images Its so advanced is confusing'
 ---
 
 # quickreviews: [lazysizes](https://github.com/aFarkas/lazysizes)
@@ -41,7 +41,6 @@ Documentation is very extensive, and complete. Is very unstructured and brittle 
 The lack of a website or marketing put this library low in the radar and that is a shame considering how much it provides.
 
 *In terms of value I'd say this does pretty much all you need for a img lazy loader.*
-
 
 ## Diving a little bit deeper
 

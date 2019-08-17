@@ -28,7 +28,7 @@ One tip that the book gives, keep the API consisten across different modules. Th
 
 A great interface means that we can always, replace poor implementation details. Keeping the Interface as small and possible and striving to have it as clean as possible will guarantee that you won't mess up with someones feelings (brain damage :P), and that for sure he/she won't need to check our ugly implementation details to understand what is going on.
 
-Keeping public only the bare minimum is possible. Try using [private methods and properties](https://blog.z3ro.com.ar/005-js-private-properties/).
+Keeping public only the bare minimum is possible. Try using [private methods and properties](https://m4x.io/005-js-private-properties/).
 
 ### Finding the right abstraction
 

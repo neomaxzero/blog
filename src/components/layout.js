@@ -31,7 +31,7 @@ const Layout = ({ children }) => (
             },
             {
               name: 'keywords',
-              content: 'javascript, blog, z3ro, react, redux, frontend, css',
+              content: 'javascript, blog, m4x, react, redux, frontend, css',
             },
             {
               name: 'google-site-verification',

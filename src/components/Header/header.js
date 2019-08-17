@@ -6,12 +6,12 @@ import logoSrc from '../../images/nmz-logo-black.png'
 
 const Header = () => (
   <ScHeader>
-    <OutboundLink href="https://z3ro.com.ar">
+    <OutboundLink href="https://m4x.io">
       <Logo src={logoSrc} />
     </OutboundLink>
     <Title>
       <Link to="/">
-        <Author>Z3RO</Author>
+        <Author>m4x</Author>
         <SubTitle>blog</SubTitle>
       </Link>
     </Title>

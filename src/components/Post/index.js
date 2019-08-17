@@ -10,11 +10,11 @@ export default ({ data }) => {
   return (
     <Layout>
       <Helmet
-        title={`${post.frontmatter.title} - z3ro blog`}
+        title={`${post.frontmatter.title} - m4x blog`}
         meta={[
           {
             name: 'title',
-            content: `${post.frontmatter.title} - z3ro blog`,
+            content: `${post.frontmatter.title} - m4x blog`,
           },
           {
             name: 'description',

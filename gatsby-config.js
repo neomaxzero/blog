@@ -7,9 +7,9 @@ const g_plugin_sitemap = require('./config/gatsby/gatsby-plugin-sitemap')
 
 module.exports = {
   siteMetadata: {
-    siteUrl: `https://blog.z3ro.com.ar`,
-    author: 'Z3RO',
-    title: 'z3r0 blog, Maxi opinions, frontend and JS!',
+    siteUrl: `https://blog.m4x.io`,
+    author: 'm4x',
+    title: 'm4x blog, Maxi opinions, frontend and JS!',
   },
   plugins: [
     'gatsby-transformer-remark',

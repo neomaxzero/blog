@@ -10,16 +10,16 @@ topic: 'book review'
 Based on my [highlights](https://github.com/neomaxzero/m-quickreview/blob/master/mastering-modular-js/chapter-03.md)
 
 **Disclaimer**
-*This chapter is a mix between my thoughts and my notes.
-My notes are fully based on the text, so, if you want to check exactly what the author said please refer to the highlights.*
+_This chapter is a mix between my thoughts and my notes.
+My notes are fully based on the text, so, if you want to check exactly what the author said please refer to the highlights._
 
 # Module Design
 
-Together, in [chapter 2](https://blog.z3ro.com.ar/009-mjs-modularity-principles) we reviewed the principles we need to keep in mind to achieve modularity. Everything is ok until the cockroach starts flying, and this will likely happen when your module start growing. Let's check what can we do when this happen.
+Together, in [chapter 2](https://m4x.io/009-mjs-modularity-principles) we reviewed the principles we need to keep in mind to achieve modularity. Everything is ok until the cockroach starts flying, and this will likely happen when your module start growing. Let's check what can we do when this happen.
 
 ## Growing a module
 
-From day to day we'll be receiving feature requests that we need to implement somewhere. If we are lucky, the new feature could be isolated and related to a particular module which would make our life super easy. In this scenario, the module will grow organically and the complexity introduced is unlikely to be a game changer. When we don't know where this new responsibility should be placed *Its time to experiment.*
+From day to day we'll be receiving feature requests that we need to implement somewhere. If we are lucky, the new feature could be isolated and related to a particular module which would make our life super easy. In this scenario, the module will grow organically and the complexity introduced is unlikely to be a game changer. When we don't know where this new responsibility should be placed _Its time to experiment._
 
 ## Composability and Scalability
 
@@ -29,7 +29,7 @@ If we had designed them with scalability in mind, we might’ve grouped many sim
 
 ## Design for today
 
-We love making predictions. Sometimes we are wrong. Actually, most of the times. If we want to keep our modules simple and **real**, develop for today. Don't try to add flexibility to your modules for the sake of it. Its way worse to recover from a bad API design if we don't have any data to base our decitions on. Of course there are multiple times we know before hand a new use case is going to arrive very soon, and *very soon is not today* and it might never be. When we strive to build the functionality we require for today we guarantee we are going to have only the very minimal.
+We love making predictions. Sometimes we are wrong. Actually, most of the times. If we want to keep our modules simple and **real**, develop for today. Don't try to add flexibility to your modules for the sake of it. Its way worse to recover from a bad API design if we don't have any data to base our decitions on. Of course there are multiple times we know before hand a new use case is going to arrive very soon, and _very soon is not today_ and it might never be. When we strive to build the functionality we require for today we guarantee we are going to have only the very minimal.
 
 ## Abstractions evolve in small steps
 

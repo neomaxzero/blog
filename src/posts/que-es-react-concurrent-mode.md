@@ -21,7 +21,7 @@ Este modo hace a react mas inteligente.
 
 Cuando el nucleo de react fue re-escrito por completo en `React fiber`, uno de los beneficios principales fue la posibilidad de crear distintos hilos virtuales (fibers) los cuales estarian etiquetados con distintas prioridades dependiendo de si el usuario esta interactuando con un componente o no.
 
-React fiber sento las bases sobre las cuales concurrent mode funciona. Cuando algun network request esta atado al renderizado de un componente react puede inteligente decidir que elementos en el virtual dom tienen prioridad ser renderizados lo cual hacia el usuario beneficia increiblemente ya que tiene un feedback mas interactivo.
+React fiber sento las bases sobre las cuales concurrent mode funciona. Cuando algun evento asincronico esta atado al renderizado de un componente, react puede inteligente decidir que elementos en el virtual dom tienen prioridad de ser renderizados.
 
 ## ¿Como se diferencia con el modo "normal" de React?
 
@@ -36,6 +36,12 @@ En el modo normal, sincronico, react no tiene ni idea de la existencia de esta d
 Pre-concurrent mode react no tiene ni idea de que existen una monton de dependencias a servicios externos (APIs principalmente) y entonces no puede hacer nada para optimizar la experiencia del usuario.
 
 Post-concurrent mode, le hacemos saber al engine de react nuestras dependencias con servicios externos para que el pueda inteligentemente hacer uso de esta informacion y decidir que conviene en que momento renderizar.
+
+Por ejemplo, si se tiene una seccion de la pantalla que va a mostrar un spinner mientras se solicitan datos de una API y esta necesita solamente 20ms para retornar un valor. En react sincronico vamos a ver un spinner por un minusculo periodo ya que cuando react termino de renderizar el layout, ya tiene que volver a calcular el nuevo layout con el resultado de ese endpoint.
+
+Seria mucho mejor si react esperara solo unos milisegundos mas para hacer uso eficiente de sus recursos y tambien para presentar al usuario una version final del estado de la UI en vez de los estados intermedios que son innecesarios y en muchos casos molestos para el usuario.
+
+Esto ultimo es posible gracias a [React concurrent mode](https://reactjs.org/docs/concurrent-mode-intro.html).
 
 <h4 align="center" styles="text-weight: bold">
   Stay alert, stay moving

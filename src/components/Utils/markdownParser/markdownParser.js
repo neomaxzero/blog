@@ -6,6 +6,7 @@ export default new rehypeReact({
   createElement: React.createElement,
   components: {
     h1: markdownElements.H1,
+    h2: markdownElements.H2,
     a: markdownElements.A,
     blockquote: markdownElements.Blockquote,
     ul: markdownElements.Ul,

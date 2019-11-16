@@ -9,12 +9,14 @@ import {
   VerticalRow,
   Date,
 } from './styled'
+import createPathWithLanguagePrefix from '../Utils/createPathWithLanguagePrefix'
 
 export default class PostItem extends React.Component {
+  link = createPathWithLanguagePrefix(this.props.lang, this.props.slug)
   render() {
     return (
       <Item>
-        <Link to={this.props.slug}>
+        <Link to={this.link}>
           <VerticalRow>
             <MainInfo>
               <Title>{this.props.title}</Title>

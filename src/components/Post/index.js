@@ -23,7 +23,9 @@ export default ({ data }) => {
             } - ${DEFAULT_DESCRIPTION_HEADER}`,
           },
         ]}
-      />
+      >
+        <html lang={post.frontmatter.lang || 'en'} />
+      </Helmet>
 
       {markdownParser(post.htmlAst)}
     </Layout>
@@ -37,6 +39,7 @@ export const query = graphql`
       frontmatter {
         title
         description
+        lang
       }
     }
   }

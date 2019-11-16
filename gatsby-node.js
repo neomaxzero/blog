@@ -1,5 +1,6 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
+const createPathWithLanguagePrefix = require('./src/components/Utils/createPathWithLanguagePrefix')
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
@@ -24,14 +25,19 @@ exports.createPages = ({ graphql, actions }) => {
               fields {
                 slug
               }
+              frontmatter {
+                lang
+              }
             }
           }
         }
       }
     `).then(result => {
       result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+        const langPrefix = node.frontmatter.lang
+
         createPage({
-          path: node.fields.slug,
+          path: createPathWithLanguagePrefix(langPrefix, node.fields.slug),
           component: path.resolve(`./src/components/Post/index.js`),
           context: {
             // Data passed to context is available in page queries as GraphQL variables.

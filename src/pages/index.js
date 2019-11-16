@@ -14,6 +14,7 @@ export default ({ data }) => {
             subtitle={node.frontmatter.subtitle}
             topic={node.frontmatter.topic}
             date={node.frontmatter.date}
+            lang={node.frontmatter.lang}
           />
         ))}
       </ul>
@@ -33,6 +34,7 @@ export const query = graphql`
             date(formatString: "DD/MM/YYYY")
             topic
             subtitle
+            lang
           }
           fields {
             slug

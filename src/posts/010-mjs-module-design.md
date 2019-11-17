@@ -39,7 +39,3 @@ When we doubt on exposing certain internals, just don't. Expose the minimal unti
 ## Move deliberately and experiment
 
 Remember we said that modules will grow, and sometimes we won't know where to put the new features so we just have to tried things out. It's ok to make mistakes because when there is lack of information taking decitions becomes a tough problem. Just wait until a pattern emerge and we know for certain where the features should be placed. Its a good practice (by Nico and me) to cover your functionality with tests, especially when we are dealing with a lot of uncertainty so in the future we can move things without much trouble. Tests will not guarantee that things will work out forever, but for sure are very useful to catch a big surfaces of erros we might have.
-
-<h4 align="center" styles="text-weight: bold">
-  Stay alert, stay moving
-</h4>

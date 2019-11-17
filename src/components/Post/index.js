@@ -1,9 +1,24 @@
 import React from 'react'
+import styled from 'react-emotion'
 import Helmet from 'react-helmet'
 import Layout from '../layout'
 import markdownParser from '../Utils/markdownParser/markdownParser'
 import { DEFAULT_DESCRIPTION_HEADER } from '../Utils/constants'
 
+const Social = styled.div`
+  padding: 2rem 0;
+`
+
+const A = styled.a`
+  color: #ff6aa5;
+  font-size: 0.8rem;
+`
+
+const EndOfPostQuote = styled.h4`
+  font-size: 0.7rem;
+  font-weight: normal;
+  text-align: center;
+`
 export default ({ data }) => {
   const post = data.markdownRemark
 
@@ -28,6 +43,23 @@ export default ({ data }) => {
       </Helmet>
 
       {markdownParser(post.htmlAst)}
+
+      <EndOfPostQuote>Stay alert, stay moving</EndOfPostQuote>
+
+      <Social>
+        <A
+          href="https://twitter.com/share?ref_src=twsrc%5Etfw"
+          class="twitter-share-button"
+          data-show-count="false"
+        >
+          Share via twitter
+        </A>
+        <script
+          async
+          src="https://platform.twitter.com/widgets.js"
+          charset="utf-8"
+        />
+      </Social>
     </Layout>
   )
 }
@@ -40,6 +72,9 @@ export const query = graphql`
         title
         description
         lang
+      }
+      fields {
+        slug
       }
     }
   }

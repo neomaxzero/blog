@@ -42,7 +42,3 @@ Por ejemplo, si se tiene una sección de la pantalla que va a mostrar un spinner
 Seria mucho mejor si react esperara sólo unos milisegundos más para hacer uso eficiente de sus recursos y tambien para presentar al usuario una versión final del estado de la UI en vez de los estados intermedios que, en muchos casos, son innecesarios y molestos para el usuario.
 
 Esto último es posible gracias a [React concurrent mode](https://reactjs.org/docs/concurrent-mode-intro.html).
-
-<h4 align="center" styles="text-weight: bold">
-  Stay alert, stay moving
-</h4>

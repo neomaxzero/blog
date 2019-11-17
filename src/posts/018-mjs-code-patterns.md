@@ -10,8 +10,8 @@ topic: 'book review'
 Based on my [highlights](https://github.com/neomaxzero/m-quickreview/blob/master/mastering-modular-js/chapter-05.md)
 
 **Disclaimer**
-*This chapter is a mix between my thoughts and my notes.
-My notes are fully based on the text, so, if you want to check exactly what the author said please refer to the highlights.*
+_This chapter is a mix between my thoughts and my notes.
+My notes are fully based on the text, so, if you want to check exactly what the author said please refer to the highlights._
 
 ## Modular patterns and practices: Code Patterns
 
@@ -32,7 +32,3 @@ Decoupling communication between components can be done with ease if we put a ch
 ### Messaging Passing
 
 JSON is by far the best format to send message between components in JS. Use it :D
-
-<h4 align="center" styles="text-weight: bold">
-  Stay alert, stay moving
-</h4>

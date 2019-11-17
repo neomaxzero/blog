@@ -84,7 +84,3 @@ After investigating about Symbols, I'd like to conclude that this approach is no
 - **Browser Support**. IE is not supported. :O This could be a pretty big deal.
 
 - **Private Method?**. It's still possible to retrieve all the symbols of the class and then access the "private" methods. It's still a little bit tricky, but possible.
-
- <h4 align="center" styles="text-weight: bold">
-  Stay alert, stay moving
-</h4>

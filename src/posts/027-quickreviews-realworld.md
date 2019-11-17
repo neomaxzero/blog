@@ -20,7 +20,7 @@ Multiple contributors build exactly the same application with different sort of 
 
 ## Now quickreview!
 
-Of course one of the applications is more than what I can review in 30 minutes, so I am going to judge just the repository and not a particular one.  
+Of course one of the applications is more than what I can review in 30 minutes, so I am going to judge just the repository and not a particular one.
 
 I can already say that even exactly the same application could be implemented in a different way with the same tool so depending on how experienced the author is, the implementation is going to have certain level of quality.
 
@@ -41,7 +41,3 @@ Especially with time I think this could add a different value which lacks on Tod
 - Potential: 9/10.
 
 _Overall: 8.25/10_
-
-<h4 align="center" styles="text-weight: bold">
-  Stay alert, stay moving
-</h4>

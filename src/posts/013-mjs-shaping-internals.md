@@ -10,8 +10,8 @@ topic: 'book review'
 Based on my [highlights](https://github.com/neomaxzero/m-quickreview/blob/master/mastering-modular-js/chapter-04.md)
 
 **Disclaimer**
-*This chapter is a mix between my thoughts and my notes.
-My notes are fully based on the text, so, if you want to check exactly what the author said please refer to the highlights.*
+_This chapter is a mix between my thoughts and my notes.
+My notes are fully based on the text, so, if you want to check exactly what the author said please refer to the highlights._
 
 # Shaping internals
 
@@ -19,7 +19,7 @@ Our modules will live in a constant movement, before we mentioned about differen
 
 As I said before,
 
-> Internals of the components should be as easy as possible to understand. 
+> Internals of the components should be as easy as possible to understand.
 
 ## Containing nested complexity
 
@@ -32,7 +32,3 @@ When features come at a pace we cannot keep up with a simple module. We should s
 ## Frameworks
 
 A framework as a high level module, also hinders the complexity of probably a hard problem solved. When we opt in for a framework we don't only bring all the benefits this will bring with it. We also marry with their desitions, goods or bads. In most cases we should identify which practices we want to embrace from a framework and which others we should avoid. We can use linting rules to enforce this behaviours but also a good project structure. With clear rules at the time of implementing the different artifacts will serve as a guide to a simpler architecture.
-
-<h4 align="center" styles="text-weight: bold">
-  Stay alert, stay moving
-</h4>

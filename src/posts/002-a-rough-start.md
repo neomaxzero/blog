@@ -17,9 +17,10 @@ the ability to. Sometimes more often that we think about.
 Now I'm being guilty of this same thought.I want to build a blog and
 instead of going for a straight forward solution, I decided to dive into
 the redicoulus task of reinventing the wheel, and also try a new
-technology while doing this. Let me start again, building a blog is easy,
-building a good, sublime, top notch quality content blog is _hard_. It is
-extremely hard.
+technology while doing this. Let me start again, building a blog is easy.
+
+_Building a good, sublime, top notch quality content blog is *hard*. It's
+extremely hard._
 
 If focusing in the content was what we were talking about, let's also add
 the fact that I want to have control of the platform. Well, I think the

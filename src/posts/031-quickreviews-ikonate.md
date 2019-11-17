@@ -57,7 +57,3 @@ It is nice to have multiple alternatives to the most popular icon library becaus
 - Potential: 9/10.
 
 \_Overall: 8,4/10
-
-<h4 align="center" styles="text-weight: bold">
-  Stay alert, stay moving
-</h4>

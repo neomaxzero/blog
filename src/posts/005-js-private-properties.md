@@ -79,7 +79,3 @@ we call the `set` method in our WeakMap with our own instance as a key, and an o
 Then right after we have an example of how is being used.
 
 In the next post I will be showing a different approach for dealing with private properties.
-
-<h4 align="center" styles="text-weight: bold">
-  Stay alert, stay moving
-</h4>

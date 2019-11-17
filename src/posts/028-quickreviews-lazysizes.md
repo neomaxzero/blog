@@ -34,25 +34,25 @@ There is also a demo available, that for this library I think is always a plus s
 
 ## Now quickreview!
 
-The library is easy to use and super useful. Size wise I'd say is a little bit big for what it does (3kb - gzip). 
+The library is easy to use and super useful. Size wise I'd say is a little bit big for what it does (3kb - gzip).
 
 Documentation is very extensive, and complete. Is very unstructured and brittle with pretty much all the library provides. I'd rather have this in a different way because I think this fact detracts the quality of it.
 
 The lack of a website or marketing put this library low in the radar and that is a shame considering how much it provides.
 
-*In terms of value I'd say this does pretty much all you need for a img lazy loader.*
+_In terms of value I'd say this does pretty much all you need for a img lazy loader._
 
 ## Diving a little bit deeper
 
-The code is old school with a lot of ES5 patterns. It seems a little bit outdated in terms of practices and also there is plenty of unclear function names with IIFIs and while loops. 
+The code is old school with a lot of ES5 patterns. It seems a little bit outdated in terms of practices and also there is plenty of unclear function names with IIFIs and while loops.
 
-I think is just how the author works and maybe one of the reason why is not a lot more popular. 
+I think is just how the author works and maybe one of the reason why is not a lot more popular.
 
 The library is thoroughly tested but again with an old fashion which is not bad, but could be adapted to the new practices so more people can contribute to it.
 
 There are 101 issues open at the time of writing this and the last commit was two days ago which means there is active contribution to this.
 
-I love the fact this has *0 dependencies* and maybe that is one of the reasons they claimed the library is performant.
+I love the fact this has _0 dependencies_ and maybe that is one of the reasons they claimed the library is performant.
 
 Compatibility is another positive point on this since the library works from IE8+.
 
@@ -69,7 +69,3 @@ Definitely a library to compare with (layzr)[https://github.com/callmecavs/layzr
 - Potential: 8/10.
 
 _Overall: 7.8/10_
-
-<h4 align="center" styles="text-weight: bold">
-  Stay alert, stay moving
-</h4>

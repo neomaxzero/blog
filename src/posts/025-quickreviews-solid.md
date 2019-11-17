@@ -98,7 +98,3 @@ It seems that this was an intent to learn how to build a UI library, I saw that 
 - Potential: 6/10.
 
 _Overall: 6.6/10_
-
-<h4 align="center" styles="text-weight: bold">
-  Stay alert, stay moving
-</h4>

@@ -10,8 +10,8 @@ topic: 'book review'
 Based on my [highlights](https://github.com/neomaxzero/m-quickreview/blob/master/mastering-modular-js/chapter-04.md)
 
 **Disclaimer**
-*This chapter is a mix between my thoughts and my notes.
-My notes are fully based on the text, so, if you want to check exactly what the author said please refer to the highlights.*
+_This chapter is a mix between my thoughts and my notes.
+My notes are fully based on the text, so, if you want to check exactly what the author said please refer to the highlights._
 
 # Shaping internals: Refactoring complex code
 
@@ -26,48 +26,50 @@ One tip in can give you is, when you are prototyping, focus in the functionality
 ## Guard clauses and branch flippng
 
 If we are writing a function and we have certain validations that exit the function, place them on the top of the function closer to the declaration for two reasons:
- 1. The guard clause now behaves as a circuit breaker, avoiding the execution of code that it might be unnecessary on the first place.
- 2. Else statements could be avoided If we leave the main path as the happy path of our module.
- 
+
+1.  The guard clause now behaves as a circuit breaker, avoiding the execution of code that it might be unnecessary on the first place.
+2.  Else statements could be avoided If we leave the main path as the happy path of our module.
+
 When writing guard clauses pay attention to how you name the variable that holds the evaluation. Always create a descriptive variable name and assign a name that is not going to be negated in the guard clause otherwise the reader needs to do the extra operation in their head.
 
 Not my preference:
+
 ```javascript
 function getDrink(cond1, cond2, cond3, cond4) {
-  if (!cond1 && !cond2 || cond3) {
-    return 'Thanks!';
+  if ((!cond1 && !cond2) || cond3) {
+    return 'Thanks!'
   } else {
-    return ;
+    return
   }
 }
-
 ```
 
 My preference:
+
 ```javascript
 function getDrink(cond1, cond2, cond3, cond4) {
-  const veryDescriptiveAndPositiveValue = cond1 && cond2 || !cond3;
+  const veryDescriptiveAndPositiveValue = (cond1 && cond2) || !cond3
   if (veryDescriptiveAndPositiveValue) {
-    return;
+    return
   }
-  
-  return 'Thanks!';
-}
 
+  return 'Thanks!'
+}
 ```
- Probably the example is not that good. Sorry, I'm new to this. :D. 
- 
+
+Probably the example is not that good. Sorry, I'm new to this. :D.
+
 ## An interdependency piramid
 
-When we have several functions that interact with each other inside a file. Try to put yourself in the perspective of the reader and organize your functions from top to bottom with the more high-level functions closer to the top of the function. So the user can easily understand what the module does and then if they need to have a deeper view of how things work they can just scroll and fill the holes. 
+When we have several functions that interact with each other inside a file. Try to put yourself in the perspective of the reader and organize your functions from top to bottom with the more high-level functions closer to the top of the function. So the user can easily understand what the module does and then if they need to have a deeper view of how things work they can just scroll and fill the holes.
 
 When we endup with several functions that are on the same level and we don't know in which order to place them. It might be a good idea to split those on a separate file because this means our file is growing and defining a layer inside of the same file.
 
 ## Extracting functions
 
-functions encapsulates behaviour. Use that in your favor. When you have an statement or conditionals that are growing to the point understanding is hard, consider creating a function and placing the code inside of it. The main advantage of that is that we have the extra "named" indirection level with the possibility for the reader to decide wether he wants to read about the details or not. The function can affect the context from which is invoked in two ways. 
+functions encapsulates behaviour. Use that in your favor. When you have an statement or conditionals that are growing to the point understanding is hard, consider creating a function and placing the code inside of it. The main advantage of that is that we have the extra "named" indirection level with the possibility for the reader to decide wether he wants to read about the details or not. The function can affect the context from which is invoked in two ways.
 
-The first approach is in an "impure" way. This means that the function is going either to mutate its inputs or variables from the context. 
+The first approach is in an "impure" way. This means that the function is going either to mutate its inputs or variables from the context.
 
 The second approach is "pure". This means the function is going to use its input as a configuration object and its going to return a determinstic result.
 
@@ -86,8 +88,4 @@ When flattening, we could end up with hyper modularity which again goes against 
 
 Large functions are not good for way too many reasons. You can easily ensure you have short functions by linting rules and you should do it. When you slice parts of a large function on isolated named parts make sure you group the statements by resposability. What its helpful to me most of the time is think about an hipothetical change and how much places I have to modify to deliver that functionality. If you need to touch several different functions for a very small change, this is not a good sign. This is a practice that is extremely hard because we are terrible at predicting the future.
 
-Any way that can help you think about how your module grows/shrinks organically will push you forward. 
-
-<h4 align="center" styles="text-weight: bold">
-  Stay alert, stay moving
-</h4>
+Any way that can help you think about how your module grows/shrinks organically will push you forward.

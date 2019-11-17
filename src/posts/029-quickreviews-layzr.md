@@ -71,7 +71,3 @@ A good ES6 alternative for lazy loading. The lacking of tests in such a popular 
 - Potential: 6/10.
 
 _Overall: 7.8/10_
-
-<h4 align="center" styles="text-weight: bold">
-  Stay alert, stay moving
-</h4>

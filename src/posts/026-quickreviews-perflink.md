@@ -16,14 +16,13 @@ Today I present to you a nice app to hold on your toolbox. Because we all care a
 
 Perflink lets you compare the speed between different snippets of code in a fancy and [shareable](https://perf.link/) way.
 
-Right out of the box. The application is ready to use. 
+Right out of the box. The application is ready to use.
 
 ## How does it work?
 
 The app is very intuitive. One the top side of the application. You have one panel to create your test data and another to load your snippets.
 
 Everytime you change your snippet, the graphs are going to reflect the change.
-
 
 ## Now quickreview!
 
@@ -33,12 +32,11 @@ Syntax highlighting is a useful feature, really necessary in this case and is cl
 
 The lack of an spinner was somehow a little bit annoying. There is an small animation that put the bars at 0% but still I feel is too sutil
 
-The app is built with react on top of it. 
+The app is built with react on top of it.
 
 Documentation is a bless, it explains how it works behind the scenes. It's really nice that the author had decided to explains how `performance.now` works.
 
 Roadmap is promising and well defined with a lot of tasty new features.
-
 
 ## A little bit deeper, not much
 
@@ -59,7 +57,3 @@ Definitely I will use it for small snippets when comparing different approaches.
 - Potential: 8/10.
 
 _Overall: 8.2/10_
-
-<h4 align="center" styles="text-weight: bold">
-  Stay alert, stay moving
-</h4>

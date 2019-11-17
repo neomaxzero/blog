@@ -10,8 +10,8 @@ topic: 'book review'
 Based on my [highlights](https://github.com/neomaxzero/m-quickreview/blob/master/mastering-modular-js/chapter-03.md)
 
 **Disclaimer**
-*This chapter is a mix between my thoughts and my notes.
-My notes are fully based on the text, so, if you want to check exactly what the author said please refer to the highlights.*
+_This chapter is a mix between my thoughts and my notes.
+My notes are fully based on the text, so, if you want to check exactly what the author said please refer to the highlights._
 
 # Module Design
 
@@ -29,18 +29,14 @@ The process of taking apart a big module on different submodules is an art that 
 
 When we divide a component we are spreading the complexity on different files with the cost of adding a level of indirection. This trade off is most of the time worth it because this means the level of energy we need to understand a module is related to how much code we have to read on a glance when we inspect a module. Since we spend more time reading code than writing it, this is something we could benefit from quite often.
 
-Like with the previous consideration, taking feature isolation to the extreme will mean that for every little function we create a module, that is not desirable. Isolate your features when the benefit is clear and outweight the disadvantages. 
+Like with the previous consideration, taking feature isolation to the extreme will mean that for every little function we create a module, that is not desirable. Isolate your features when the benefit is clear and outweight the disadvantages.
 
 When creating the modules is also a good addition to create layers, this will help from the developer perspective to quickly identify how the information flow and where to place the components.
 
 It might not be clear at the beginning how to split your component. Wait until patterns start emerging or, trial and error.
 
-> **feature isolation** is something that I always see it defers from project to project and although we might want to use the same architecture and pattern on all projects this is something that is not really something you should aim to. 
+> **feature isolation** is something that I always see it defers from project to project and although we might want to use the same architecture and pattern on all projects this is something that is not really something you should aim to.
 
 ## Trade-offs when designing internals
 
 While implementing the requirements of our consumers and having the right API for them to use it, there are a few considerations that might arise that are not quite obvious to estimate. Flexibility is always desire but not required. We have to manage to deliver the minimal, easiest API while providing a mantainable module. Always favor readability over speed since in a few weeks you or someone in your team will have to start over with understanding what it was done.
-
-<h4 align="center" styles="text-weight: bold">
-  Stay alert, stay moving
-</h4>

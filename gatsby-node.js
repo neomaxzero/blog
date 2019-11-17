@@ -1,6 +1,8 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
-const createPathWithLanguagePrefix = require('./src/components/Utils/createPathWithLanguagePrefix')
+const {
+  createPathWithLanguagePrefix,
+} = require('./src/components/Utils/createPathWithLanguagePrefix')
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions

@@ -48,9 +48,10 @@ export default ({ data }) => {
 
       <Social>
         <A
-          href="https://twitter.com/share?ref_src=twsrc%5Etfw"
-          class="twitter-share-button"
+          href="https://twitter.com/share"
+          className="twitter-share-button"
           data-show-count="false"
+          target="_blank"
         >
           Share via twitter
         </A>

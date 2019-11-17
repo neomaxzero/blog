@@ -44,3 +44,6 @@ export const query = graphql`
     }
   }
 `
+
+// Add link to sandbox.
+// Add gif de la diferencia.

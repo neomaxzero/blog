@@ -4,6 +4,7 @@ import Helmet from 'react-helmet'
 import Layout from '../layout'
 import markdownParser from '../Utils/markdownParser/markdownParser'
 import { DEFAULT_DESCRIPTION_HEADER } from '../Utils/constants'
+import Comments from './Comments'
 
 const Social = styled.div`
   padding: 2rem 0;
@@ -61,6 +62,7 @@ export default ({ data }) => {
           charset="utf-8"
         />
       </Social>
+      <Comments />
     </Layout>
   )
 }

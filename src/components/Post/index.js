@@ -5,6 +5,7 @@ import Layout from '../layout'
 import markdownParser from '../Utils/markdownParser/markdownParser'
 import { DEFAULT_DESCRIPTION_HEADER } from '../Utils/constants'
 import Comments from './Comments'
+import { getFullPostUrl } from '../Utils/createPathWithLanguagePrefix'
 
 const Social = styled.div`
   padding: 2rem 0;
@@ -62,7 +63,10 @@ export default ({ data }) => {
           charset="utf-8"
         />
       </Social>
-      <Comments />
+      <Comments
+        fullUrl={getFullPostUrl(post.frontmatter.lang, post.fields.slug)}
+        id={post.fields.slug}
+      />
     </Layout>
   )
 }

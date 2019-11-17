@@ -1,12 +1,12 @@
 import React from 'react'
 
-const Comments = () => {
+const Comments = ({ fullUrl, id }) => {
   const html = `
   <div id="disqus_thread"></div>
   <script>
   var disqus_config = function () {
-  this.page.url = 'https://blog.m4x.io';
-  this.page.identifier = 'm4x-io';
+  this.page.url = '${fullUrl}';
+  this.page.identifier = '${id}';
   };
   (function() {
   var d = document, s = d.createElement('script');

@@ -4,13 +4,12 @@ const createPathWithLanguagePrefix = (langPrefix, slug) => {
   return langPrefix ? `/${langPrefix}${slug}` : slug
 }
 
-// export const getFullPostUrl = (langPrefix, slug) => {
-//   if (!location) {
+const getFullPostUrl = (langPrefix, slug) => {
+  const fullSlug = createPathWithLanguagePrefix(langPrefix, slug)
+  return `https://blog.m4x.io/${fullSlug}`
+}
 
-//   }
-//   const fullSlug = createPathWithLanguagePrefix(langPrefix, slug)
-
-//   return `${location.origin}/${fullSlug}`
-// }
-
-module.exports = createPathWithLanguagePrefix
+module.exports = {
+  createPathWithLanguagePrefix,
+  getFullPostUrl,
+}

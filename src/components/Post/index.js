@@ -8,7 +8,7 @@ import Comments from './Comments'
 import { getFullPostUrl } from '../Utils/createPathWithLanguagePrefix'
 
 const Social = styled.div`
-  padding: 2rem 0;
+  padding-bottom: 4rem 0;
 `
 
 const A = styled.a`
@@ -49,24 +49,11 @@ export default ({ data }) => {
       <EndOfPostQuote>Stay alert, stay moving</EndOfPostQuote>
 
       <Social>
-        <A
-          href="https://twitter.com/share"
-          className="twitter-share-button"
-          data-show-count="false"
-          target="_blank"
-        >
-          Share via twitter
-        </A>
-        <script
-          async
-          src="https://platform.twitter.com/widgets.js"
-          charset="utf-8"
+        <Comments
+          fullUrl={getFullPostUrl(post.frontmatter.lang, post.fields.slug)}
+          id={post.fields.slug}
         />
       </Social>
-      <Comments
-        fullUrl={getFullPostUrl(post.frontmatter.lang, post.fields.slug)}
-        id={post.fields.slug}
-      />
     </Layout>
   )
 }

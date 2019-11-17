@@ -6,7 +6,7 @@ const createPathWithLanguagePrefix = (langPrefix, slug) => {
 
 const getFullPostUrl = (langPrefix, slug) => {
   const fullSlug = createPathWithLanguagePrefix(langPrefix, slug)
-  return `https://blog.m4x.io/${fullSlug}`
+  return `https://blog.m4x.io${fullSlug}`
 }
 
 module.exports = {

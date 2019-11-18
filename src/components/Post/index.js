@@ -1,11 +1,12 @@
 import React from 'react'
-import styled from 'react-emotion'
+import styled from '@emotion/styled'
 import Helmet from 'react-helmet'
 import Layout from '../layout'
 import markdownParser from '../Utils/markdownParser/markdownParser'
 import { DEFAULT_DESCRIPTION_HEADER } from '../Utils/constants'
 import Comments from './Comments'
 import { getFullPostUrl } from '../Utils/createPathWithLanguagePrefix'
+// import NewsletterForm from './NewsletterForm'
 
 const Social = styled.div`
   padding-bottom: 4rem 0;
@@ -54,6 +55,7 @@ export default ({ data }) => {
           id={post.fields.slug}
         />
       </Social>
+      {/* <NewsletterForm /> */}
     </Layout>
   )
 }

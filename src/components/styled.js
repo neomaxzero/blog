@@ -1,4 +1,4 @@
-import styled from 'react-emotion'
+import styled from '@emotion/styled'
 
 export const LayoutSy = styled('div')`
   margin: 0 auto;

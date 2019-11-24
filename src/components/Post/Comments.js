@@ -1,23 +1,20 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 const Comments = ({ fullUrl, id }) => {
-  const html = `
-  <div id="disqus_thread"></div>
-  <script>
-  var disqus_config = function () {
-  this.page.url = '${fullUrl}';
-  this.page.identifier = '${id}';
-  };
-  (function() {
-  var d = document, s = d.createElement('script');
-  s.src = 'https://m4x-io.disqus.com/embed.js';
-  s.setAttribute('data-timestamp', +new Date());
-  (d.head || d.body).appendChild(s);
-  })();
-  </script>
-  `
+  useEffect(() => {
+    var disqus_config = function() {
+      this.page.url = fullUrl
+      this.page.identifier = id
+    }
+    const d = document
+    const s = d.createElement('script')
+    s.src = 'https://m4x-io.disqus.com/embed.js'
+    s.async = true
+    s.setAttribute('data-timestamp', +new Date())
 
-  return <div dangerouslySetInnerHTML={{ __html: html }} />
+    d.body.appendChild(s)
+  }, [])
+  return <div id="disqus_thread"></div>
 }
 
 export default Comments

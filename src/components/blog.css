@@ -25,6 +25,10 @@ li {
   list-style-type: none;
 }
 
+li:not(first-child) {
+  margin-top: 0.8rem;
+}
+
 ul {
   padding: 0;
 }

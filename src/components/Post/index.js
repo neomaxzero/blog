@@ -6,7 +6,10 @@ import markdownParser from '../Utils/markdownParser/markdownParser'
 import { DEFAULT_DESCRIPTION_HEADER } from '../Utils/constants'
 import Comments from './Comments'
 import { getFullPostUrl } from '../Utils/createPathWithLanguagePrefix'
+import { OutboundLink } from 'gatsby-plugin-google-analytics'
 // import NewsletterForm from './NewsletterForm'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGithub } from '@fortawesome/free-brands-svg-icons'
 
 const Social = styled.div`
   padding-bottom: 4rem 0;
@@ -17,13 +20,34 @@ const A = styled.a`
   font-size: 0.8rem;
 `
 
+const Toolbar = styled.div`
+  display: flex;
+  margin-bottom: 4rem;
+  margin-top: 4rem;
+`
+
 const EndOfPostQuote = styled.h4`
   font-size: 0.7rem;
   font-weight: normal;
   text-align: center;
 `
+
+const OutLink = styled(OutboundLink)`
+  color: #ff6aa5;
+  font-size: 0.8rem;
+
+  &:hover {
+    text-decoration: underline;
+  }
+`
+
+const TextToolbar = styled.span`
+  margin-left: 0.4rem;
+`
+
 export default ({ data }) => {
   const post = data.markdownRemark
+  const fileName = data.file.name
 
   return (
     <Layout>
@@ -36,9 +60,7 @@ export default ({ data }) => {
           },
           {
             name: 'description',
-            content: ` ${
-              post.frontmatter.description
-            } - ${DEFAULT_DESCRIPTION_HEADER}`,
+            content: ` ${post.frontmatter.description} - ${DEFAULT_DESCRIPTION_HEADER}`,
           },
         ]}
       >
@@ -48,6 +70,14 @@ export default ({ data }) => {
       {markdownParser(post.htmlAst)}
 
       <EndOfPostQuote>Stay alert, stay moving</EndOfPostQuote>
+      <Toolbar>
+        <OutLink
+          href={`https://github.com/neomaxzero/blog/edit/master/src/posts/${fileName}.md`}
+        >
+          <FontAwesomeIcon icon={faGithub}></FontAwesomeIcon>
+          <TextToolbar>suggest changes</TextToolbar>
+        </OutLink>
+      </Toolbar>
 
       <Social>
         <Comments
@@ -72,6 +102,9 @@ export const query = graphql`
       fields {
         slug
       }
+    }
+    file {
+      name
     }
   }
 `

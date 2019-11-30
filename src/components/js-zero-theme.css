@@ -79,7 +79,6 @@ code[class*='language-'] ::selection {
   }
 }
 
-
 /* Code blocks */
 pre[class*='language-'] {
   background: rgba(40, 41, 54, 1) !important;
@@ -90,6 +89,13 @@ pre[class*='language-'] {
   height: auto;
   margin-left: -1.5rem;
   margin-right: -1.5rem;
+}
+
+@media screen and (min-width: 768px) {
+  pre[class*='language-'] {
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 :not(pre) > code[class*='language-'],

@@ -25,7 +25,7 @@ Que es concurrent mode? ya lo cubri en el [post anterior](https://blog.m4x.io/es
 yarn add react@experimental react-dom@experimental
 ```
 
-### 2. Reemplazar en tu app el método de renderizado de tu app por el nuevo modo.
+### 2. Reemplazar en tu app el método de renderizado por el nuevo modo.
 
 ```javascript
 import React from 'react'
@@ -40,12 +40,12 @@ root.render(<App />)
 
 ### 4. Verificar y volver a verificar
 
-En tu lugar yo utilizaría este modo, en este momento específico, solo para tener una idéa de si nuestra app es compatible con el nuevo modo y anticipar la cantidad de tiempo que requerirá de nosotros cuando la versión sea parte de un release estable.
+En tu lugar yo utilizaría este modo, en este momento específico, solo para tener una idéa de si nuestra app es compatible con él y anticipar la cantidad de tiempo que requerirá de nosotros cuando la versión sea parte de un release estable y queramos hacer el salto.
 
-## Quien se beneficia con este modo?
+## Quienes se benefician con este modo?
 
-Si tu aplicación web no presenta una gran cantidad (>10k) componentes que esten "luchando" por la prioridad del motor de renderizado de React, dificilmente notes una diferencia. En el caso de que estés dentro del caso de uso que esta característica resuelve, tendrás un impacto más directo sobre la percepción de tus usuarios con este nuevo modo.
+Si tu aplicación web no presenta una gran cantidad (>10k) componentes que esten "luchando" por la prioridad del motor de renderizado de React, dificilmente notes una diferencia. En el caso de que estés dentro del caso de uso que esta característica resuelve, tendrás un impacto más directo sobre la percepción de tus usuarios sobre el rendimiento de tu UI.
 
 ## Conclusión
 
-Probar el modo es terriblemente sencillo. Evaluá si tu aplicación es intensa en animaciones o tenes problemas de performance actualmente. En el caso que cumplas estas premisas, porque no? cierto?
+Probar el modo es terriblemente sencillo. Evaluá si tu aplicación es intensa en animaciones, gráficos, (react game) o tenes problemas de performance actualmente. En el caso que cumplas estas premisas, _porque no? cierto?_

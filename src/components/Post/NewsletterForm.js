@@ -99,7 +99,9 @@ const Sign = styled.div`
 `
 const Success = ({ email }) => {
   useEffect(() => {
-    localStorage.setItem('subscribed', 'true')
+    if (typeof window !== 'undefined' && window.localStorage) {
+      localStorage.setItem('subscribed', 'true')
+    }
   }, [])
 
   return (
@@ -120,7 +122,7 @@ const NewsletterForm = () => {
   const [email, setEmail] = useState('')
   const [state, setState] = useState('')
 
-  if (localStorage.getItem('subscribed')) {
+  if (typeof window !== 'undefined' && localStorage.getItem('subscribed')) {
     return null
   }
 

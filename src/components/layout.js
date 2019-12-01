@@ -8,6 +8,8 @@ import Header from './Header'
 import './layout.css'
 import './blog.css'
 import { DEFAULT_DESCRIPTION_HEADER } from './Utils/constants'
+import { ThemeProvider } from 'emotion-theming'
+import theme from './theme'
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -21,7 +23,7 @@ const Layout = ({ children }) => (
       }
     `}
     render={data => (
-      <>
+      <ThemeProvider theme={theme}>
         <Helmet
           title={data.site.siteMetadata.title}
           meta={[
@@ -46,7 +48,7 @@ const Layout = ({ children }) => (
           siteTitle={data.site.siteMetadata.title}
         />
         <LayoutSy>{children}</LayoutSy>
-      </>
+      </ThemeProvider>
     )}
   />
 )

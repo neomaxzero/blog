@@ -7,7 +7,7 @@ import { DEFAULT_DESCRIPTION_HEADER } from '../Utils/constants'
 import Comments from './Comments'
 import { getFullPostUrl } from '../Utils/createPathWithLanguagePrefix'
 import { OutboundLink } from 'gatsby-plugin-google-analytics'
-// import NewsletterForm from './NewsletterForm'
+import NewsletterForm from './NewsletterForm'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 
@@ -22,7 +22,7 @@ const A = styled.a`
 
 const Toolbar = styled.div`
   display: flex;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
   margin-top: 4rem;
 `
 
@@ -79,13 +79,13 @@ export default ({ data }) => {
         </OutLink>
       </Toolbar>
 
+      <NewsletterForm />
       <Social>
         <Comments
           fullUrl={getFullPostUrl(post.frontmatter.lang, post.fields.slug)}
           id={post.fields.slug}
         />
       </Social>
-      {/* <NewsletterForm /> */}
     </Layout>
   )
 }

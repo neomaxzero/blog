@@ -2,16 +2,20 @@ import React, { useState, useEffect } from 'react'
 import styled from '@emotion/styled'
 
 import MailchimpSubscribe from 'react-mailchimp-subscribe'
+import mq from '../Utils/mq'
 
 const Input = styled.input`
   background-color: ${({ theme }) => theme.colors.primary16};
   padding: 1rem;
   border-radius: 2px;
   border: none;
-  margin-right: 0.8rem;
   flex-grow: 1;
   ::placeholder {
     color: ${({ theme }) => theme.colors.primary};
+  }
+
+  ${mq.tablet} {
+    margin-right: 0.8rem;
   }
 `
 
@@ -25,14 +29,28 @@ const Button = styled.button`
   color: white;
   cursor: pointer;
 
+  margin-top: 1rem;
+  width: 100%;
+
   &:hover {
     background-color: white;
     color: ${({ theme }) => theme.colors.primary};
+  }
+
+  ${mq.tablet} {
+    margin-top: 0;
+    width: auto;
   }
 `
 const NewsForm = styled.form`
   display: flex;
   flex: 1;
+  flex-wrap: wrap;
+  width: 100%;
+  ${mq.tablet} {
+    flex-wrap: nowrap;
+    width: auto;
+  }
 `
 
 const Message = styled.p`

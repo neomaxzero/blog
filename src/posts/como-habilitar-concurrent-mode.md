@@ -1,13 +1,12 @@
 ---
-title: 'Como habilitar react concurrent mode'
+title: 'Como habilitar react concurrent mode?'
 subtitle: 'concurrent mode'
 date: '2019-11-30'
 topic: 'react'
 description: 'React: Como habilitar react concurrent mode?'
 lang: 'es'
+featuredImage: '0001.jpg'
 ---
-
-# Como habilitar react concurrent mode?
 
 Me sentí un poco inspirado por un post del amigo Kent donde comparte una guía de los pasos necesarios para activar concurrent mode en tu webapp con react.
 

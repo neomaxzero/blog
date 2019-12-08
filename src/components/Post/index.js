@@ -10,6 +10,8 @@ import { OutboundLink } from 'gatsby-plugin-google-analytics'
 import NewsletterForm from './NewsletterForm'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
+import ImageF from './Image'
+import PostHeader from './PostHeader'
 
 const Social = styled.div`
   padding-bottom: 4rem 0;
@@ -48,7 +50,7 @@ const TextToolbar = styled.span`
 export default ({ data }) => {
   const post = data.markdownRemark
   const fileName = data.file.name
-
+  const imgFileName = post.frontmatter.featuredImage
   return (
     <Layout>
       <Helmet
@@ -66,6 +68,8 @@ export default ({ data }) => {
       >
         <html lang={post.frontmatter.lang || 'en'} />
       </Helmet>
+
+      <PostHeader imgFileName={imgFileName} title={post.frontmatter.title} />
 
       {markdownParser(post.htmlAst)}
 
@@ -98,6 +102,7 @@ export const query = graphql`
         title
         description
         lang
+        featuredImage
       }
       fields {
         slug

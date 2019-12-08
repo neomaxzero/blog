@@ -4,11 +4,9 @@ export const H1 = styled('h1')`
   font-size: 2.9rem;
   margin: 2.9rem 0;
 `
-
 export const H2 = styled('h2')`
   margin-top: 3rem;
 `
-
 export const A = styled('a')`
   color: #ff6aa5;
 `

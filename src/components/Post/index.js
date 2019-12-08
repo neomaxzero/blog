@@ -49,7 +49,7 @@ const TextToolbar = styled.span`
 
 export default ({ data }) => {
   const post = data.markdownRemark
-  const fileName = data.file.name
+  const fileName = post.fields.slug.substring(1, post.fields.slug.length - 1)
   const imgFileName = post.frontmatter.featuredImage
   return (
     <Layout>
@@ -107,9 +107,6 @@ export const query = graphql`
       fields {
         slug
       }
-    }
-    file {
-      name
     }
   }
 `

@@ -51,6 +51,20 @@ If you see that something is inevitable don't look aside and wait for the chaos 
 
 How is this related to modules? The decision to add a module today might be tempting, but if you look a little bit ahead you'll realize it doesn't make sense to add it because in a couple of month you'll have double the work.
 
+### Was this already solved by some other colleague?
+
+If you've worked long enough for a company you'll start noticing there are requirements that are going to be similar to others.
+
+Check with other colleagues
+
+don't re invent the wheel once again Inside your company.
+
+keep the consistency b
+
+benefit from the mistakes of the rests
+
+ask around and you never know if there is an expert in the subject you need to work with. The advice from the people that work with you are gold...pip pipipi
+
 ## Second: It's all about control
 
 After we have identified the context in which we are taking a decision. It's time to start changing the perspective from an organizational level to a repository one.

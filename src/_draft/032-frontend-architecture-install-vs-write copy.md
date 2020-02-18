@@ -99,11 +99,18 @@ Luckily, there are people that have been working for YEARS in solving a very spe
 
 What problem do you really want to solve?
 
-So, when the borders are not clear we are lost. In a repo, the flexibility we have to install whatever we want whenever we can could be nice at the beginning but at some points you need to start adding constraints on what is it really the problem this project is solving. The code you want to maintain should be the core of the solution you are trying to solve. The potential of your repo at solving problems could be "over-provisioned" by including external libraries.
+So, when the borders are not clear we are lost. In a repo, the flexibility we have to install whatever we want whenever we can could be nice at the beginning but at some points you need to start adding constraints so it becomes super evident what is it really the problem this project is solving. **The code you want to maintain should be the core of the solution you are trying to solve**. The potential of your repo at solving problems could be "over-provisioned" by including external libraries.
 
 This gray area that I find incredible hard to explain is something that we are constantly changing by introducing or removing dependencies from our repos.
 
+To make myself a little bit clear I'll give a couple of examples of modules and how I do approach them:
+
 ## Example case 1: isNull (lodash) - Utility Library
+
+Javascript is a complete language and at some point we need to check if a variable is null. What do we do?
+
+Case 1: Lodash is already a dependency. We import the function we need and we are done.
+Case 2: Lodash is not a dependency and we face the dilemma. Should I include lodash for an is
 
 ## Example case 2: Formatting dates - Utility Library
 

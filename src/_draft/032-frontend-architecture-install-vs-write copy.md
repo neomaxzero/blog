@@ -110,7 +110,15 @@ To make myself a little bit clear I'll give a couple of examples of modules and 
 Javascript is a complete language and at some point we need to check if a variable is null. What do we do?
 
 Case 1: Lodash is already a dependency. We import the function we need and we are done.
-Case 2: Lodash is not a dependency and we face the dilemma. Should I include lodash for an is
+Case 2: We don't have any "utility" library that can help us so we have to decide.
+
+Do we want to add lodash to only use isNull? Luckily today you can install `lodash.isNull` and you are settle again. But you could be in a situation that you need a banana and you install the jungle.
+
+Code you write is code you have to maintain and if you are in a code base that has coverage you'll have to add a battery of tests as well.
+
+in the case of `isNull` I will say it seems even ridiculous since the function is extremely small: (`const isNull => value => value === null`).
+
+The process of npm installing is maybe more work than creating a function.
 
 ## Example case 2: Formatting dates - Utility Library
 

@@ -114,7 +114,7 @@ Case 2: We don't have any "utility" library that can help us so we have to decid
 
 Do we want to add lodash to only use isNull? Luckily today you can install `lodash.isNull` and you are settle again. But you could be in a situation that you need a banana and you install the jungle.
 
-Code you write is code you have to maintain and if you are in a code base that has coverage you'll have to add a battery of tests as well.
+Code you write is code you have to maintain and if you are in a code base that has coverage you'll have to add a battery of tests as well, and the more underestimated feature: **Documentation**.
 
 in the case of `isNull` I will say it seems even ridiculous since the function is extremely small: (`const isNull => value => value === null`).
 
@@ -122,11 +122,37 @@ The process of npm installing is maybe more work than creating a function.
 
 ## Example case 2: Formatting dates - Utility Library
 
+At some point we have to show a date in our application and when we show it to our stakeholders they say it has to look prettier than `Fri Feb 21 2020 08:27:13 GMT+0100`. So we notice we have to do quite some work to make it work in a prettier, more custom made format.
+
+Again, we could start with learning the Date api in javascript and at some point we are going to realize how much of a hassle it is to do simple stuff.
+
+There are multiple options for this and I'd say it is worth spending time reading what every library provides and how much it's the cost at the moment of importing it.
+
+Dealing with dates is hard. If you have plenty of experience with this it might be good for you to build a custom made library for this, but this is not only a decision is going to affect you but also the rest of your team.
+
 ## Example case 3: React - UI Library
+
+We are entering the level of complexity and also level of problem which is generic enough A LOT of developers encounter. When this happens the options tend to increase, the ammount of opinions as well and when A LOT of very capable people gather together and solve a complex problem the solution tend to be complex as well.
+
+With this I'm saying flavors are all over the place and today one of the options you have to build your UI is React.
+
+What it does for you? A lot. The problem is complex enough that you would need to spend a significant amount of time to build something relatively close to it and trust me, there are people that breath this kind of problems day and night so you can focus on what matters to your business.
+
+I agree with you it is cool to create an UI library but holy santa molly it's a hell of a job. Giants of the industry have collaborated to create something that works pretty good. There is an entire team dedicated to this solo job.
+
+In the end, you might not need a UI library at all. You could do a lot of stuff with a couple of utilities.
+
+I don't know your use case, you do.
+
+At this point of complexity, I wouldn't even think about using modules vs creating my own. If there is something you could use, **try it out**.
+
+Evaluate the options you have, maybe even extend one library, contribute make it easier for someone else.
 
 ## Example case 4: Next JS - UI Framework
 
 ## Conclusion
+
+The more complex the problem, the more effort we have to put on evaluating if you should include or not something to our project. therefore at some point it's easier to just try out libraries instead of even think about solving a problem ourselves.
 
 With a bottom up approach..
 

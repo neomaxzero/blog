@@ -29,7 +29,19 @@ Promise to be:
 
 ## How does it work?
 
+Lion offers a set of web components with bare functionality and no styling. You can directly install whatever you need from the library and start using it directly.
+
+Not much magic, very straightforward approach. Writing web-components that work is not easy but also not trivial.
+
 ## Now quickreview!
+
+There's shit ton of documentation from the very beginning which is super nice. The focus on making sure people uderstand what is the library about and what are the benefits you have upfront.
+
+You have a [storybook](https://lion-web-components.netlify.com/) implementation where you can play around and if you still didn't get it, the blog post really help.
+
+**More than 40 web components** with utilities and everything you might need to implement forms and a, ...Bank.
+
+I like the approach the company took and how they are pushing to start using the web standard. More to read about web-components and its hype.
 
 ## Diving a little bit deeper
 

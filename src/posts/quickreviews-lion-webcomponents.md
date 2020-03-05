@@ -45,14 +45,28 @@ I like the approach the company took and how they are pushing to start using the
 
 ## Diving a little bit deeper
 
+The repository follows a monorepo structure with [Lerna](https://github.com/lerna/lerna) which makes it easier for them to maintain and keep it separately, this allow them to offer individual components and the user can opt to import what they need.
+
+The implementation of their componens is based on the [Open web components recommendation](https://github.com/open-wc/open-wc) and [Web components polifyll](https://www.webcomponents.org/) to increase compatibility.
+
+The structure of the repo is standard for a monorepo with [rollup](https://rollupjs.org/) as a module bundler.
+
+I really like the libraries they've picked and it seems that it evolved to a very nicely picked process.
+
+There is a `bundlesize` configuration in the package.json I find very nice. Actually, I didn't know that existed. I'll take a look
+
+Every subpackage has a ton of documentation with examples and each components present a set of tests.
+
 ## Conclusion
+
+This web component library is definetely one you should at least try if you are into web component. ING bank bet for web compoenents and the idea behind this library is well executed. The quality of the documentation, examples and the set of components is sufficient
 
 ## Scores (higher is better)
 
-- Usefulness: /10.
-- Code quality: /10.
-- Documentation: /10.
-- Browser support: /10.
-- Potential: /10.
+- Usefulness: 8/10.
+- Code quality: 8/10.
+- Documentation: 9/10.
+- Browser support: 9/10.
+- Potential: 10/10.
 
-_Overall: 7.8/10_
+_Overall: 8.8/10_

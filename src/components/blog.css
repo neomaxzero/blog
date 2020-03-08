@@ -1,5 +1,6 @@
 * {
   font-family: Inter UI, Arial;
+  transition: all 0.2s ease-in-out;
 }
 h1 {
   text-align: center;

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useMemo, useRef, useCallback } from 'react'
 import Link from 'gatsby-link'
 import {
   Item,
@@ -11,22 +11,30 @@ import {
 } from './styled'
 import { createPathWithLanguagePrefix } from '../Utils/createPathWithLanguagePrefix'
 
-export default class PostItem extends React.Component {
-  link = createPathWithLanguagePrefix(this.props.lang, this.props.slug)
-  render() {
-    return (
-      <Item>
-        <Link to={this.link}>
-          <VerticalRow>
-            <MainInfo>
-              <Title>{this.props.title}</Title>
-              <Subtitle>{this.props.subtitle}</Subtitle>
-            </MainInfo>
-            <Date>{this.props.date}</Date>
-          </VerticalRow>
-        </Link>
-        <Topic>{this.props.topic}</Topic>
-      </Item>
-    )
-  }
+const PostItem = ({ title, subtitle, date, topic, lang, slug }) => {
+  const [hovered, setHovered] = useState(false)
+
+  const link = createPathWithLanguagePrefix(lang, slug)
+  const activeHover = useCallback(() => setHovered(true), [])
+  const inactivateHover = useCallback(() => setHovered(false), [])
+
+  return (
+    <Item>
+      <Link to={link} onMouseOver={activeHover} onMouseOut={inactivateHover}>
+        <VerticalRow>
+          <MainInfo>
+            <Title hovered={hovered}>{title}</Title>
+          </MainInfo>
+          <div>
+            <Date hovered={hovered}>{date}</Date>
+            <Subtitle hovered={hovered}>{subtitle}</Subtitle>
+          </div>
+        </VerticalRow>
+      </Link>
+      <Topic hovered={hovered}>{topic}</Topic>
+      <div></div>
+    </Item>
+  )
 }
+
+export default PostItem

@@ -30,4 +30,4 @@ featuredImage: ''
 - Browser support: /10.
 - Potential: /10.
 
-_Overall: 7.8/10_
+_Overall: /10_

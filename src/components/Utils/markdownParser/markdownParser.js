@@ -11,5 +11,6 @@ export default new rehypeReact({
     blockquote: markdownElements.Blockquote,
     ul: markdownElements.Ul,
     li: markdownElements.Li,
+    img: markdownElements.Img,
   },
 }).Compiler

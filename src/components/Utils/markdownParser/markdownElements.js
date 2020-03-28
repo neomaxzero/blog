@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+import mq from '../mq'
 
 export const H1 = styled('h1')`
   font-size: 2.9rem;
@@ -36,4 +37,18 @@ export const Ul = styled('ul')`
 
 export const Li = styled('li')`
   list-style-type: inherit;
+`
+
+export const Img = styled('img')`
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+
+  ${mq.tablet} {
+    width: 80%;
+  }
+
+  .raw {
+    width: 0;
+  }
 `

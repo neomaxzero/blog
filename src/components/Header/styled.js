@@ -15,7 +15,7 @@ export const Logo = styled('img')`
   opacity: 0.3;
 `
 
-export const Title = styled('h1')`
+export const Title = styled('h2')`
   font-weight: 100;
   font-size: 0.9rem;
   text-align: right;

@@ -6,11 +6,16 @@ import Img from 'gatsby-image'
 import A from '../components/shared/A'
 import ImageF from '../components/Post/Image'
 import { useState, useCallback } from 'react'
+import mq from '../components/Utils/mq'
 
 const ImgAbout = styled(Img)`
   margin: 0 auto;
-  width: 30%;
-  margin-bottom: 1rem;
+  width: 70%;
+  margin-bottom: 3rem;
+
+  ${mq.tablet} {
+    width: 35%;
+  }
 `
 
 const ImageHover = () => {

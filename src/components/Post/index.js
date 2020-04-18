@@ -16,12 +16,6 @@ import PostHeader from './PostHeader'
 const Social = styled.div`
   padding-bottom: 4rem 0;
 `
-
-const A = styled.a`
-  color: #ff6aa5;
-  font-size: 0.8rem;
-`
-
 const Toolbar = styled.div`
   display: flex;
   margin-bottom: 2rem;

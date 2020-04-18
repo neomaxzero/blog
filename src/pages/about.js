@@ -74,22 +74,22 @@ const About = () => (
     <h2>What is this blog about?</h2>
     <p>
       In this blog I write about <strong>frontend</strong> and some other topics
-      around it. I like reviewing books and ocasionally spent some time open
+      around it. I like reviewing books and ocasionally I spend some time open
       sourcing stuff I think you might like.
     </p>
     <p>
-      Everybody have opinions, I like sometimes sharing those here. One thing
-      you probably already noticed is that I'm not a great writer. I'm not an
-      English native speaker so I try my best to avoid having a lot of grammar
-      mistakes. I rather "deliver" something and rely a little bit on your end
-      to help me interpret my articles than not publishing because It's not
-      "ready" yet.
+      Everybody have opinions, I like sometimes sharing mine here. One thing you
+      probably already noticed is that I'm not a great writer. I'm not an
+      English native speaker so I try my best to avoid having a lot of
+      grammar/semantics mistakes. I rather "deliver" something and rely a little
+      bit on your end to help me interpret my articles than not publishing
+      because It's not "ready" yet.
     </p>
     <p>
       Writing somehow is relaxing to me and I want to keep it that way. I'm
-      sorry, but not that much, when something is a little bit off and hard to
-      understand but ultimately I know small improvements will come if I publish
-      more frequently.
+      sorry, but not that much, about sometimes being a little bit off and hard
+      to understand but ultimately I know small improvements will come if I
+      publish more frequently.
     </p>
     <ImageHover />
     <h2>Contact me</h2>

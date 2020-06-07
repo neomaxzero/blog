@@ -45,6 +45,8 @@ export default ({ data }) => {
   const post = data.markdownRemark
   const fileName = post.fields.slug.substring(1, post.fields.slug.length - 1)
   const imgFileName = post.frontmatter.featuredImage
+  const hideImgTitle = post.frontmatter.hideImgTitle
+
   return (
     <Layout>
       <Helmet
@@ -63,7 +65,11 @@ export default ({ data }) => {
         <html lang={post.frontmatter.lang || 'en'} />
       </Helmet>
 
-      <PostHeader imgFileName={imgFileName} title={post.frontmatter.title} />
+      <PostHeader
+        imgFileName={imgFileName}
+        title={post.frontmatter.title}
+        hideImgTitle={hideImgTitle}
+      />
 
       {markdownParser(post.htmlAst)}
 
@@ -97,6 +103,7 @@ export const query = graphql`
         description
         lang
         featuredImage
+        hideImgTitle
       }
       fields {
         slug

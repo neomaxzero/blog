@@ -23,6 +23,7 @@ const Title = styled.h1`
   font-weight: normal;
   margin-left: 2.9rem;
   margin-right: 2.9rem;
+  display: ${({ hideImgTitle }) => (hideImgTitle ? 'none' : 'block')};
 `
 
 const ImgHeader = styled(Img)`
@@ -33,14 +34,14 @@ const ImgHeader = styled(Img)`
     max-height: 400px;
   }
 `
-const PostHeader = ({ imgFileName, title }) => {
+const PostHeader = ({ imgFileName, title, hideImgTitle }) => {
   const { isMobile } = useViewport()
   return (
     imgFileName && (
       <>
         <ImgContainer>
           <ImageF imgFileName={imgFileName} ImgComponent={ImgHeader} />
-          {!isMobile && <Title>{title}</Title>}
+          {!isMobile && <Title hideImgTitle={hideImgTitle}>{title}</Title>}
         </ImgContainer>
         {isMobile && <H1>{title}</H1>}
       </>

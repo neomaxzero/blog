@@ -11,23 +11,23 @@ hideImgTitle: true
 
 Have you ever been in this situation where you don't know what had happened to your day and it's already gone? You have this feeling of under achievement because either you've planned a lot and that was the end of it or you have done everything on your list but still you don't have the fulfillment you expected.
 
-I've been there. I was there yesterday, I might be there tomorrow, I don't really know if today I'll feel that way.
+I've been there. I was there yesterday, I don't really know about today and I might be there tomorrow.
 
 _Chaos_ help me find joyment when I take decisions I find myself not commiting to.
 
-I want to share some thoughts, random thoughts, you could even consider this _chaotic_, that's the whole point.
+I want to share some thoughts, random thoughts, you could even consider this _chaotic_... that's the whole point.
 
 ## The negative connotation
 
-When you hear that someone is a chaotic person, you might immediately think negatively. I also thought like this the vast majority of my life because since my childhood, structure and order was one of the main values my family and institutions taught me and Chaos is the opposite. (Is it?)
+When you hear that someone is a chaotic person, you might immediately think negatively. I also thought like this the vast majority of my life because since my childhood, structure and order was one of the main values my family and institutions taught me and Chaos is the opposite. (Isn't it?)
 
-When we hear about chaos, we tend to extrapolate to the extreme. That make it very easy for us to get the concept but this doesn't necessarily need to be black and white.
+When we hear about chaos we tend to extrapolate to the extreme. That makes it very easy for us to get the concept but this doesn't necessarily need to be black and white.
 
-Depending of the situation, extreme chaos can be something that adds value. If we take as an example a painting, there are many situations where we see the painter forget all the "rules" and go along with what we perceive as chaos...In the end, this could be a master piece.
+Depending on the situation, extreme chaos can be something that adds value. If we take as an example a painting, there are many situations where we see a painter forget all the "rules" and go along with what we perceive as chaos...In the end, this could be a master piece.
 
-If we go to the other side of the spectrum and we are extremely organized, you could end up in some behavior that could lead to be so off it can be considered a TOC. A Harmful act instead of support the situation trying to remediate.
+If we go to the other side of the spectrum and we are extremely organized, you could end up in some behavior that could lead to be so off it can be considered a TOC. A Harmful act instead of one that supports the situation trying to remediate.
 
-But, for some reason now this side of the spectrum is sociable accepted with more ease because of the misuse of the word and sometimes even brought to job interviews and other places you wouldn't have listened before.
+But, for some reason now this side of the spectrum is sociable accepted with more ease because maybe of the misuse of the word and sometimes even brought to job interviews and other places you wouldn't have listened before.
 
 The version of chaos I'm trying to convey here is closer to what we consider "Creativity".
 
@@ -36,6 +36,8 @@ Let me illustrate this with a small diagram where I show the "spectrum":
 ![chaos-window](https://github.com/neomaxzero/blog/blob/master/src/images/chaos-window.png?raw=true)
 
 When everything we do, everything we decide, everything we say it's in line with what we plan we are on the "order" side of the range. If we plan, organize and act based on these premises outcomes are more deterministic and that helps on making future ideas a reality.
+
+When going to the "negative" side of the order range you will find chaos, before reaching the extreme of self-destruction and total entropy you'll find many steps that can help you to be more creative, try new stuff, re-discover yourself. The key here is to know when to look for that side, when to expand your "chao-window" and how to do it. I'm going to tell you what works for me but I'm pretty sure it won't work for you... It can maybe serve you for inspiration.
 
 I want you to remember that to keep this scoped, I want to focus and use as an example the following topic: **Technology and Frontend Engineering**, which are the things I spent some time thinking and doing last 5 years.
 
@@ -51,19 +53,19 @@ There was some UI development required for the job and that wasn't planned, I wa
 
 Another task came and it was in this case adding a button to one of the WebApps we were maintaining. Again, not planned from my side but I enjoyed it a lot.
 
-There was some small part of the design that was not decided, that part I had to think about how to display it. I'm a very visual person, and **I found a lot more joy** at doing this tasks than the SQL queries I was doing it before.
+There was some small part of the design that was not decided, I had the opportunity to design how to display it and then later implement . I'm a very visual person, and **I found a lot more joy** at doing this tasks than the SQL queries I was doing before.
 
-A combination of many things, specially Chaos put tasks and challenges on the way that help me **discover** a new field I didn't know I liked it that much.
+A combination of many things, specially chaos put tasks and challenges on the way that help me **discover** a new field I didn't know I liked that much.
 
-There is one thing I didn't tell you until now, I'm a person of hobbies, I like MANY things, I don't have time to do everything I want to do. At any specific time I think I know what I like, but there are SO many things I'm more than sure I have so much more to discover about myself, I do need to keep this "chaos" going!
+There is one thing I didn't tell you until now, I'm a person of hobbies, I like MANY things, I don't have time to do everything I want to do. At any specific time I think I know what I like but there are so many things I'm more than sure I have so much more to discover about myself.
 
 When we do like something we tend to dedicate time to it. Maybe we discover how much we like about something and we start increasing our available time until there is not much budget for that. If we use ALL our budget we are limiting ourselves into this discovery process.
 
-Trying to make sense of how I came from my first .NET job to my liking for UI. At that time I unintentionally use chaos and helped my way into the Frontend development. I continued with my chaotic behavior and learnt A LOT about how much little I know about everything.
+Trying to make sense of how I came from my first .NET job to my liking for UI I found chaos in the process, plenty of it. At that time I unintentionally use chaos and helped my way into the Frontend development. I continued with my chaotic behavior and learnt A LOT about how much little I know about everything.
 
-If you are a developer, you can probably relate to the fact that the amount of jargon and libraries, frameworks, books, techniques, concepts that you need to get a grasp on something is incredible overwhelming. Fortunately, many good people have created content that help you organize yourself into a plan that is less overwhelming. If you are in an early stage of your development career ORDER is a must and thank god we have so many awesome content creators covering this side.
+If you are a developer, you can probably relate to the fact that the amount of jargon and libraries, frameworks, books, techniques, concepts that you need to get a grasp to be able to move in this world can be incredible overwhelming. Fortunately, many good people have created content that help you organize yourself into a plan that is less overwhelming. If you are in an early stage of your development career ORDER is a must and thank god we have so many awesome content creators covering this side.
 
-On the other hand, If you passed through that phase (In any specific area), the plan you create for yourself has to pretty much be tailor made. YOU only know yourself and things that work for someone might not work for you. When we learnt how to organize the next thing we want to learn, the book we want to read and to follow plans. You should start considering **chaos is a powerful tool and can play on your favor if you know how to use it**.
+On the other hand, If you passed through that phase (In any specific area), the plan you create for yourself has to pretty much be tailor made. YOU and only YOU know about yourself and the things that work for someone else might not work for you. When we learnt how to organize the next thing we want to learn, the book we want to read and to follow plans. You should start considering **chaos is a powerful tool and can play on your favor if you know how to use it**.
 
 ## Deliberate chaos
 
@@ -72,7 +74,7 @@ This are physical examples, easy to acknowledge. The "non-physical" side of thin
 
 These are example of chaos that we don't control, we don't necessarily ask for it. It just happen because it happens.
 
-When you have worked for years to maintain order in this world full of chaos, you might have became way too good at organizing some specific stuff. In those areas that you are too experienced, room for error has been decreased to a minimum. If that happens to you, you might want to add CHAOS!
+When you have worked for years to maintain order in this world full of chaos, you might have became way too good at organizing some specific stuff. In those areas that you are too experienced and room for error has been decreased to a minimum you might want to add CHAOS! :O
 
 What the actual \*functional-programming are you talking about? If you have been on the same field for years, you learnt your way into that field. You know how to learn "quickly" enough, what matters to you, what matters to the market, how you _react_ to "new" libraries/ frameworks, new roles: From 'Webmaster' to 'Frontend Developer' to 'UI React Engineer' to 'UI React Native Engineer', to 'UI React Native Redux Engineer', etc.
 
@@ -86,13 +88,13 @@ But not the kind of chaos we already face daily, _the chaos that will help you e
 
 ## You might not need ~~Redux~~ Chaos
 
-This is not for everyone, to everything at anytime. Like many things in life, there's a moment, a subject, where adding chaos makes sense. Nobody knows about your inner motivations more than yourself and probably a handful of other people (Could be). What I do notice is that everyone in one way or another is using chaos. When we feel unhappy, chaos help us. When we are bored, chaos strikes again. When we have to make an essay, and we are playing League of legends. :P
+This is not for everyone, to everything at anytime. Like many things, there's a moment, a subject, where adding chaos makes sense. Nobody knows about your inner motivations more than yourself and probably a handful of other people (Could be). What I do notice is that everyone in one way or another is using chaos. When we feel unhappy, chaos help us. When we are bored, chaos strikes again. When we have to make an essay and we are playing League of legends, chaos is right there next to you.
 
 ## How I use chaos
 
-Because this is story about myself, and to make justice a little bit to the title.
+Because this is my story and to make justice a little bit to the title.
 
-### How chaos can be used as an exploration tool and how I create chaos in my life?
+### How chaos can be used as an exploration tool and how I create deliberate chaos in my life?
 
 As a Frontend developer I like "knowing" or getting a sense of what's the new next thing. Is Svelte gonna conquer the world? Is Service worker really the future? Is JQuery dead? This questions came from chaos.
 
@@ -106,9 +108,9 @@ How I add chaos to my frontend mind?
 
 I'm pretty sure you might do the same. It's very hard to talk to some other frontenders if you are not up to date with the new shiny Future proof framework.
 
-Although, that doesn't really create the chaos and exploration level I meant by the title, it's one level of chaos. This creates exploration, not at the level it will really help rediscover yourself.
+Although, that doesn't really create the chaos and exploration level I meant by the title, it's one level of chaos. This creates exploration, not at the level it will really help you rediscover yourself.
 
-What if I tell you? Fellow frontender.
+What if I ask you?
 
     - Do you like Animations?
     - Do you like 3D design?
@@ -123,14 +125,16 @@ What if I tell you? Fellow frontender.
 You can answer yes or no to each of this questions, I know. But have you really tried it?
 The more away you are from the field you are in (your comfort zone) your discovery process enlarge it, the more chaos you bring to your life because _each of these_ can change your career if you _really_ like it.
 
-> If you find more happiness than what you have with what you are currently doing. You probably will do something about it
+> If you find more happiness than what you have with what you are currently doing. You should probably do something about it and you probably will.
 
-I don't want to encourage people to GO CHANGE, I want you to think, I'm constantly checking what do makes me happy today. In my spare time I also experiment and try to go out of my comfort zone as much as I can. I find fascinating people that came from other completely unrelated fields like Dancers, Doctors, Biologists. These people know how to explore, and take big risks.
+I don't want to encourage people to GO CHANGE, I want you to **think**, I'm constantly checking what do makes me happy today. In my spare time I also experiment and try to go out of my comfort zone as much as I can. I find fascinating people that come from other completely unrelated fields like Dancers, Doctors, Biologists. These people know how to explore and take big risks.
 
 Ask yourself bigger questions, explore more, re-define yourself over and over again and be happy!
 
 ## Conclusion
 
-When we are learning how to learn, we learn about chaos, and how to control it. We should also learn about how to create it back and use it on our favor. You probably already have enough chaos in your life, but consider that you could probably use this as your new power. Next time chaos is consuming your time and energy, think about how deliberately this happen. Maybe you discover what makes your really happy. :D
+When we are learning how to learn we learn about chaos and how to control it. We should also learn about how to create it back and use it on our favor. 
+
+You probably already have enough chaos in your life, but consider that you could probably use this as your new power. Next time chaos is consuming your time and energy, think about how deliberately this happens. Maybe you discover what make you really happy. :D
 
 I'm very interested if you deliberately use chaos, _chaos management_ is not a thing yet but I think it should. What do you think?

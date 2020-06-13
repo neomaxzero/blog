@@ -1,6 +1,6 @@
 ---
 title: 'Chaos as an exploration tool'
-subtitle: 'Why I think we all have what we need to find joyment'
+subtitle: 'Why I think chaos will help you find joyment'
 date: '2020-06-07'
 topic: 'life'
 description: 'Chaos as an exploration tool, you have all you need to discover what you really like'
@@ -25,7 +25,7 @@ When we hear about chaos we tend to extrapolate to the extreme. That makes it ve
 
 Depending on the situation, extreme chaos can be something that adds value. If we take as an example a painting, there are many situations where we see a painter forget all the "rules" and go along with what we perceive as chaos...In the end, this could be a master piece.
 
-If we go to the other side of the spectrum and we are extremely organized, you could end up in some behavior that could lead to be so off it can be considered a TOC. A Harmful act instead of one that supports the situation trying to remediate.
+If we go to the other side of the spectrum and we are extremely organized, you could end up in some behavior that could lead to be so off it can be considered O.C.D. A Harmful act instead of one that supports the situation trying to remediate.
 
 But, for some reason now this side of the spectrum is sociable accepted with more ease because maybe of the misuse of the word and sometimes even brought to job interviews and other places you wouldn't have listened before.
 
@@ -133,7 +133,7 @@ Ask yourself bigger questions, explore more, re-define yourself over and over ag
 
 ## Conclusion
 
-When we are learning how to learn we learn about chaos and how to control it. We should also learn about how to create it back and use it on our favor. 
+When we are learning how to learn we learn about chaos and how to control it. We should also learn about how to create it back and use it on our favor.
 
 You probably already have enough chaos in your life, but consider that you could probably use this as your new power. Next time chaos is consuming your time and energy, think about how deliberately this happens. Maybe you discover what make you really happy. :D
 

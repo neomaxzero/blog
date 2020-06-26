@@ -36,15 +36,11 @@ const ImageHover = () => {
 const About = () => (
   <Layout>
     <h1>About</h1>
-    I'm Maxi, a...
+    I'm Maxi
     <p>
-      It's incredible hard for me to say things about myself. This part is about
-      exposing yourself, it's about saying things to the world that you want
-      them to know. This is a public declaration of, what I think I "am" at this
-      specific moment of time.
-    </p>
-    <p>
-      The question is, <strong>what really define you?</strong>
+      Talking about yourself is not easy. This is the moment where you expose
+      yourself, you write things to the world that you want them to know. I
+      don't have answer but you probably have some questions.
     </p>
     <h2>What do I do?</h2>
     <ul>
@@ -68,14 +64,14 @@ const About = () => (
     </ul>
     <h2>Where am I from?</h2>
     <p>
-      From a place where Mate is "the thing", where Cumbia is what the folks
-      hear and where meat is our proudest plate.
+      From a place where <i>Mate</i> is "the thing", where <i>Cumbia</i> is what
+      the folks hear and where meat is our proudest plate: Argentina.
     </p>
     <h2>What is this blog about?</h2>
     <p>
-      In this blog I write about <strong>frontend</strong> and some other topics
-      around it. I like reviewing books and ocasionally I spend some time open
-      sourcing stuff I think you might like.
+      I write about <strong>frontend</strong> and some other topics around it. I
+      like reviewing books and ocasionally I spend some time open sourcing stuff
+      I think you might like.
     </p>
     <p>
       Everybody have opinions, I like sometimes sharing mine here. One thing you

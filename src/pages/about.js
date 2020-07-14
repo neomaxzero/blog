@@ -40,7 +40,7 @@ const About = () => (
     <p>
       Talking about yourself is not easy. This is the moment where you expose
       yourself, you write things to the world that you want them to know. I
-      don't have answer but you probably have some questions.
+      don't have answers but you probably have some questions.
     </p>
     <h2>What do I do?</h2>
     <ul>
@@ -53,8 +53,13 @@ const About = () => (
           Photograpy
         </A>
       </li>
-      <li>- Build products </li>
       <li>- Read books</li>
+      <li>
+        - Building an IT community for readers:
+        <A href="https://pugmark.io/?ref=blog-maxi" target="_blank">
+          {' pugmark'}
+        </A>
+      </li>{' '}
       <li>
         - Netflix &{' '}
         <A href="https://www.github.com/neomaxzero/" target="_blank">
@@ -65,34 +70,22 @@ const About = () => (
     <h2>Where am I from?</h2>
     <p>
       From a place where <i>Mate</i> is "the thing", where <i>Cumbia</i> is what
-      the folks hear and where meat is our proudest plate: Argentina.
+      the folks hear and where meat is our proudest plate: Argentina 🇦🇷.
     </p>
     <h2>What is this blog about?</h2>
     <p>
       I write about <strong>frontend</strong> and some other topics around it. I
-      like reviewing books and ocasionally I spend some time open sourcing stuff
-      I think you might like.
+      like writing reviews about books and ocasionally I spend some time open
+      sourcing small libraries I think you might like.
     </p>
-    <p>
-      Everybody have opinions, I like sometimes sharing mine here. One thing you
-      probably already noticed is that I'm not a great writer. I'm not an
-      English native speaker so I try my best to avoid having a lot of
-      grammar/semantics mistakes. I rather "deliver" something and rely a little
-      bit on your end to help me interpret my articles than not publishing
-      because It's not "ready" yet.
-    </p>
+    <p>Everybody have opinions, I like sharing mines here.</p>
     <p>
       Writing somehow is relaxing to me and I want to keep it that way. I'm
-      sorry, but not that much, about sometimes being a little bit off and hard
-      to understand but ultimately I know small improvements will come if I
-      publish more frequently.
+      sorry, a little bit, about sometimes being off and hard to understand.
     </p>
     <ImageHover />
-    <h2>Contact me</h2>
-    <p>
-      I have a 100% reply ratio if you want to know more about me...You can send
-      me a message in any of this mediums:
-    </p>
+    <h2>What if I have more questions?</h2>
+    <p>I have a 100% reply ratio if you want to know more.</p>
     <ul>
       <li>
         <A href="https://www.linkedin.com/in/neomaxzero/" target="_blank">

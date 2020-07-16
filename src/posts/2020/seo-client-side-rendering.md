@@ -18,7 +18,7 @@ We went full JS rockstar mode and we pushed it to the extreme. We went from addi
 
 Browsers became monsters. 😋
 
-**We move the rendering process from the server to the client.** We did this because ... (I'm not gonna enter this area in this post). The result of that: A gazillion UI frameworks started to emerge.
+**We moved the rendering process from the server to the client.** We did this because ... (I'm not gonna enter this area in this post). The result of that: A gazillion UI frameworks started to emerge.
 
 ## What makes it so different from client-side rendering?
 
@@ -60,13 +60,13 @@ Having a longer time to market is not something you should take lightly. It can 
 
 SSR/CSR it's like a knob. You might not need your site to be available in search engines. SEO is only one of the considerations when we choose frontend technologies.
 
-Javascript SEO is still under development and I was very surprised google had this power already.
+Javascript SEO is still under development and I was very surprised google had this power already. (Not really working that well)
 
 Going SSR is not the only solution if you have a fully client-side rendered app and you want to be part of the search results.
 
 ## Pre-rendering
 
-Taking a snapshot of your HTML and save it as the initial-load for your user and google-bot is another technique it can be used to solve this problem. Again, it's not easy but it might be worth it if you need a middle ground.
+Taking a snapshot of your HTML and saving it as the initial-load for your user and google-bot is another technique that can be used to solve this problem. Again, it's not easy but it might be worth it if you need a middle ground.
 
 ## Conclusion
 

@@ -1,5 +1,5 @@
 ---
-title: 'A few words on SEO for client-side rendering apps'
+title: 'A few words on SEO for client-side rendered apps'
 subtitle: 'How does SEO work with Single page applications?'
 date: '2020-07-16'
 topic: 'dev-blog'
@@ -8,7 +8,7 @@ language: 'en'
 featuredImage: ''
 ---
 
-# A few words on SEO for client-side rendering apps
+# A few words on SEO for client-side rendered apps
 
 SEO and server-side rendering (SSR) work well together. Every search engine started by optimizing this technique.
 

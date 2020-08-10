@@ -5,7 +5,6 @@ module.exports = {
     // Puts tracking script in the head instead of the body
     head: false,
     // Setting this parameter is optional
-    anonymize: true,
     // Setting this parameter is also optional
     respectDNT: true,
     // Avoids sending pageview hits from custom paths
@@ -13,6 +12,5 @@ module.exports = {
     // Any additional create only fields (optional)
     sampleRate: 5,
     siteSpeedSampleRate: 10,
-    cookieDomain: 'm4x.io',
   },
 }

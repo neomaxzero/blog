@@ -9,7 +9,7 @@ const GlobalStyles = () => (
         font-family: 'Inter UI';
         font-style: normal;
         font-weight: 400;
-        font-display: swap;
+        font-display: optional;
         src: url("${fonts.InterUIWoff2}") format('woff2'),url("${fonts.InterUIWoff}") format('woff');
       }
 
@@ -17,7 +17,7 @@ const GlobalStyles = () => (
         font-family: 'Inter UI';
         font-style: normal;
         font-weight: 600;
-        font-display: swap;
+        font-display: optional;
         src: url("${fonts.InterUISemiBoldWoff2}") format('woff2'),url("${fonts.InterUISemiBoldWoff}") format('woff');
       }
 
@@ -25,7 +25,7 @@ const GlobalStyles = () => (
         font-family: 'Inter UI';
         font-style: normal;
         font-weight: 700;
-        font-display: swap;
+        font-display: optional;
         src: url("${fonts.InterUIBoldWoff2}") format('woff2'),url("${fonts.InterUIBoldWoff}") format('woff');
       }
     `}

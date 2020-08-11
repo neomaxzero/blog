@@ -1,5 +1,5 @@
 * {
-  font-family: Inter UI, arial;
+  font-family: Inter UI, sans-serif;
   transition: all 0.2s ease-in-out;
 }
 h1 {
@@ -10,12 +10,12 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: Inter UI, serif;
+  font-family: Inter UI, sans-serif;
   font-weight: 700;
 }
 
 a {
-  font-family: Inter UI;
+  font-family: Inter UI, sans-serif;
 }
 
 p {

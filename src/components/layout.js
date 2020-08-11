@@ -1,3 +1,5 @@
+import GlobalStyles from './globalStyles';
+
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
@@ -24,6 +26,7 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <ThemeProvider theme={theme}>
+        <GlobalStyles />
         <Helmet
           title={data.site.siteMetadata.title}
           meta={[

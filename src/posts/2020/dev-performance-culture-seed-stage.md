@@ -1,5 +1,5 @@
 ---
-title: 'Building a culture of Performance: Seed stage'
+title: 'Building a web performance culture: Seed stage'
 subtitle: 'Monitoring'
 date: '2020-11-14'
 topic: 'Performance'
@@ -15,7 +15,7 @@ If these elements are explicitly defined and thought of its easier to early dete
 
 Although performance was last on my list that doesn't mean there's an order in which you should take care of them and this might depend on the values of your company and the current stage of your project.
 
-I want to tell you a little bit of my experience on being a spectator/participant of some sort of performance culture creation.
+I want to tell you a little bit of my experience on being a spectator/participant of some sort of web performance culture creation.
 
 # The origin of a discussion: Why is it this slow?
 
@@ -55,7 +55,7 @@ Metrics are an important part of building a performance culture because when we 
 
 What do we measure? How? This are questions that require its own article.
 
-## A culture of performance starts with measuring
+## A web performance culture  starts with measuring
 
 Having a measuring tool it's essential to start with performance improvements and if you want to make it to be more than a one-time thing it doesn't end there. Culture is a bold word and brings with it a lot more than a measuring tool.
 

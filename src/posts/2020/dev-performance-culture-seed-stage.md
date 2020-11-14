@@ -53,7 +53,7 @@ If you reach this situation you probably want to start gathering data. It's real
 
 Metrics are an important part of building a performance culture because when we all talk in relative terms: Slow / Fast / Ok. It's pretty hard to say if we are all on the same page.
 
-What do we measure? How? This are questions that require its own article.
+What do we measure? How? These are questions that require its own article.
 
 ## A web performance culture  starts with measuring
 

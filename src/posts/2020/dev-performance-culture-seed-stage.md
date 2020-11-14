@@ -59,7 +59,7 @@ What do we measure? How? These are questions that require its own article.
 
 Having a measuring tool it's essential to start with performance improvements and if you want to make it to be more than a one-time thing it doesn't end there. Culture is a bold word and brings with it a lot more than a measuring tool.
 
-We know how information is so valuable to pretty much everything. Performance is not the exception and having a data to help you in your decisions will be the base when answering these other two questions:
+We know how information is so valuable to pretty much everything. Performance is not the exception and having data to help your team in your decisions will be the base when answering these other two questions:
 
 - How do we make people care about performance?
 - What do we do when we are not as fast as we want it to be?

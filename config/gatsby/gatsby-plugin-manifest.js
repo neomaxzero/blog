@@ -7,6 +7,10 @@ module.exports = {
     background_color: '#0C0C0C',
     theme_color: '#0C0C0C',
     display: 'minimal-ui',
-    icon: 'src/images/nmz-logo-black.png', // This path is relative to the root of the site.
+    icon: 'src/images/maskable_icon.png', // This path is relative to the root of the site.
+    icon_options: {
+      // For all the options available, please see the additional resources below.
+      purpose: `any maskable`,
+    },
   },
 }

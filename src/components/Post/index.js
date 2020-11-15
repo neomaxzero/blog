@@ -13,6 +13,7 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import PostHeader from './PostHeader'
 import { Link } from 'gatsby'
 import { A } from '../Utils/markdownParser/markdownElements'
+import { LinkColor } from '../shared/A'
 
 const Social = styled.div`
   padding-bottom: 4rem 0;
@@ -80,7 +81,7 @@ export default ({ data }) => {
         hideImgTitle={hideImgTitle}
       />
       <Date>
-        By <A><Link to="/about">Maxi</Link></A> | <time>{post.frontmatter.date}</time>
+        By <LinkColor to="/about">Maxi</LinkColor> | <time>{post.frontmatter.date}</time>
       </Date>
       {markdownParser(post.htmlAst)}
       <EndOfPostQuote>Stay alert, stay moving</EndOfPostQuote>

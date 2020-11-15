@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useRef, useCallback } from 'react'
+import React, { useState, useCallback } from 'react'
 import Link from 'gatsby-link'
 import {
   Item,
@@ -20,7 +20,13 @@ const PostItem = ({ title, subtitle, date, topic, lang, slug }) => {
 
   return (
     <Item>
-      <Link to={link} onMouseOver={activeHover} onMouseOut={inactivateHover}>
+      <Link
+        to={link}
+        onMouseOver={activeHover}
+        onFocus={activeHover}
+        onMouseOut={inactivateHover}
+        onBlur={inactivateHover}
+      >
         <VerticalRow>
           <MainInfo>
             <Title hovered={hovered}>{title}</Title>

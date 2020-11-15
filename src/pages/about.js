@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import Layout from '../components/layout'
-import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 import A from '../components/shared/A'
 import ImageF from '../components/Post/Image'
@@ -25,7 +24,13 @@ const ImageHover = () => {
   const inactivateHover = useCallback(() => setHovered(false), [])
 
   return (
-    <div onMouseOver={activeHover} onMouseOut={inactivateHover}>
+    <div
+      onMouseOver={activeHover}
+      onFocus={activeHover}
+      onMouseOut={inactivateHover}
+      onBlur={inactivateHover}
+      role="image"
+    >
       <ImageF
         imgFileName={hovered ? 'maxi-alt.jpg' : 'maxi.jpg'}
         ImgComponent={ImgAbout}

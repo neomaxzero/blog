@@ -127,7 +127,7 @@ const Success = ({ email }) => {
       <PBlock>
         <strong>{email}</strong> thanks for subscribing!
       </PBlock>
-      <PBlock>I’d ❤️ to hear what you want to know about. </PBlock>
+      <PBlock>I’d love to hear what you want to know about. </PBlock>
       <PBlock>
         Leave a comment, you have 100% chances to hear back from me{' '}
       </PBlock>

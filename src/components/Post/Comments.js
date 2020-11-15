@@ -24,7 +24,7 @@ const Comments = ({ fullUrl, id }) => {
         config: disqus_config,
       })
     }
-  }, [])
+  }, [fullUrl, id])
   return <div id="disqus_thread"></div>
 }
 

@@ -31,7 +31,7 @@ const EndOfPostQuote = styled.div`
 `
 
 const OutLink = styled(OutboundLink)`
-  color: #ff6aa5;
+  color: ${({theme}) => theme.colors.primary};
   font-size: 0.8rem;
 
   &:hover {

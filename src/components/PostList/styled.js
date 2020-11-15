@@ -35,7 +35,7 @@ export const Topic = styled('span')`
 
 export const Date = styled('span')`
   color: ${({ theme, hovered }) =>
-    hovered ? theme.colors.greys['800'] : theme.colors.greys['500']};
+    hovered ? theme.colors.greys['900'] : theme.colors.greys['600']};
   font-size: ${({ theme }) => theme.sizes['1']};
   font-weight: 300;
   margin: 0.2rem 0.4rem 0 0.4rem;

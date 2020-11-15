@@ -17,7 +17,7 @@ const NavElement = styled.div`
 const Header = () => (
   <ScHeader>
     <OutboundLink href="https://m4x.io">
-      <Logo src={logoSrc} />
+      <Logo src={logoSrc} alt="M4X blog logo"/>
     </OutboundLink>
     <Title>
       <Link to="/about">

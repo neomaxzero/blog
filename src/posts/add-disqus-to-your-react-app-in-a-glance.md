@@ -9,14 +9,14 @@ tags: 'react, disqus, comments, modules'
 
 # Add disqus to your react app in a glance
 
-I recently started adding more content to my blog and in the process I decided to have a communication channel with my audience, if there's any, would be quite useful.
+I recently started adding more content to my blog and in the process I thought It might be a good idea to have a communication channel with my audience.
 
-Disqus it's a _"comment as a service"_ platform that give you all the tools you need to have this feature on your application in _literally 5 mins_.
+Disqus is a _"comment as a service"_ platform that gives you all the tools you need to have comments on your application in _literally 5 mins_.
 
-## Let's get it on
+## Straight to the point: 5 Steps to have Disqus in your react app.
 
-1. Create a disqus account, if you don't have it yet.
-2. Add the component that is going to load the disqus comment box to your app.
+1. Create a disqus account.
+2. Add the component that loads the disqus comment box to your app.
 
 ```javascript
 // Comments.js
@@ -53,7 +53,7 @@ const Comments = ({ fullUrl, id }) => {
 export default Comments
 ```
 
-3. Use it in your app whenever you want to add comments:D
+3. Place it in the page you want the comment box to be displayed.
 
 ```javascript
 // Post.js
@@ -70,20 +70,16 @@ const Post = ({ url, id }) => (
 export default Post
 ```
 
-4. Make sure you add the url of the page you are taking comments for and an id.
+4. Make sure you add the the unique url and id to the comments component.
 5. Wait for the awesome comments from your followers.
 
-## Is that all I need?
+## Is that all I need? Comments up and running.
 
-Yes! Incredible, that's all that you need to use disqus. Make sure to add comments yourself to be sure you are sending the right url and id. Stay longer if you want the rest of the story...
+Yes! Incredible, that's all that you need to use disqus. Make sure to add comments yourself to check if you are sending the right url and id. Stay longer if you want the rest of the story...
 
 ## Extra: Juice of the story
 
-While doing some research on how to add this I encounter a couple of options that I could try on:
-
-First,I tried adding the snippet of code that it's in the disqus wizzard.
-
-I turned into a component with the famous `dangerouslySetInnerHTML` and It looked like this
+While doing some research on how to add this, I encounter a couple of options that I could try on: First, I tried adding the snippet of code that it's in the disqus wizzard.I turned into a component with the famous `dangerouslySetInnerHTML` and It looked like this
 
 ```javascript
 import React from 'react'
@@ -111,11 +107,9 @@ const Comments = ({ fullUrl, id }) => {
 export default Comments
 ```
 
-But, this didn't work out of the box. Every time the client side routing was switching components it was behaving quite awful. Also, I was adding a new script everytime the component was mounting. 
+This didn't work out of the box. Every time the client side routing was switching components it was behaving quite awful. Also, I was adding a new script everytime the component was mounting. Yes, I know it was way to MVP. But it worked, 2 out 10 times :P
 
-Yes, I know it was waaay to mvp. But it worked, 2 out 10 times :P
-
-Second tried was using the npm module [disqus-react](https://github.com/disqus/disqus-react) that disqus provides but I was skeptical of how would this be much different from the web approach and if you look at the code...
+Second try was using the official npm module [disqus-react](https://github.com/disqus/disqus-react) but I was skeptical of how would this be much different from the web approach and if you look at the code: It isn't.
 
 ```javascript
 // file: https://github.com/disqus/disqus-react/blob/master/src/DiscussionEmbed.jsx
@@ -137,13 +131,11 @@ Second tried was using the npm module [disqus-react](https://github.com/disqus/d
 // ..lots of react code
 ```
 
-...and if you look at the code, It isn't.
-
-I didn't install the npm module and tried it out because at this point I have learnt enough about what I need to do to make it work without another black box in my proyect.
+I didn't install the npm module because at this point I had learnt enough about what I needed to do to make it work without another black box in my proyect.
 
 So, a couple of tries more and I ended up with this small, in house component that does exactly that. - [useDisqus](https://github.com/neomaxzero/useDisqus)
 
-In this story of adding a "simple" component. I hope you can relate with the thought process to decide what to do at any given time when picking a new library.
+In this story of adding a "simple" component I hope you can relate with the thought process on deciding what to do at any given time when picking a new library. You can check my opinion [here](/en/frontend-architecture-install-vs-write)
 
 **If you read this far, thank you and give me a sign ( like, comment, email, etc) that you want to keep reading about my day to day struggles.**
 

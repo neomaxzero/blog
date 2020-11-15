@@ -1,1 +1,1 @@
-export const DEFAULT_DESCRIPTION_HEADER = `m4x's thoughts, mainly javascript, learn frontend together with me. Review libraries and frameworks! Witness the path to JS enlightment.`
+export const DEFAULT_DESCRIPTION_HEADER = `M4X in words, mainly javascript, learn frontend. Review libraries and frameworks.`

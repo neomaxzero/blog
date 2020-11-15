@@ -50,15 +50,15 @@ export default ({ data }) => {
   return (
     <Layout>
       <Helmet
-        title={`${post.frontmatter.title} - m4x blog`}
+        title={`${post.frontmatter.title} | M4X`}
         meta={[
           {
             name: 'title',
-            content: `${post.frontmatter.title} - m4x blog`,
+            content: `${post.frontmatter.title} | M4X`,
           },
           {
             name: 'description',
-            content: ` ${post.frontmatter.description} - ${DEFAULT_DESCRIPTION_HEADER}`,
+            content: ` ${post.frontmatter.description || DEFAULT_DESCRIPTION_HEADER}`,
           },
         ]}
       >

@@ -10,7 +10,7 @@ module.exports = {
   siteMetadata: {
     siteUrl: `https://blog.m4x.io`,
     author: 'm4x',
-    title: 'M4X blog, Maxi\'s opinions about Frontend, Performance, React, Javascript, Everything!',
+    title: 'Another day to Frontend, Performance, React, Javascript',
   },
   plugins: [
     'gatsby-transformer-remark',

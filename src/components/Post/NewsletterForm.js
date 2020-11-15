@@ -81,7 +81,12 @@ const SimpleForm = ({ onSubmitted, email, setEmail, state, setState }) => {
     <>
       <SectionTitle>Join the Newsletter</SectionTitle>
       <NewsForm>
+        <label class="hidden" for="emailInput">
+          Email address
+        </label>
+
         <Input
+          id="emailInput"
           type="text"
           placeholder="Enter email address"
           value={email}

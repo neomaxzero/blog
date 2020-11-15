@@ -24,7 +24,7 @@ const Toolbar = styled.div`
   margin-top: 4rem;
 `
 
-const EndOfPostQuote = styled.h4`
+const EndOfPostQuote = styled.div`
   font-size: 0.7rem;
   font-weight: normal;
   text-align: center;

@@ -1,14 +1,12 @@
 ---
-title: 'playroom'
+title: 'Quickreviews: Playroom'
 subtitle: 'library'
 date: '2019-04-15'
 topic: 'quickreviews'
 description: 'quickreviews: playroom is a playground for your react components'
 ---
 
-# quickreviews: [playroom](https://github.com/seek-oss/playroom)
-
-> version: 0.9.0
+> [playroom](https://github.com/seek-oss/playroom) - version: 0.9.0
 
 ## What are you?
 

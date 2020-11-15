@@ -8,8 +8,6 @@ language: 'en'
 featureImage: ''
 ---
 
-# How to equalize your rows in react.
-
 As frontenders, sometimes when we are building grids we run into a very annoying but common issue, **Unalignment**. When the items of a grid are not aligned correctly it is time for trouble.
 
 As human beings we are very good at detecting these irregularities. An issue like this immediately jumps into our attention.

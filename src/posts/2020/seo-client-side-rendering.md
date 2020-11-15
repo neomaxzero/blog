@@ -8,8 +8,6 @@ language: 'en'
 featuredImage: ''
 ---
 
-# A few words on SEO for client-side rendered apps
-
 SEO and server-side rendering (SSR) work well together. Every search engine started by optimizing this technique.
 
 In the beginning, JS was used to enhance our pages and improve the experience for the end-user but that changed.

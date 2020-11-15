@@ -1,5 +1,5 @@
 ---
-title: 'Chakra-ui'
+title: 'Quickreviews: Chakra-ui'
 subtitle: 'chakra-ui: accessible react component library'
 date: '2020-03-11'
 topic: 'quickreviews'
@@ -8,9 +8,7 @@ language: 'en'
 featuredImage: ''
 ---
 
-# quickreviews: [chakra-ui](https://chakra-ui.com/)
-
-> version: X.X.X
+> [chakra-ui](https://chakra-ui.com/) - version: X.X.X
 
 ## What are you then?
 

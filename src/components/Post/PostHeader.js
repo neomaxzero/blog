@@ -37,7 +37,7 @@ const ImgHeader = styled(Img)`
 const PostHeader = ({ imgFileName, title, hideImgTitle }) => {
   const { isMobile } = useViewport()
   return (
-    imgFileName && (
+    imgFileName ? (
       <>
         <ImgContainer>
           <ImageF imgFileName={imgFileName} ImgComponent={ImgHeader} />
@@ -45,7 +45,7 @@ const PostHeader = ({ imgFileName, title, hideImgTitle }) => {
         </ImgContainer>
         {isMobile && <H1>{title}</H1>}
       </>
-    )
+    ) : <H1>{title}</H1>
   )
 }
 

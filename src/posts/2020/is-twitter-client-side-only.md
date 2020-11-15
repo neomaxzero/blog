@@ -8,8 +8,6 @@ language: 'en'
 featuredImage: ''
 ---
 
-# is Twitter only client-side-rendered?
-
 The other day I was discussing with my friend what could we do to give a glance to the community without being authenticated.
 
 At [pugmark](https://pugmark.io?ref=blog-m4x) every route after you authenticate is client side rendered. This means that we send a minimal version of the HTML that then the browser downloads and process to create the DOM on the fly.

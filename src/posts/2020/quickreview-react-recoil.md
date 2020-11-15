@@ -1,5 +1,5 @@
 ---
-title: 'React recoil'
+title: 'Quickreviews: React recoil'
 subtitle: 'A 2 min read introduction to react-recoil'
 date: '2020-07-14'
 topic: 'quickreviews'
@@ -8,7 +8,7 @@ language: ''
 featuredImage: ''
 ---
 
-# quickreviews: [React-recoil](https://recoiljs.org/)
+> [React-recoil](https://recoiljs.org/)
 
 ## What is it?
 

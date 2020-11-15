@@ -1,13 +1,11 @@
 ---
-title: '¿Que es react concurrent mode?'
+title: 'React: ¿Que es react concurrent mode?'
 subtitle: 'concurrent mode'
 date: '2019-11-16'
 topic: 'react'
 description: 'React: Introduccion a concurrent mode. Una explicacion basica de su functionamiento'
 lang: 'es'
 ---
-
-# React: ¿Que es react concurrent mode?
 
 Concurrent mode está ahora con nosotros y vino para quedarse. La última feature fue lanzada en la ReactConf 2019 como una versión experimental y promete una mejora de rendimiento.
 

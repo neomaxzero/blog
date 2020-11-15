@@ -1,14 +1,12 @@
 ---
-title: 'pikapkg/web'
+title: 'Quickreviews: Pikapkg web'
 subtitle: 'library'
 date: '2019-04-06'
 topic: 'quickreviews'
 description: 'quickreviews: pikapkg web bundler? '
 ---
 
-# quickreviews: [pikapkg web](https://github.com/pikapkg/web)
-
-> version: 0.4.1
+> [pikapkg web](https://github.com/pikapkg/web) - version: 0.4.1
 
 At the beginning I thought this was a _module bundler_, it claims is not. I'd say pika is a module mapper(?).
 

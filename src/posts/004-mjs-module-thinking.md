@@ -1,11 +1,9 @@
 ---
-title: 'mastering modular javascript: chapter 1'
+title: 'Lets review: Mastering Modular Javascript - Chapter 1 - 1/2.'
 subtitle: 'part I'
 date: '2018-09-15'
 topic: 'book review'
 ---
-
-# Let's review: Mastering Modular Javascript - Chapter 1 - 1/2.
 
 With this series of posts I am going to give my opinions, thoughts and conclusions about the free ebook "Mastering Modular Javascript" by Nicolas Bevaqcua.
 

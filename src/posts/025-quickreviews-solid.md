@@ -1,14 +1,13 @@
 ---
-title: 'solid'
+title: 'Quickreviews: Solid'
 subtitle: 'library'
 date: '2019-04-07'
 topic: 'quickreviews'
 description: 'quickreviews: solid a non-vdom ui library'
 ---
 
-# quickreviews: [solid](https://github.com/ryansolid/solid)
 
-> version: 0.4.2
+> [solid](https://github.com/ryansolid/solid) - version: 0.4.2
 
 yet another UI library. Looks a like react but deep inside is not.
 

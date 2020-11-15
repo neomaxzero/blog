@@ -8,8 +8,6 @@ language: 'en'
 featuredImage: ''
 ---
 
-# UI: Explicit vs implicit actioners
-
 If you ever used JIRA. This very powerful tool is riddled with features. The tool is so powerful that the designers have an incredibly hard time trying to cram all the functionality on a page.
 
 There are only so many buttons and messages that you can convey on a page before you go beyond the understanding threshold. I always complain about the number of features it has only to discover there's even more.

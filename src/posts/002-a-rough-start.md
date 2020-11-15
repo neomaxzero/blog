@@ -1,10 +1,8 @@
 ---
-title: 'a rough start'
+title: 'A Rough Start'
 date: '2018-09-02'
 topic: 'blog retro'
 ---
-
-# A Rough start
 
 Building a blog is easy? Maybe if you know nothing about programming you
 can even use a blogging platorm such as Wordpress, blogspot, etc. The

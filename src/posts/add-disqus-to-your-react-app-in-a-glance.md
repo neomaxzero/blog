@@ -7,8 +7,6 @@ description: 'react comments: How to add disqus to your react app'
 tags: 'react, disqus, comments, modules'
 ---
 
-# Add disqus to your react app in a glance
-
 I recently started adding more content to my blog and in the process I thought It might be a good idea to have a communication channel with my audience.
 
 Disqus is a _"comment as a service"_ platform that gives you all the tools you need to have comments on your application in _literally 5 mins_.

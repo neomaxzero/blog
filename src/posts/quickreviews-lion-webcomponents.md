@@ -1,5 +1,5 @@
 ---
-title: 'Lion web components'
+title: 'Quickreviews: Lion Web Components'
 subtitle: 'library'
 date: '2020-03-02'
 topic: 'quickreviews'
@@ -8,9 +8,7 @@ language: 'en'
 featureImage: ''
 ---
 
-# quickreviews: [Lion Web Components](https://github.com/ing-bank/lion)
-
-> version: X.X.X
+> [Lion Web Components](https://github.com/ing-bank/lion) - version: X.X.X
 
 ## What are you then?
 

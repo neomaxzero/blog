@@ -12,6 +12,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import ImageF from './Image'
 import PostHeader from './PostHeader'
+import { Link } from 'gatsby'
+import { A } from '../Utils/markdownParser/markdownElements'
 
 const Social = styled.div`
   padding-bottom: 4rem 0;
@@ -41,6 +43,13 @@ const TextToolbar = styled.span`
   margin-left: 0.4rem;
 `
 
+const Date = styled.div`
+  font-size: 0.8rem;
+  color: #757575;
+  text-align: center;
+  margin-bottom: 2rem;
+`
+
 export default ({ data }) => {
   const post = data.markdownRemark
   const fileName = post.fields.slug.substring(1, post.fields.slug.length - 1)
@@ -58,7 +67,8 @@ export default ({ data }) => {
           },
           {
             name: 'description',
-            content: ` ${post.frontmatter.description || DEFAULT_DESCRIPTION_HEADER}`,
+            content: ` ${post.frontmatter.description ||
+              DEFAULT_DESCRIPTION_HEADER}`,
           },
         ]}
       >
@@ -70,9 +80,10 @@ export default ({ data }) => {
         title={post.frontmatter.title}
         hideImgTitle={hideImgTitle}
       />
-
+      <Date>
+        By <A><Link to="/about">Maxi</Link></A> | <time>{post.frontmatter.date}</time>
+      </Date>
       {markdownParser(post.htmlAst)}
-
       <EndOfPostQuote>Stay alert, stay moving</EndOfPostQuote>
       <Toolbar>
         <OutLink
@@ -104,6 +115,7 @@ export const query = graphql`
         lang
         featuredImage
         hideImgTitle
+        date
       }
       fields {
         slug

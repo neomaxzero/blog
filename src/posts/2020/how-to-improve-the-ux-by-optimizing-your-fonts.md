@@ -8,8 +8,6 @@ language: 'en'
 featureImage: ''
 ---
 
-# How to improve the UX by optimizing your fonts
-
 Lately, I have been interested in improving the speed of my blog. The main reason why I wanted to do that was because I love seeing the content instantly. I was checking some performance audit tools and a common sign that every tool was giving was that the way I was requesting the fonts was hurting the speed of my site.
 
 I found two main questions needed answers to come up with a better approach:

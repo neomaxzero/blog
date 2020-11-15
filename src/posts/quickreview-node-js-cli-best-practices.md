@@ -1,5 +1,5 @@
 ---
-title: 'NodeJS CLI: Best practices'
+title: 'Quickreviews: NodeJS CLI: Best Practices'
 subtitle: 'best practices'
 date: '2020-03-21'
 topic: 'quickreviews'
@@ -8,7 +8,7 @@ language: 'en'
 featuredImage: ''
 ---
 
-# quickreviews: [NodeJS CLI: Best practices](https://github.com/lirantal/nodejs-cli-apps-best-practices)
+> [NodeJS CLI: Best practices](https://github.com/lirantal/nodejs-cli-apps-best-practices)
 
 ## What are you then?
 

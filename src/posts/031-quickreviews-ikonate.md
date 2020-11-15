@@ -1,14 +1,12 @@
 ---
-title: 'ikonate'
+title: 'Quickreviews: Ikonate'
 subtitle: 'library'
 date: '2019-04-21'
 topic: 'quickreviews'
 description: 'quickreviews: ikonate is an icon library with customization and performance in mind'
 ---
 
-# quickreviews: [ikonate](https://github.com/mikolajdobrucki/ikonate/)
-
-> version: 1.0.0
+> [ikonate](https://github.com/mikolajdobrucki/ikonate/) - version: 1.0.0
 
 ## What are you?
 

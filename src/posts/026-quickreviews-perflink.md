@@ -1,14 +1,13 @@
 ---
-title: 'perflink'
+title: 'Quickreviews: Perflink'
 subtitle: 'performance tool'
 date: '2019-04-08'
 topic: 'quickreviews'
 description: 'quickreviews: perflink a real time performance benchmark tooling tool to compare js snippets'
 ---
 
-# quickreviews: [perflink](https://github.com/lukejacksonn/perflink)
 
-> version: first (?)
+> [perflink](https://github.com/lukejacksonn/perflink) - version: first (?)
 
 Today I present to you a nice app to hold on your toolbox. Because we all care about performance, and sometimes we wonder if this or that is better, instead of just wondering, you can now quickly test it.
 

@@ -1,12 +1,10 @@
 ---
-title: 'mastering modular javascript: end words'
+title: 'Lets review: Mastering Modular Javascript - Conclusion'
 subtitle: 'iThink'
 date: '2019-04-03'
 topic: 'book review'
 description: 'Modular Javascript, book conclusion: modularity is a doable edge sword'
 ---
-
-# Let's review: Mastering Modular Javascript - Conclusion
 
 After 16 mini chapters of Mastering modular Javascript, I've written more than than a 1000 words about the topics in the book and also my thought process while analyzing it. I can assure you that in the journey I've changed how I approached every article.
 

@@ -1,14 +1,13 @@
 ---
-title: 'realworld'
+title: 'Quickreviews: Realworld'
 subtitle: 'framework showcase'
 date: '2019-04-09'
 topic: 'quickreviews'
 description: 'quickreviews: realworld will present you a pretty big application and how it is implemented on different stacks'
 ---
 
-# quickreviews: [realworld](https://github.com/gothinkster/realworld)
 
-> version: XXX
+> [realworld](https://github.com/gothinkster/realworld) - version: XXX
 
 ## What are you then?
 

@@ -81,12 +81,13 @@ const SimpleForm = ({ onSubmitted, email, setEmail, state, setState }) => {
     <>
       <SectionTitle>Join the Newsletter</SectionTitle>
       <NewsForm>
-        <label style={{display: 'none'}} for="emailEntry">
+        <label id="lbl-email" style={{display: 'none'}} for="emailEntry">
           Email address
         </label>
 
         <Input
           type="text"
+          aria-labelledby="lbl-email"
           aria-label="Email Address:"
           placeholder="Enter email address"
           value={email}

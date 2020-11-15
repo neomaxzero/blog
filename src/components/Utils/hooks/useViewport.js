@@ -3,7 +3,7 @@ import debounce from 'lodash/debounce'
 import { breakpoints } from '../mq'
 
 const getViewportSemaphore = () => {
-  let isMobile = false,
+  let isMobile = true,
     isTablet = false,
     isDesktop = false,
     isFullHD = false

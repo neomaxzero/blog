@@ -1,31 +1,22 @@
 import React, { useEffect } from 'react'
 
-const Comments = ({ fullUrl, id }) => {
+const Comments = () => {
   useEffect(() => {
-    const DISQUS_SCRIPT = 'disq_script'
-    const sd = document.getElementById(DISQUS_SCRIPT)
-    if (!sd) {
-      var disqus_config = function() {
-        this.page.url = fullUrl
-        this.page.identifier = id
-      }
+    const s = document.createElement('script')
+    s.src = 'https://utteranc.es/client.js'
+    s.setAttribute('repo', 'neomaxzero/blog-comments')
+    s.setAttribute('issue-term', 'pathname')
+    s.setAttribute('theme', 'github-light')
+    s.crossOrigin = 'anonymous'
+    s.async = true
 
-      const d = document
-      const s = d.createElement('script')
-      s.src = 'https://m4x-io.disqus.com/embed.js'
-      s.id = DISQUS_SCRIPT
-      s.async = true
-      s.setAttribute('data-timestamp', +new Date())
+    document.body.appendChild(s)
 
-      d.body.appendChild(s)
-    } else {
-      window.DISQUS.reset({
-        reload: true,
-        config: disqus_config,
-      })
-    }
-  }, [fullUrl, id])
-  return <div id="disqus_thread"></div>
+    return () => {
+      document.body.removeChild(document.getElementsByClassName('utterances')[0])
+    };
+  }, [])
+  return null;
 }
 
 export default Comments

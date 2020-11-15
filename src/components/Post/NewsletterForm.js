@@ -86,8 +86,8 @@ const SimpleForm = ({ onSubmitted, email, setEmail, state, setState }) => {
         </label>
 
         <Input
-          id="emailEntry"
           type="text"
+          aria-label="Email Address:"
           placeholder="Enter email address"
           value={email}
           onChange={({ target: { value } }) => {

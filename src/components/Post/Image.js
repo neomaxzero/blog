@@ -38,7 +38,13 @@ const ImageF = ({ imgFileName, maxHeight, ImgComponent = ImgHeader }) => (
         return null
       }
 
-      return <ImgComponent fluid={image.node.fluid} maxHeight={maxHeight} />
+      return (
+        <ImgComponent
+          fluid={image.node.fluid}
+          maxHeight={maxHeight}
+          alt="Header Image post"
+        />
+      )
     }}
   />
 )

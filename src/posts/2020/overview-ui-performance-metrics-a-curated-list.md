@@ -9,11 +9,11 @@ featuredImage: 'performance-ui-metrics-list.png'
 hideImgTitle: false
 ---
 
-Your site is slow and you want to make it faster. You go out there and start gathering a list of available UI metrics that could help you in this endeavor. A few moments later you are overwhelm. The list of metrics the browser provides is longer than what you thought. I've been there and because of that I make this cheatsheet to hopefully summarise what they represent.
+Your site is slow and you want to make it faster. You go out there and start gathering a list of available UI metrics that could help you in this endeavor. A few moments later you are overwhelm. The list of metrics the browser provides is longer than what you thought. I've been there and because of that I've made this cheatsheet to summarise what they represent.
 
 ## The basic performance metrics
 
-I called these metrics basics because the majority of these are events the browser dispatch at specific moments while loads/renders a page. A few are also more a representation of how the user will perceive how fast (or slow) your site is.
+I call these metrics basics because the majority are events the browser dispatch at specific moments while loading/rendering a page. A few can be also considered more of a representation of how the user will perceive how fast (or slow) your site is.
 
 - **Time to first byte (TTFB)**: Time it takes to the browser to receive the first byte of a page.
 - **First paint:** When the first pixel is painted onto the screen.
@@ -27,7 +27,7 @@ I called these metrics basics because the majority of these are events the brows
 
 ## The user-centric performance metrics. (Lighthouse Score)
 
-These metrics measure the perceived performance of your page. They were popularized by Google to make it easier to measure and compare performance among other pages.
+These metrics measure the perceived performance of your page. They were popularized by Google to make it easier to measure and compare performance among other web sites.
 
 - **First contentful paint.**
 - **Speed Index.**
@@ -38,10 +38,10 @@ These metrics measure the perceived performance of your page. They were populari
 
 ## Web core vitals.
 
-Subset of metrics that simplify the process of what metrics to choose. Every year are changing to define the new standard of what is acceptable performance.
+Subset of metrics that simplify the process of what metrics to choose. Every year what is considered to be good performance is subject to change.
 
-- **Largest Contentful Paint: **When the largest element in the viewport is rendered**.**
-- **First Input delay**: How long it takes to your page to execute the first input..
+- **Largest Contentful Paint:** When the largest element in the viewport is rendered.
+- **First Input delay**: How long it takes to your page to execute the first input.
 - **Cumulative Layout Shift:** How much your page shakes while loading. Sum total of all individual layout shift.
 
 ## Deprecated performance metrics
@@ -52,8 +52,8 @@ Subset of metrics that simplify the process of what metrics to choose. Every yea
 
 ## How to decide which metrics to use?
 
-The community is inclining for the **web-core-vitals** but depending on your situation you might find more insights on other metrics that will also affect the user experience.
+The community is inclining towards the **web-core-vitals** but depending on your situation you might find more insights on other metrics that will also affect the user experience.
 
 ## Conclusion
 
-UI performance metrics are all over the place and is not easy to interpret what all of those acronims mean. If you are doubtful about which metrics to choose go for the **web-core-vitals **and keep exploring. On the process you are very likely to find other metrics that will help you achieve your targets.
+The UI performance metrics are constantly evolving and is not easy to interpret what all of those acronims mean. If you are doubtful about which metrics to choose go for the **web-core-vitals** and keep exploring. On the process you are very likely to find other metrics that will help you achieve your targets.

@@ -20,6 +20,7 @@ a {
 
 p {
   color: #262626;
+  font-size: 18px;
 }
 
 li {
@@ -32,4 +33,5 @@ li:not(first-child) {
 
 ul {
   padding: 0;
+  font-size: 18px;
 }

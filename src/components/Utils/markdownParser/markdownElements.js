@@ -23,7 +23,7 @@ export const Blockquote = styled('blockquote')`
   opacity: 0.9;
 `
 export const Ul = styled('ul')`
-  list-style-type: square;
+  list-style-type: circle;
   margin-block-start: 0;
   margin-block-end: 1rem;
   margin-inline-start: 0px;
@@ -31,7 +31,7 @@ export const Ul = styled('ul')`
   padding-inline-start: 2rem;
 
   & li:not(:first-child) {
-    margin-top: 0.6rem;
+    margin-top: 1.2rem;
   }
 `
 

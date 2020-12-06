@@ -11,12 +11,10 @@ export const H2 = styled('h2')`
   margin-top: 3rem;
 `
 
-const StyledA = styled(Link)`
+export const A = styled('a')`
   color: ${({ theme }) => theme.colors.primary};
   border-bottom: 2px solid ${({ theme }) => theme.colors.primary};
 `
-
-export const A = ({ href, ...rest }) => <StyledA to={href} {...rest} />
 
 export const Blockquote = styled('blockquote')`
   border: 1px solid #e2e2e2;

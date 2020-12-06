@@ -2,16 +2,14 @@ import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 
 const A = styled.a`
-  color: #ff6aa5;
+  color: ${({ theme }) => theme.colors.primary};
+  border-bottom: 2px solid ${({ theme }) => theme.colors.primary};
   cursor: pointer;
-
-  &:hover {
-    text-decoration: underline;
-  }
 `
 
 export const LinkColor = styled(Link)`
-  color: ${({theme}) => theme.colors.primary};
-`;
+  color: ${({ theme }) => theme.colors.primary};
+  border-bottom: 2px solid ${({ theme }) => theme.colors.primary};
+`
 
 export default A

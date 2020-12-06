@@ -21,7 +21,7 @@ I call these metrics basics because the majority are events the browser dispatch
 - **DOM interactive:** DOM is completely process. (HTML is parsed, Exclude sub-resources).
 - **DOM content loaded:** CSS-Object model is done and blocking scripts and styles are done.
 - **Speed Index:** Measures how quickly content is visually displayed during page load. Captures a video of the page loading in the browser and computes the visual progression between frames.
-- **Time-to-interactive:** When the longest task takes less than 50ms to process. Interacting with the page will feel responsive at this point.
+- **[Time to Interactive](/2020/ui-performance-metrics-what-is-time-to-interactive/):** When the longest task takes less than 50ms to process. Interacting with the page will feel responsive at this point.
 - **DOM Complete:** It's done! The page has been processed. No spinner anymore.
 - **Page load:** Time it takes to execute the "load" event handler. Triggered after dom complete.
 
@@ -32,7 +32,7 @@ These metrics measure the perceived performance of your page. They were populari
 - **First contentful paint.**
 - **Speed Index.**
 - **Largest Contentful Paint.**
-- **Time to Interactive.**
+- **[Time to Interactive](/2020/ui-performance-metrics-what-is-time-to-interactive/).**
 - **Total Blocking Time.**
 - **Cumulative Layout Shift**
 

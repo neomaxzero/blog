@@ -1,4 +1,6 @@
+import React from 'react'
 import styled from '@emotion/styled'
+import { Link } from 'gatsby'
 import mq from '../mq'
 
 export const H1 = styled('h1')`
@@ -8,9 +10,13 @@ export const H1 = styled('h1')`
 export const H2 = styled('h2')`
   margin-top: 3rem;
 `
-export const A = styled('a')`
-  color: #ff6aa5;
+
+const StyledA = styled(Link)`
+  color: ${({ theme }) => theme.colors.primary};
+  border-bottom: 2px solid ${({ theme }) => theme.colors.primary};
 `
+
+export const A = ({ href, ...rest }) => <StyledA to={href} {...rest} />
 
 export const Blockquote = styled('blockquote')`
   border: 1px solid #e2e2e2;
@@ -21,6 +27,12 @@ export const Blockquote = styled('blockquote')`
   padding-top: 16px;
   margin: 0;
   opacity: 0.9;
+  border-left: 3px solid ${({ theme }) => theme.colors.primary};
+  background-color: ${({ theme }) => theme.colors.primary16};
+
+  p {
+    color: ${({ theme }) => theme.colors.primaryOverText};
+  }
 `
 export const Ul = styled('ul')`
   list-style-type: circle;

@@ -2,6 +2,7 @@ const theme = {
   colors: {
     primary: '#ab2ff7',
     primary16: 'rgba(171, 47, 247, 0.16)',
+    primaryOverText: '#9529d8',
     error: '#FF431A',
     grayDark: '#505050',
     greys: {

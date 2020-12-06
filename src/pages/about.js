@@ -41,17 +41,14 @@ const ImageHover = () => {
 const About = () => (
   <Layout>
     <h1>About</h1>
-    I'm Maxi
     <p>
-      Talking about yourself is not easy. This is the moment where you expose
-      yourself, you write things to the world that you want them to know. I
-      don't have answers but you probably have some questions.
+      I'm Maxi. Sometimes I have answers but you probably have some questions.
     </p>
     <h2>What do I do?</h2>
     <ul>
       <li>- Frontend & Chill </li>
       <li>- Play games</li>
-      <li>- Spent time with the people I love </li>
+      <li>- Spend time with people I love </li>
       <li>
         -{' '}
         <A href="https://500px.com/neomaxzero" target="_blank">
@@ -74,19 +71,19 @@ const About = () => (
     </ul>
     <h2>Where am I from?</h2>
     <p>
-      From a place where <i>Mate</i> is "the thing", where <i>Cumbia</i> is what
-      the folks hear and where meat is our proudest plate: Argentina 🇦🇷.
+      From a place where <i>Mate</i> is "the thing", where <i>Cumbia</i> is our
+      jam and where meat is our proudest plate: Argentina 🇦🇷.
     </p>
     <h2>What is this blog about?</h2>
     <p>
-      I write about <strong>frontend</strong> and some other topics around it. I
-      like writing reviews about books and ocasionally I spend some time open
-      sourcing small libraries I think you might like.
+      I write mostly about <strong>frontend</strong>. I like writing reviews
+      about books and I ocasionally spend some time open sourcing small
+      libraries I think you might like.
     </p>
     <p>Everybody have opinions, I like sharing mines here.</p>
     <p>
-      Writing somehow is relaxing to me and I want to keep it that way. I'm
-      sorry, a little bit, about sometimes being off and hard to understand.
+      Writing somehow is relaxing and I want to keep it that way. I'm sorry, a
+      little bit, about sometimes being off and hard to understand.
     </p>
     <ImageHover />
     <h2>What if I have more questions?</h2>

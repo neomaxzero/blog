@@ -31,7 +31,7 @@ const EndOfPostQuote = styled.div`
 `
 
 const OutLink = styled(OutboundLink)`
-  color: ${({theme}) => theme.colors.primary};
+  color: ${({ theme }) => theme.colors.primary};
   font-size: 0.8rem;
 
   &:hover {
@@ -81,7 +81,8 @@ export default ({ data }) => {
         hideImgTitle={hideImgTitle}
       />
       <Date>
-        By <LinkColor to="/about">Maxi</LinkColor> | <time>{post.frontmatter.date}</time>
+        By <LinkColor to="/about">Maxi</LinkColor> |{' '}
+        <time>{post.frontmatter.date}</time>
       </Date>
       {markdownParser(post.htmlAst)}
       <EndOfPostQuote>Stay alert, stay moving</EndOfPostQuote>

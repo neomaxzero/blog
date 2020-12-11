@@ -32,6 +32,7 @@ Something to note is that although interactivity might make us think we have to 
 - Time-to-interactive gives an ok indication of when your page is "ready".
 - Trying to measure interactivity without anyone interacting it's a little bit controversial.
 - Depending on the type of app it can also mislead that your page is slow when it's ready to your audience.
+- [Don't confuse it with DOM Interactive](/2020/ui-performance-metrics-tti-vs-domInteractive/).
 
 ## Reference
 

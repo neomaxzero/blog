@@ -54,6 +54,10 @@ Subset of metrics that simplify the process of what metrics to choose. Every yea
 
 The community is inclining towards the **web-core-vitals** but depending on your situation you might find more insights on other metrics that will also affect the user experience.
 
+## Extra resources
+
+- **[Time-to-interactive vs DOM Interactive](/2020/ui-performance-metrics-tti-vs-domInteractive/)**
+
 ## Conclusion
 
 The UI performance metrics are constantly evolving and is not easy to interpret what all of those acronims mean. If you are doubtful about which metrics to choose go for the **web-core-vitals** and keep exploring. On the process you are very likely to find other metrics that will help you achieve your targets.

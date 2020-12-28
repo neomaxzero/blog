@@ -4,6 +4,7 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
 import Layout from '../layout'
+import PostItem from '../PostList/PostItem'
 
 const Tags = ({ pageContext, data }) => {
   const { tag } = pageContext
@@ -27,15 +28,17 @@ const Tags = ({ pageContext, data }) => {
 
       <h1>{tagHeader}</h1>
       <ul>
-        {edges.map(({ node }) => {
-          const { slug } = node.fields
-          const { title } = node.frontmatter
-          return (
-            <li key={slug}>
-              <Link to={slug}>{title}</Link>
-            </li>
-          )
-        })}
+        {edges.map(({ node }) => (
+          <PostItem
+            key={node.id}
+            slug={node.fields.slug}
+            title={node.frontmatter.title}
+            subtitle={node.frontmatter.subtitle}
+            topic={node.frontmatter.topic}
+            date={node.frontmatter.date}
+            lang={node.frontmatter.lang}
+          />
+        ))}
       </ul>
     </Layout>
   )
@@ -53,11 +56,17 @@ export const pageQuery = graphql`
       totalCount
       edges {
         node {
-          fields {
-            slug
-          }
+          id
           frontmatter {
             title
+            date(formatString: "DD/MM/YYYY")
+            topic
+            subtitle
+            lang
+            tags
+          }
+          fields {
+            slug
           }
         }
       }

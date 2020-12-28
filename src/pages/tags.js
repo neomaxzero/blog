@@ -18,7 +18,6 @@ const TagsPage = ({
 
   sortedTags.sort((a, b) => (a.totalCount > b.totalCount ? -1 : 1))
 
-  console.log(sortedTags)
   return (
     <Layout>
       <Helmet

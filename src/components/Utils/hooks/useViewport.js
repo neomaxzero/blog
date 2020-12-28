@@ -17,8 +17,6 @@ const getViewportSemaphore = () => {
     window.innerWidth || 0
   )
 
-  console.log(width)
-
   if (width < breakpoints.tablet) {
     isMobile = true
   } else if (width < breakpoints.desktop) {

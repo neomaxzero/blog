@@ -14,6 +14,7 @@ import PostHeader from './PostHeader'
 import { Link } from 'gatsby'
 import { A } from '../Utils/markdownParser/markdownElements'
 import { LinkColor } from '../shared/A'
+import Tags from './Tags'
 
 const Social = styled.div`
   padding-bottom: 4rem 0;
@@ -47,7 +48,6 @@ const Date = styled.div`
   font-size: 0.8rem;
   color: #757575;
   text-align: center;
-  margin-bottom: 2rem;
 `
 
 export default ({ data }) => {
@@ -55,6 +55,7 @@ export default ({ data }) => {
   const fileName = post.fields.slug.substring(1, post.fields.slug.length - 1)
   const imgFileName = post.frontmatter.featuredImage
   const hideImgTitle = post.frontmatter.hideImgTitle
+  const tags = post.frontmatter.tags
 
   return (
     <Layout>
@@ -84,6 +85,7 @@ export default ({ data }) => {
         By <LinkColor to="/about">Maxi</LinkColor> |{' '}
         <time>{post.frontmatter.date}</time>
       </Date>
+      <Tags tags={tags}></Tags>
       {markdownParser(post.htmlAst)}
       <EndOfPostQuote>Stay alert, stay moving</EndOfPostQuote>
       <Toolbar>
@@ -117,6 +119,7 @@ export const query = graphql`
         featuredImage
         hideImgTitle
         date
+        tags
       }
       fields {
         slug

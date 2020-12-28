@@ -13,34 +13,41 @@ const TagsPage = ({
       siteMetadata: { title },
     },
   },
-}) => (
-  <Layout>
-    <Helmet
-      meta={[
-        {
-          name: 'title',
-          content: `Tags | M4X`,
-        },
-        {
-          name: 'description',
-          content: `Categories to filter the content of the blog`,
-        },
-      ]}
-    />
-    <div>
-      <h1>Tags</h1>
-      <ul>
-        {group.map(tag => (
-          <li key={tag.fieldValue}>
-            <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
-              {tag.fieldValue} ({tag.totalCount})
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </div>
-  </Layout>
-)
+}) => {
+  const sortedTags = [...group]
+
+  sortedTags.sort((a, b) => (a.totalCount > b.totalCount ? -1 : 1))
+
+  console.log(sortedTags)
+  return (
+    <Layout>
+      <Helmet
+        meta={[
+          {
+            name: 'title',
+            content: `Tags | M4X`,
+          },
+          {
+            name: 'description',
+            content: `Categories to filter the content of the blog`,
+          },
+        ]}
+      />
+      <div>
+        <h1>Tags</h1>
+        <ul>
+          {sortedTags.map(tag => (
+            <li key={tag.fieldValue}>
+              <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
+                {tag.fieldValue} ({tag.totalCount})
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </Layout>
+  )
+}
 
 TagsPage.propTypes = {
   data: PropTypes.shape({

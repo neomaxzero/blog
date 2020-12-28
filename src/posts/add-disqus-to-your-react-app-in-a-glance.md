@@ -4,7 +4,7 @@ subtitle: 'comments'
 date: '2019-11-27'
 topic: 'react'
 description: 'react comments: How to add disqus to your react app'
-tags: 'react, disqus, comments, modules'
+tags: ['react', 'disqus', 'comments', 'open source']
 ---
 
 I recently started adding more content to my blog and in the process I thought It might be a good idea to have a communication channel with my audience.

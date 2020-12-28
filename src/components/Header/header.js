@@ -17,11 +17,17 @@ const NavElement = styled.div`
 const Header = () => (
   <ScHeader>
     <OutboundLink href="https://m4x.io">
-      <Logo src={logoSrc} alt="M4X blog logo"/>
+      <Logo
+        src={logoSrc}
+        alt="M4X blog logo: The logo its not a big deal. It's a black triangle with white stripes in the middle."
+      />
     </OutboundLink>
     <Title>
+      <Link to="/tags">
+        <NavElement>Tags</NavElement>
+      </Link>
       <Link to="/about">
-        <NavElement>about</NavElement>
+        <NavElement>About</NavElement>
       </Link>
       <Link to="/">
         <Author>m4x</Author>

@@ -3,6 +3,7 @@ title: 'UI: explicit vs implicit actioners'
 subtitle: 'How do you know when to stop adding elements to your page?'
 date: '2020-07-19'
 topic: 'UI life'
+tags: ['dev thoughts']
 description: 'How do you know when to stop adding elements to your page?'
 language: 'en'
 featuredImage: ''

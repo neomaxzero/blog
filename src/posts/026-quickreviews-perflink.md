@@ -4,8 +4,8 @@ subtitle: 'performance tool'
 date: '2019-04-08'
 topic: 'quickreviews'
 description: 'quickreviews: perflink a real time performance benchmark tooling tool to compare js snippets'
+tags: ['quickreviews']
 ---
-
 
 > [perflink](https://github.com/lukejacksonn/perflink) - version: first (?)
 

@@ -3,6 +3,7 @@ title: 'Javascript - Private Properties In Classes Part 2'
 subtitle: 'part II'
 topic: 'Javascript'
 date: '2018-12-23'
+tags: ['javascript', 'private properties']
 ---
 
 Before, we talked about how important private properties are and I show you a way to implement it with WeakMaps, now I'm going to show you an alternative using `Symbols`.

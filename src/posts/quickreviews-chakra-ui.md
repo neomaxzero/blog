@@ -6,6 +6,7 @@ topic: 'quickreviews'
 description: 'quickreviews: my opinion on chakra-ui, the accessible component library'
 language: 'en'
 featuredImage: ''
+tags: ['quickreviews']
 ---
 
 > [chakra-ui](https://chakra-ui.com/) - version: X.X.X

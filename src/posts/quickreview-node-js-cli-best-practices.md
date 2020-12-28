@@ -6,6 +6,7 @@ topic: 'quickreviews'
 description: 'quickreviews: A list of **21** tips you can apply when creating a CLI in Node.js'
 language: 'en'
 featuredImage: ''
+tags: ['quickreviews']
 ---
 
 > [NodeJS CLI: Best practices](https://github.com/lirantal/nodejs-cli-apps-best-practices)

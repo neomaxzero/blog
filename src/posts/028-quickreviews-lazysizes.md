@@ -4,6 +4,7 @@ subtitle: 'library'
 date: '2019-04-10'
 topic: 'quickreviews'
 description: 'quickreviews: a must have lazy load library for your images Its so advanced is confusing'
+tags: ['quickreviews']
 ---
 
 > [lazysizes](https://github.com/aFarkas/lazysizes) - version: 4.1.7

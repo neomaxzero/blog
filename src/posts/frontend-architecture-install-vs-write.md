@@ -6,6 +6,7 @@ topic: 'architecture'
 description: 'frontend architecture: Installing vs Writing modules'
 lang: 'en'
 featuredImage: '0002.jpg'
+tags: ['architecture']
 ---
 
 When working in an application we are constantly solving small problems to complete a task. Sometimes these issues are common among different use cases we run upon and with the experience we start noticing patterns.

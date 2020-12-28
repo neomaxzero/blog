@@ -2,6 +2,7 @@
 title: 'A Rough Start'
 date: '2018-09-02'
 topic: 'blog retro'
+tags: ['daily']
 ---
 
 Building a blog is easy? Maybe if you know nothing about programming you

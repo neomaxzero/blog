@@ -2,6 +2,7 @@
 title: 'Redux: Introduction to Services.'
 date: '2018-09-08'
 topic: 'redux'
+tags: ['react', 'redux']
 ---
 
 ## Redux-thunk

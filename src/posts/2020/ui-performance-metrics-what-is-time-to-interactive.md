@@ -3,6 +3,7 @@ title: 'UI Performance Metrics: What is Time to Interactive?'
 subtitle: 'TTI'
 date: '2020-12-06'
 topic: 'Performance'
+tags: ['performance']
 description: 'The list of metrics the browser provides is longer than what I thought and hopefully I can summarise in here what they represent. TLDR; Web-core-vitals.'
 language: 'en'
 hideImgTitle: false

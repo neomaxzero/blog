@@ -3,6 +3,7 @@ title: 'Chaos as an exploration tool'
 subtitle: 'Why I think chaos will help you find joyment'
 date: '2020-06-07'
 topic: 'life'
+tags: ['dev thoughts']
 description: 'Chaos as an exploration tool, you have all you need to discover what you really like'
 language: 'en'
 featuredImage: 'chaos-an-exploration-tool.png'

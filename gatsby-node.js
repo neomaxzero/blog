@@ -3,6 +3,7 @@ const { createFilePath } = require(`gatsby-source-filesystem`)
 const {
   createPathWithLanguagePrefix,
 } = require('./src/components/Utils/createPathWithLanguagePrefix')
+const kebabCase = require('./src/utils')
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
@@ -16,38 +17,63 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
   }
 }
 
-exports.createPages = ({ graphql, actions }) => {
+exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
-  return new Promise((resolve, reject) => {
-    graphql(`
-      {
-        allMarkdownRemark {
-          edges {
-            node {
-              fields {
-                slug
-              }
-              frontmatter {
-                lang
-              }
+  const blogPostTemplate = path.resolve('./src/components/Post/index.js')
+  const tagTemplate = path.resolve('./src/components/Tags/index.js')
+
+  const result = await graphql(`
+    {
+      postsRemark: allMarkdownRemark {
+        edges {
+          node {
+            fields {
+              slug
+            }
+            frontmatter {
+              tags
+              lang
             }
           }
         }
       }
-    `).then(result => {
-      result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-        const langPrefix = node.frontmatter.lang
+      tagsGroup: allMarkdownRemark(limit: 2000) {
+        group(field: frontmatter___tags) {
+          fieldValue
+        }
+      }
+    }
+  `)
 
-        createPage({
-          path: createPathWithLanguagePrefix(langPrefix, node.fields.slug),
-          component: path.resolve(`./src/components/Post/index.js`),
-          context: {
-            // Data passed to context is available in page queries as GraphQL variables.
-            slug: node.fields.slug,
-          },
-        })
-      })
-      resolve()
+  if (result.errors) {
+    reporter.panicOnBuild(`Error while running GraphQL query.`)
+    return
+  }
+
+  const posts = result.data.postsRemark.edges
+
+  posts.forEach(({ node }) => {
+    const langPrefix = node.frontmatter.lang
+
+    createPage({
+      path: createPathWithLanguagePrefix(langPrefix, node.fields.slug),
+      component: path.resolve(`./src/components/Post/index.js`),
+      context: {
+        // Data passed to context is available in page queries as GraphQL variables.
+        slug: node.fields.slug,
+      },
+    })
+  })
+
+  const tags = result.data.tagsGroup.group
+  // Make tag pages
+  tags.forEach(tag => {
+    createPage({
+      path: `/tags/${kebabCase(tag.fieldValue)}/`,
+      component: tagTemplate,
+      context: {
+        tag: tag.fieldValue,
+      },
     })
   })
 }

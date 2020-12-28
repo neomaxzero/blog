@@ -6,6 +6,7 @@ topic: 'quickreviews'
 description: 'quickreviews: Lion web components library'
 language: 'en'
 featureImage: ''
+tags: ['quickreviews']
 ---
 
 > [Lion Web Components](https://github.com/ing-bank/lion) - version: X.X.X

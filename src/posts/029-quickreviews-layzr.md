@@ -4,6 +4,7 @@ subtitle: 'library'
 date: '2019-04-12'
 topic: 'quickreviews'
 description: 'quickreviews: a modern lazy load library for your images. Fancy from the start'
+tags: ['quickreviews']
 ---
 
 > [layzr](https://github.com/callmecavs/layzr.js) - version: 2.2.2

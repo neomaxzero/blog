@@ -4,6 +4,7 @@ subtitle: 'library'
 date: '2019-04-06'
 topic: 'quickreviews'
 description: 'quickreviews: pikapkg web bundler? '
+tags: ['quickreviews']
 ---
 
 > [pikapkg web](https://github.com/pikapkg/web) - version: 0.4.1

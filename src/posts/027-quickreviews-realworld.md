@@ -4,8 +4,8 @@ subtitle: 'framework showcase'
 date: '2019-04-09'
 topic: 'quickreviews'
 description: 'quickreviews: realworld will present you a pretty big application and how it is implemented on different stacks'
+tags: ['quickreviews']
 ---
-
 
 > [realworld](https://github.com/gothinkster/realworld) - version: XXX
 

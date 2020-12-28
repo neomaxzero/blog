@@ -5,6 +5,7 @@ date: '2019-11-19'
 topic: 'react'
 description: 'React: What really is concurrent mode?'
 lang: 'en'
+tags: ['react']
 ---
 
 Concurrent mode is now with us and came to stay. The last feature was launched in an experimental mode and promise an improvement in the overall performance of your web apps.

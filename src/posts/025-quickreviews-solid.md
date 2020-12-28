@@ -4,8 +4,8 @@ subtitle: 'library'
 date: '2019-04-07'
 topic: 'quickreviews'
 description: 'quickreviews: solid a non-vdom ui library'
+tags: ['quickreviews']
 ---
-
 
 > [solid](https://github.com/ryansolid/solid) - version: 0.4.2
 

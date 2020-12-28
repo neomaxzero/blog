@@ -1,6 +1,7 @@
 ---
 title: 'Everything has a start'
 date: '2018-09-01'
+tags: ['daily']
 topic: 'Hi!'
 ---
 

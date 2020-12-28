@@ -1,10 +1,21 @@
 import React from 'react'
+import styled from '@emotion/styled'
+
 import Layout from '../components/layout'
 import PostItem from '../components/PostList/PostItem'
+import Filter from '../components/Filter'
 
+const Subtitle = styled.h2`
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: #9e9e9e;
+  font-weight: 100;
+  letter-spacing: -0.2px;
+`
 export default ({ data }) => {
   return (
     <Layout>
+      <Subtitle>Latest articles</Subtitle>
       <ul>
         {data.allMarkdownRemark.edges.map(({ node }) => (
           <PostItem
@@ -35,6 +46,7 @@ export const query = graphql`
             topic
             subtitle
             lang
+            tags
           }
           fields {
             slug

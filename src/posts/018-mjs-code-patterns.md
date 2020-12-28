@@ -3,6 +3,7 @@ title: 'Lets review: Mastering Modular Javascript - Chapter 5 - 3/3'
 subtitle: 'part III'
 date: '2019-03-25'
 topic: 'book review'
+tags: ['book review', 'mastering modular javascript']
 ---
 
 Based on my [highlights](https://github.com/neomaxzero/m-quickreview/blob/master/mastering-modular-js/chapter-05.md)

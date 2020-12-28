@@ -3,6 +3,7 @@ title: 'How to improve the UX by optimizing your fonts'
 subtitle: 'react-equalize'
 date: '2020-08-16'
 topic: 'performance'
+tags: ['performance', 'fonts']
 description: 'I was checking some performance audit tools and a common sign that every tool was giving was that the way I was requesting the fonts was hurting the speed.'
 language: 'en'
 featureImage: ''

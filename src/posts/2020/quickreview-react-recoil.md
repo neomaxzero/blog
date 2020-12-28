@@ -3,8 +3,8 @@ title: 'Quickreviews: React recoil'
 subtitle: 'A 2 min read introduction to react-recoil'
 date: '2020-07-14'
 topic: 'quickreviews'
+tags: ['quickreviews', 'react']
 description: 'quickreviews: A 5 mins review of react-recoil'
-language: ''
 featuredImage: ''
 ---
 

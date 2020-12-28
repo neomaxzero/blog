@@ -3,6 +3,7 @@ title: 'Overview UI Performance Metrics: A Curated List'
 subtitle: 'A curated list'
 date: '2020-11-22'
 topic: 'Performance'
+tags: ['performance']
 description: 'The list of metrics the browser provides is longer than what I thought and hopefully I can summarise in here what they represent. TLDR; Web-core-vitals.'
 language: 'en'
 featuredImage: 'performance-ui-metrics-list.png'

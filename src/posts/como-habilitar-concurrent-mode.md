@@ -6,6 +6,7 @@ topic: 'react'
 description: 'React: Como habilitar react concurrent mode?'
 lang: 'es'
 featuredImage: '0001.jpg'
+tags: ['react']
 ---
 
 Me sentí un poco inspirado por un post del amigo Kent donde comparte una guía de los pasos necesarios para activar concurrent mode en tu webapp con react.

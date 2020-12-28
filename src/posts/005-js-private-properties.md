@@ -3,6 +3,7 @@ title: 'Javascript - Private Properties in Classes'
 subtitle: 'part I'
 topic: 'Javascript'
 date: '2018-09-30'
+tags: ['javascript', 'private properties']
 ---
 
 Classes are a very recent addition to the language. Before the existance of classes if we wanted to apply Object oriented principles to the language we needed to rely on our expertise and common well known strategies to create pseudo-classes.

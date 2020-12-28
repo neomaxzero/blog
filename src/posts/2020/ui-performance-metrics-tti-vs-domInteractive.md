@@ -3,6 +3,7 @@ title: 'UI Performance Metrics: Time to Interactive vs Dom Interactive'
 subtitle: 'TTI vs DOM Interactive'
 date: '2020-12-11'
 topic: 'Performance'
+tags: ['performance']
 description: 'We might have different ideas about what that means and certanly that is the case between time to interactive and dom Interactive'
 language: 'en'
 hideImgTitle: false

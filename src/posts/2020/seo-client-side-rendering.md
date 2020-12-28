@@ -3,6 +3,7 @@ title: 'A few words on SEO for client-side rendered apps'
 subtitle: 'How does SEO work with Single page applications?'
 date: '2020-07-16'
 topic: 'dev-blog'
+tags: ['seo', 'dev thoughts']
 description: 'How does SEO work with Single page applications?'
 language: 'en'
 featuredImage: ''

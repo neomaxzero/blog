@@ -4,6 +4,7 @@ subtitle: 'quickreviews'
 date: '2019-04-05'
 topic: 'library review'
 description: 'quickreviews: the place where we quickly review upcoming libraries/frameworks together'
+tags: ['quickreviews']
 ---
 
 A long time ago I started writing my own notes about new libraries and frameworks that are released to the frontend world. Of couse, in the Javascript community this happens almost every second so we have to be critical on what is worth taking a look at.

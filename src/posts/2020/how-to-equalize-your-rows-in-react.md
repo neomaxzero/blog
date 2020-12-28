@@ -3,6 +3,7 @@ title: 'How to equalize your rows in react'
 subtitle: 'react-equalize'
 date: '2020-03-28'
 topic: 'react'
+tags: ['react', 'open source']
 description: 'react-equalize: How to Equalize the height of your elements in your page'
 language: 'en'
 featureImage: ''

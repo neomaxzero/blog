@@ -3,6 +3,7 @@ title: 'UI Performance Metrics: Time to Interactive vs First Input Delay'
 subtitle: 'TTI vs FID'
 date: '2020-12-27'
 topic: 'Performance'
+tags: ['performance']
 description: 'TTI and FID are both good candidates to measure interactive. One is better than the other depending on the situation.'
 language: 'en'
 hideImgTitle: false

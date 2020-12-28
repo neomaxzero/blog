@@ -3,6 +3,7 @@ title: 'is Twitter only client-side-rendered?'
 subtitle: 'SEO is drunk, I dont understand.'
 date: '2020-07-15'
 topic: 'dev-blog'
+tags: ['seo', 'dev thoughts']
 description: 'Is twitter a client-side only app? if then how do they do SEO?'
 language: 'en'
 featuredImage: ''

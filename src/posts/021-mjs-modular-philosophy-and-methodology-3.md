@@ -4,6 +4,7 @@ subtitle: 'part III'
 date: '2019-03-29'
 topic: 'book review'
 description: 'Modular Javascript, philosophy: Applying modularity in the build process and outside of your core systems'
+tags: ['book review', 'mastering modular javascript']
 ---
 
 Based on my [highlights](https://github.com/neomaxzero/m-quickreview/blob/master/mastering-modular-js/chapter-06.md)

@@ -24,9 +24,9 @@ const Badge = styled('li')`
 const Tags = ({ tags }) => (
   <TagList>
     {tags.map(tag => (
-      <Badge>
-        <Link to={`/tags/${tag}`}>{tag}</Link>
-      </Badge>
+      <Link to={`/tags/${tag}`}>
+        <Badge>{tag}</Badge>
+      </Link>
     ))}
   </TagList>
 )

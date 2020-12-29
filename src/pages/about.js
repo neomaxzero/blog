@@ -17,6 +17,10 @@ const ImgAbout = styled(Img)`
   }
 `
 
+const ImageWrapper = styled('div')`
+  background-color: black;
+  border-radius: 10px;
+`
 const ImageHover = () => {
   const [hovered, setHovered] = useState(false)
 
@@ -24,7 +28,7 @@ const ImageHover = () => {
   const inactivateHover = useCallback(() => setHovered(false), [])
 
   return (
-    <div
+    <ImageWrapper
       onMouseOver={activeHover}
       onFocus={activeHover}
       onMouseOut={inactivateHover}
@@ -35,7 +39,7 @@ const ImageHover = () => {
         imgFileName={hovered ? 'maxi-alt.jpg' : 'maxi.jpg'}
         ImgComponent={ImgAbout}
       />
-    </div>
+    </ImageWrapper>
   )
 }
 const About = () => (
@@ -44,6 +48,7 @@ const About = () => (
     <p>
       I'm Maxi. Sometimes I have answers but you probably have some questions.
     </p>
+    <ImageHover />
     <h2>What do I do?</h2>
     <ul>
       <li>- Frontend & Chill </li>
@@ -85,7 +90,6 @@ const About = () => (
       Writing somehow is relaxing and I want to keep it that way. I'm sorry, a
       little bit, about sometimes being off and hard to understand.
     </p>
-    <ImageHover />
     <h2>What if I have more questions?</h2>
     <p>I have a 100% reply ratio if you want to know more.</p>
     <ul>

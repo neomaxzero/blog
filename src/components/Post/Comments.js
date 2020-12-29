@@ -13,10 +13,12 @@ const Comments = () => {
     document.body.appendChild(s)
 
     return () => {
-      document.body.removeChild(document.getElementsByClassName('utterances')[0])
-    };
+      document.body.removeChild(
+        document.getElementsByClassName('utterances')[0]
+      )
+    }
   }, [])
-  return null;
+  return null
 }
 
 export default Comments

@@ -35,6 +35,24 @@ exports.createPages = async ({ graphql, actions }) => {
               lang
             }
           }
+          next {
+            frontmatter {
+              title
+              featuredImage
+            }
+            fields {
+              slug
+            }
+          }
+          previous {
+            frontmatter {
+              title
+              featuredImage
+            }
+            fields {
+              slug
+            }
+          }
         }
       }
       tagsGroup: allMarkdownRemark(limit: 2000) {
@@ -52,7 +70,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const posts = result.data.postsRemark.edges
 
-  posts.forEach(({ node }) => {
+  posts.forEach(({ node, next, previous }) => {
     const langPrefix = node.frontmatter.lang
 
     createPage({
@@ -61,6 +79,8 @@ exports.createPages = async ({ graphql, actions }) => {
       context: {
         // Data passed to context is available in page queries as GraphQL variables.
         slug: node.fields.slug,
+        next,
+        previous,
       },
     })
   })

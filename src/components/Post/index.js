@@ -15,6 +15,7 @@ import { Link } from 'gatsby'
 import { A } from '../Utils/markdownParser/markdownElements'
 import { LinkColor } from '../shared/A'
 import Tags from './Tags'
+import PreviousNextPost from './PreviousNextPost'
 
 const Social = styled.div`
   padding-bottom: 4rem 0;
@@ -50,7 +51,7 @@ const Date = styled.div`
   text-align: center;
 `
 
-export default ({ data }) => {
+export default ({ data, pageContext }) => {
   const post = data.markdownRemark
   const fileName = post.fields.slug.substring(1, post.fields.slug.length - 1)
   const imgFileName = post.frontmatter.featuredImage
@@ -88,6 +89,10 @@ export default ({ data }) => {
       <Tags tags={tags}></Tags>
       {markdownParser(post.htmlAst)}
       <EndOfPostQuote>Stay alert, stay moving</EndOfPostQuote>
+      <PreviousNextPost
+        previous={pageContext.previous}
+        next={pageContext.next}
+      />
       <Toolbar>
         <OutLink
           href={`https://github.com/neomaxzero/blog/edit/master/src/posts/${fileName}.md`}

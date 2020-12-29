@@ -1,16 +1,28 @@
+import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 import React from 'react'
 import Flex, { Section } from '../shared/Flex'
 
+const Colored = styled.div`
+  color: ${({ theme }) => theme.colors.primary};
+`
 const PreviousNextPost = ({ previous, next }) => (
-  <Section size={2}>
+  <Section size={6}>
     <Flex justifyContent="space-between">
       {previous ? (
-        <Link to={previous.fields.slug}> {'<-'} Previous</Link>
+        <Colored>
+          <Link to={previous.fields.slug}> {'<-'} Previous article</Link>
+        </Colored>
       ) : (
         <div />
       )}
-      {next ? <Link to={next.fields.slug}>Next {'->'} </Link> : <div />}
+      {next ? (
+        <Colored>
+          <Link to={next.fields.slug}>Next article{' ->'} </Link>
+        </Colored>
+      ) : (
+        <div />
+      )}
     </Flex>
   </Section>
 )

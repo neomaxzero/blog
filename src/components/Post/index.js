@@ -88,7 +88,6 @@ export default ({ data, pageContext }) => {
       </Date>
       <Tags tags={tags}></Tags>
       {markdownParser(post.htmlAst)}
-      <EndOfPostQuote>Stay alert, stay moving</EndOfPostQuote>
       <PreviousNextPost
         previous={pageContext.previous}
         next={pageContext.next}

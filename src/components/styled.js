@@ -18,6 +18,7 @@ export const LayoutSy = styled('div')`
   * {
     font-family: Inter, sans-serif;
     transition: all 0.2s ease-in-out;
+    color: ${({ theme }) => theme.colors.text};
   }
 
   h1,
@@ -42,7 +43,6 @@ export const LayoutSy = styled('div')`
   }
 
   li {
-    font-size: 18px;
     list-style-type: none;
   }
 
@@ -52,7 +52,6 @@ export const LayoutSy = styled('div')`
 
   ul {
     padding: 0;
-    font-size: 18px;
   }
 `
 

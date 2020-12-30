@@ -38,7 +38,7 @@ export const Date = styled('span')`
     hovered ? theme.colors.greys['900'] : theme.colors.greys['600']};
   font-size: ${({ theme }) => theme.sizes['1']};
   font-weight: 300;
-  margin: 0.2rem 0.4rem 0 0.4rem;
+  margin: 0.2rem 0.4rem 0 0;
 `
 
 export const Title = styled('span')`

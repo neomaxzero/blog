@@ -10,6 +10,7 @@ import Header from './Header'
 import { DEFAULT_DESCRIPTION_HEADER } from './Utils/constants'
 import { ThemeProvider } from 'emotion-theming'
 import theme from './theme'
+import './reset.css'
 
 const Layout = ({ children }) => (
   <StaticQuery

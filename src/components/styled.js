@@ -6,13 +6,14 @@ export const LayoutSy = styled('div')`
   padding: 0px 1.2rem;
   padding-top: 0;
 
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
   * {
     font-family: Inter, sans-serif;
     transition: all 0.2s ease-in-out;
-  }
-
-  h1 {
-    text-align: center;
   }
 
   h1,
@@ -22,6 +23,10 @@ export const LayoutSy = styled('div')`
     font-family: Inter, sans-serif;
     font-weight: 700;
     color: ${({ theme }) => theme.colors.greys[900]};
+  }
+
+  h1 {
+    text-align: center;
   }
 
   p {

@@ -1,28 +1,21 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import ScHeader, { Logo, Title, Author, SubTitle } from './styled'
-import { OutboundLink } from 'gatsby-plugin-google-analytics'
-import logoSrc from '../../images/nmz-logo-black.png'
 import styled from '@emotion/styled'
+import Flex from '../shared/Flex'
 
 const NavElement = styled.div`
   display: inline-block;
   margin-right: ${({ theme }) => theme.sizes[1]};
-  padding-bottom: ${({ theme }) => theme.sizes[0]};
 
   &:hover {
-    font-size: 16px;
+    font-size: 18px;
   }
 `
+
 const Header = () => (
   <ScHeader>
-    <OutboundLink href="https://m4x.io">
-      <Logo
-        src={logoSrc}
-        alt="M4X blog logo: The logo its not a big deal. It's a black triangle with white stripes in the middle."
-      />
-    </OutboundLink>
-    <Title>
+    <Flex justifyContent="flex-end">
       <Link to="/tags">
         <NavElement>Tags</NavElement>
       </Link>
@@ -33,7 +26,7 @@ const Header = () => (
         <Author>m4x</Author>
         <SubTitle>blog</SubTitle>
       </Link>
-    </Title>
+    </Flex>
   </ScHeader>
 )
 

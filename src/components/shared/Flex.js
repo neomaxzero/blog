@@ -4,6 +4,7 @@ const Flex = styled.div`
   display: flex;
   justify-content: ${({ justifyContent }) => justifyContent || 'center'};
   align-items: ${({ alignItems }) => alignItems || 'center'};
+  height: 100%;
 `
 
 export const Section = styled.div`

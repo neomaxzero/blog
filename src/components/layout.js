@@ -44,11 +44,13 @@ const Layout = ({ children }) => (
         >
           <html lang="en" />
         </Helmet>
-        <Header
-          author={data.site.siteMetadata.author}
-          siteTitle={data.site.siteMetadata.title}
-        />
-        <LayoutSy>{children}</LayoutSy>
+        <LayoutSy>
+          <Header
+            author={data.site.siteMetadata.author}
+            siteTitle={data.site.siteMetadata.title}
+          />
+          {children}
+        </LayoutSy>
       </ThemeProvider>
     )}
   />

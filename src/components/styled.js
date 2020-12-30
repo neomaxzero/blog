@@ -8,6 +8,7 @@ export const LayoutSy = styled('div')`
 
   a {
     text-decoration: none;
+    color: ${({ theme }) => theme.colors.primary};
   }
 
   a:visited {

@@ -10,6 +10,7 @@ export const LayoutSy = styled('div')`
     font-family: Inter, sans-serif;
     transition: all 0.2s ease-in-out;
   }
+
   h1 {
     text-align: center;
   }
@@ -23,14 +24,12 @@ export const LayoutSy = styled('div')`
     color: ${({ theme }) => theme.colors.greys[900]};
   }
 
-  a {
-    font-family: Inter, sans-serif;
-  }
-
   p {
     color: #3d4852;
     font-size: 18px;
-    font-weight: 200;
+    font-weight: 300;
+    line-height: 26px;
+    padding-bottom: 16px;
   }
 
   li {

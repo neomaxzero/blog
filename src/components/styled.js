@@ -8,11 +8,11 @@ export const LayoutSy = styled('div')`
 
   a {
     text-decoration: none;
-    color: ${({ theme }) => theme.colors.primary};
+    color: inherit;
   }
 
   a:visited {
-    color: ${({ theme }) => theme.colors.primary};
+    color: inherit;
   }
 
   * {

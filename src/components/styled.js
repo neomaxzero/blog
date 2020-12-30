@@ -7,7 +7,7 @@ export const LayoutSy = styled('div')`
   padding-top: 0;
 
   * {
-    font-family: Inter UI, sans-serif;
+    font-family: Inter, sans-serif;
     transition: all 0.2s ease-in-out;
   }
   h1 {
@@ -18,13 +18,13 @@ export const LayoutSy = styled('div')`
   h2,
   h3,
   h4 {
-    font-family: Inter UI, sans-serif;
+    font-family: Inter, sans-serif;
     font-weight: 700;
     color: ${({ theme }) => theme.colors.greys[900]};
   }
 
   a {
-    font-family: Inter UI, sans-serif;
+    font-family: Inter, sans-serif;
   }
 
   p {

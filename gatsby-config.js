@@ -1,5 +1,4 @@
 const g_plugin_manifest = require('./config/gatsby/gatsby-plugin-manifest')
-const g_plugin_font_loader = require('./config/gatsby/gatsby-plugin-web-font-loader')
 const g_plugin_source_filesystem = require('./config/gatsby/gatsby-plugin-source-filesystem')
 const g_plugin_ga = require('./config/gatsby/gastby-plugin-ga')
 const g_plugin_prismjs = require('./config/gatsby/gatsby-plugin-prismjs')
@@ -24,6 +23,6 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     g_plugin_sitemap,
-    g_plugin_canonicals
+    g_plugin_canonicals,
   ],
 }

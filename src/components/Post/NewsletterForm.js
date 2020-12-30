@@ -65,7 +65,7 @@ const SectionTitle = styled.div`
 
 const PlaceholderForm = styled.div`
   margin-bottom: 4rem;
-  color: ${({ theme }) => theme.colors.grayDark};
+  color: ${({ theme }) => theme.colors.greys[600]};
 `
 
 const SimpleForm = ({ onSubmitted, email, setEmail, state, setState }) => {
@@ -81,7 +81,7 @@ const SimpleForm = ({ onSubmitted, email, setEmail, state, setState }) => {
     <>
       <SectionTitle>Join the Newsletter</SectionTitle>
       <NewsForm>
-        <label id="lbl-email" style={{display: 'none'}} for="emailEntry">
+        <label id="lbl-email" style={{ display: 'none' }} for="emailEntry">
           Email address
         </label>
 

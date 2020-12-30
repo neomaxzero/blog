@@ -8,8 +8,8 @@ import Filter from '../components/Filter'
 const Subtitle = styled.h2`
   font-size: 0.8rem;
   text-transform: uppercase;
-  color: #9e9e9e;
-  font-weight: 100;
+  color: ${({ theme }) => theme.colors.greys[400]};
+  font-weight: 200;
   letter-spacing: -0.2px;
 `
 export default ({ data }) => {

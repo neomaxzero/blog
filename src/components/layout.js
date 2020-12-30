@@ -1,4 +1,4 @@
-import GlobalStyles from './globalStyles';
+import GlobalStyles from './globalStyles'
 
 import React from 'react'
 import PropTypes from 'prop-types'
@@ -8,7 +8,7 @@ import { StaticQuery, graphql } from 'gatsby'
 import { LayoutSy } from './styled'
 import Header from './Header'
 import './layout.css'
-import './blog.css'
+// import './blog.css'
 import { DEFAULT_DESCRIPTION_HEADER } from './Utils/constants'
 import { ThemeProvider } from 'emotion-theming'
 import theme from './theme'

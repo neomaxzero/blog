@@ -47,7 +47,7 @@ const TextToolbar = styled.span`
 
 const Date = styled.div`
   font-size: 0.8rem;
-  color: #757575;
+  color: ${({ theme }) => theme.colors.text};
   text-align: center;
 `
 

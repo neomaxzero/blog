@@ -16,20 +16,20 @@ export const Logo = styled('img')`
 `
 
 export const Title = styled('h2')`
-  font-weight: 100;
+  font-weight: 200;
   font-size: 0.9rem;
   text-align: right;
   margin-right: 0.6rem;
 `
 
 export const SubTitle = styled(`span`)`
-  color: black;
+  color: ${({ theme }) => theme.colors.greys[900]};
 `
 
 export const Author = styled('span')`
   margin-right: 0.1rem;
 
-  color: black;
+  color: ${({ theme }) => theme.colors.greys[900]};
   font-weight: bold;
 `
 

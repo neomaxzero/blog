@@ -4,7 +4,7 @@ export const Item = styled('li')`
   display: flex;
   flex: 1 1 100%;
   justify-content: space-between;
-  color: black;
+  color: ${({ theme }) => theme.colors.greys[900]};
   font-size: 1.2rem;
   font-weight: 600;
 

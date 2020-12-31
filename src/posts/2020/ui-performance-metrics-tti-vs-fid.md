@@ -13,7 +13,7 @@ Whenever it comes to measure interactivity there are a couple of metrics that st
 
 ## Establishing a common ground: Interactivity
 
-While doing a high-level comparison of two things without specifying what matter can always benefit one metric over the other and in this case, I think I'd like to reflect on why I think they are both very valid depending on your goal. **Interactivity **will be the central point of this comparison: How reactive is your site to user input?
+While doing a high-level comparison of two things without specifying what matter can always benefit one metric over the other and in this case, I think I'd like to reflect on why I think they are both very valid depending on your goal. **Interactivity** will be the central point of this comparison: How reactive is your site to user inputs?
 
 ## The main difference: Measurement characteristics.
 

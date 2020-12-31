@@ -13,8 +13,12 @@ export const LayoutSy = styled('div')`
   h1,
   h2,
   h3,
-  h4 {
+  h4,
+  strong {
     color: ${({ theme }) => theme.colors.greys[900]};
+  }
+  strong {
+    font-weight: 500;
   }
 
   h1 {

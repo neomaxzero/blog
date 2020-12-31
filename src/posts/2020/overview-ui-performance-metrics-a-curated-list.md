@@ -59,6 +59,7 @@ The community is inclining towards the **web-core-vitals** but depending on your
 
 - **[Time-to-interactive vs DOM Interactive](/2020/ui-performance-metrics-tti-vs-domInteractive/)**
 - **[Time-to-interactive vs First Input Delay](/2020/ui-performance-metrics-tti-vs-fid/)**
+- **[First-Contentful-Paint vs First-Meaningful-Paint vs Largest-Contentful-Paint](/2020/ui-performance-fcp-fmp-lcp/)**
 
 ## Conclusion
 

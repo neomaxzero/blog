@@ -96,6 +96,8 @@ I know webpack/parcel could be very tedious to work with but today there is alre
 
 Nice attempt to get rid of module bundlers, not a library I'd use as it is today.
 
+> Update: I did a follow up comment about the library in this post: [Snowpack: A promising module bundler](/2021/snowpack-a-promising-module-bundler)
+
 # Scores (higher is better)
 
 - Usefulness: 5/10.

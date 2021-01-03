@@ -11,7 +11,7 @@ const Badge = styled('li')`
   border: 1px solid ${({ theme }) => theme.colors.primary};
   color: ${({ theme }) => theme.colors.primary};
   font-size: ${({ theme }) => theme.sizes[1]};
-  padding: ${({ theme }) => theme.sizes[0]} ${({ theme }) => theme.sizes[2]};
+  padding: 0 ${({ theme }) => theme.sizes[1]};
   border-radius: 3px;
   margin-right: ${({ theme }) => theme.sizes[0]};
   margin-bottom: ${({ theme }) => theme.sizes[0]};

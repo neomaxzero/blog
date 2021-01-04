@@ -46,14 +46,16 @@ const About = () => (
   <Layout>
     <h1>About</h1>
     <p>
-      I'm Maxi. Sometimes I have answers but you probably have some questions.
+      I'm Maxi. A friend, writer, reader. In that order. I spend the majority of
+      my day thinking about frontend and a little bit of it actually
+      frontending. I'm from Argentina and currently living in the Netherlands.
     </p>
     <ImageHover />
     <h2>What do I do?</h2>
     <ul>
-      <li>- Frontend & Chill </li>
-      <li>- Play games</li>
       <li>- Spend time with people I love </li>
+      <li>- Frontend & Chill </li>
+      <li>- Video-games</li>
       <li>
         -{' '}
         <A href="https://500px.com/neomaxzero" target="_blank">
@@ -68,27 +70,29 @@ const About = () => (
         </A>
       </li>{' '}
       <li>
-        - Netflix &{' '}
         <A href="https://www.github.com/neomaxzero/" target="_blank">
-          Code
+          - Open source
         </A>
       </li>
     </ul>
-    <h2>Where am I from?</h2>
-    <p>
-      From a place where <i>Mate</i> is "the thing", where <i>Cumbia</i> is our
-      jam and where meat is our proudest plate: Argentina 🇦🇷.
-    </p>
     <h2>What is this blog about?</h2>
     <p>
-      I write mostly about <strong>frontend</strong>. I like writing reviews
-      about books and I ocasionally spend some time open sourcing small
-      libraries I think you might like.
+      I write mostly about <strong>frontend</strong>. Sometimes you will also
+      encounter some reviews about books and I ocasionally spend some time open
+      sourcing small libraries I think you might like.
     </p>
-    <p>Everybody have opinions, I like sharing mines here.</p>
     <p>
-      Writing somehow is relaxing and I want to keep it that way. I'm sorry, a
-      little bit, about sometimes being off and hard to understand.
+      I like reflecting on things while writing. I feel sharing It's a risk I'm
+      willing to take. It is thrilling and at the same time rewarding to put
+      things live when you always feel like it's not good enough. I hope that
+      while refining my thoughts, we can help each other become a better version
+      of ourselves.
+    </p>
+    <p>
+      Writing is relaxing when you decide to not pay too much attention to
+      details that could prevent you from sharing some content. I'm sorry, a
+      little bit, about sometimes being off and hard to understand. I would love
+      you to message me if you feel like it.
     </p>
     <h2>What if I have more questions?</h2>
     <p>I have a 100% reply ratio if you want to know more.</p>

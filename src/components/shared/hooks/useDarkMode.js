@@ -6,7 +6,8 @@ export const ThemeEmotionContext = createContext({
 })
 
 export const useDarkMode = () => {
-  const currentTheme = window.localStorage.getItem('theme')
+  const currentTheme =
+    typeof window !== 'undefined' && window.localStorage.getItem('theme')
   const [theme, setTheme] = useState(currentTheme || 'light')
   const [componentMounted, setComponentMounted] = useState(false)
 

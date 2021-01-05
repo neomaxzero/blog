@@ -5,6 +5,8 @@ import styled from '@emotion/styled'
 import Flex from '../shared/Flex'
 import { ThemeEmotionContext } from '../shared/hooks/useDarkMode'
 import { useContext } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faLightbulb, faSun } from '@fortawesome/free-solid-svg-icons'
 
 const NavElement = styled.div`
   display: inline-block;
@@ -14,6 +16,10 @@ const NavElement = styled.div`
   &:hover {
     font-size: 18px;
   }
+`
+
+const IconNav = styled.div`
+  font-size: 0.8rem;
 `
 
 const Header = () => {
@@ -28,7 +34,13 @@ const Header = () => {
           <NavElement>About</NavElement>
         </Link>
         <NavElement onClick={toggle}>
-          {theme === 'light' ? 'Dark' : 'Light'}
+          <IconNav>
+            {theme === 'light' ? (
+              <FontAwesomeIcon icon={faLightbulb}></FontAwesomeIcon>
+            ) : (
+              <FontAwesomeIcon icon={faSun}></FontAwesomeIcon>
+            )}
+          </IconNav>
         </NavElement>
         <Link to="/">
           <Author>m4x</Author>

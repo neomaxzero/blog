@@ -89,7 +89,7 @@ const About = () => (
       of ourselves.
     </p>
     <p>
-      Writing is relaxing when you decide to not pay too much attention to
+      Writing is relaxing when you decide not to pay too much attention to
       details that could prevent you from sharing some content. I'm sorry, a
       little bit, about sometimes being off and hard to understand. I would love
       you to message me if you feel like it.

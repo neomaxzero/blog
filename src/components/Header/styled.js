@@ -21,13 +21,13 @@ export const MenuItem = styled('div')`
 `
 
 export const SubTitle = styled(`span`)`
-  color: ${({ theme }) => theme.colors.greys[900]};
+  color: ${({ theme }) => theme.colors.text};
 `
 
 export const Author = styled('span')`
   margin-right: 0.1rem;
 
-  color: ${({ theme }) => theme.colors.greys[900]};
+  color: ${({ theme }) => theme.colors.text};
   font-weight: bold;
 `
 

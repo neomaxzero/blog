@@ -65,7 +65,7 @@ const SectionTitle = styled.div`
 
 const PlaceholderForm = styled.div`
   margin-bottom: 4rem;
-  color: ${({ theme }) => theme.colors.greys[600]};
+  color: ${({ theme }) => theme.colors.text};
 `
 
 const SimpleForm = ({ onSubmitted, email, setEmail, state, setState }) => {

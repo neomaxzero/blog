@@ -8,7 +8,7 @@ import Filter from '../components/Filter'
 const Subtitle = styled.h2`
   font-size: 0.8rem;
   text-transform: uppercase;
-  color: ${({ theme }) => theme.colors.greys[400]};
+  color: ${({ theme }) => theme.colors.textSubtle};
   font-weight: 200 !important;
   letter-spacing: -0.2px;
   margin-top: ${({ theme }) => theme.sizes[6]};

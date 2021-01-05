@@ -18,7 +18,7 @@ const ImgAbout = styled(Img)`
 `
 
 const ImageWrapper = styled('div')`
-  background-color: black;
+  background-color: ${({ theme }) => theme.colors.text};
   border-radius: 10px;
 `
 const ImageHover = () => {

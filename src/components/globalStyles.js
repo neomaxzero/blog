@@ -1,10 +1,14 @@
 import React from 'react'
+import { useTheme } from 'emotion-theming'
+
 import { Global, css } from '@emotion/core'
 import * as fonts from './fonts'
 
-const GlobalStyles = () => (
-  <Global
-    styles={css`
+const GlobalStyles = () => {
+  const theme = useTheme()
+  return (
+    <Global
+      styles={css`
       @font-face {
         font-family: 'Inter';
         font-weight: 400;
@@ -39,8 +43,26 @@ const GlobalStyles = () => (
         font-display: optional;
         src: url("${fonts.InterUILightWoff}") format('woff2'),url("${fonts.InterUILightWoff2}") format('woff');
       }
+
+      body {
+        background-color: ${theme.colors.background};
+      }
+
+
+      * {
+        color: ${theme.colors.text};
+      }
+
+      h1,
+  h2,
+  h3,
+  h4,
+  strong {
+    color: ${theme.colors.strong};
+  }
     `}
-  />
-)
+    />
+  )
+}
 
 export default GlobalStyles

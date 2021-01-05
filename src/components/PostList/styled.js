@@ -4,7 +4,6 @@ export const Item = styled('li')`
   display: flex;
   flex: 1 1 100%;
   justify-content: space-between;
-  color: ${({ theme }) => theme.colors.greys[900]};
   font-size: 1.2rem;
   font-weight: 600;
 
@@ -22,7 +21,7 @@ export const MainInfo = styled('span')`
   align-items: center;
 `
 export const Topic = styled('span')`
-  color: ${({ theme }) => theme.colors.greys['500']};
+  color: ${({ theme }) => theme.colors.textSubtle};
   font-weight: normal;
   font-size: 0.8rem;
   display: none;
@@ -35,7 +34,7 @@ export const Topic = styled('span')`
 
 export const Date = styled('span')`
   color: ${({ theme, hovered }) =>
-    hovered ? theme.colors.greys['900'] : theme.colors.greys['600']};
+    hovered ? theme.colors.strong : theme.colors.textSubtle};
   font-size: ${({ theme }) => theme.sizes['1']};
   font-weight: 300;
   margin: 0.2rem 0.4rem 0 0;

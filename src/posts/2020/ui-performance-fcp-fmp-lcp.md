@@ -28,13 +28,13 @@ The main difference between this three metrics is the main element measured to d
 
 ## Isn't largest contentful paint the same as meaningful paint?
 
-No. There are very different metrics in the method they use to estimate completion and relevancy. It is known that the bigger element of the page is the one we consider the most when estimating if a page is loaded or not.
+No. These are very different metrics in the method they use to estimate completion and relevancy. It is known that the bigger element of the page is the one we consider the most important when deciding if a page is loaded or not.
 
 ## Why to even consider first contenful paint?
 
-First contentful paint it's useful. On single page applications measures at what moment do you see the loader. You know at which time users have first feedback that the web app is loading.
+First contentful paint it's useful. On single page applications measures at what moment do you see the loader. You know at which time users have its first feedback that the web app is loading.
 
-On non-spa it gives at what time and which is the first thing the users sees. If you have a blog and the main content of the article is present it might be more relavant than a banner/header or whatever the biggest element is.
+On server side rendered apps gives at what time and which is the first thing the users sees. If you have a blog and the main content of the article is the one you intend to show it might be more relavant for the metric to show that instead of a banner/header or whatever the biggest element might be.
 
 ## References
 

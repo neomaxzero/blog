@@ -11,6 +11,8 @@ I recently started adding more content to my blog and in the process I thought I
 
 Disqus is a _"comment as a service"_ platform that gives you all the tools you need to have comments on your application in _literally 5 mins_.
 
+_**Update**: I don't have disqus anymore. I shared why [here](/2021/the-reason-I-move-away-from-disqus)_
+
 ## Straight to the point: 5 Steps to have Disqus in your react app.
 
 1. Create a disqus account.

@@ -17,7 +17,7 @@ const theme = {
     primary16: 'rgba(171, 47, 247, 0.16)',
     primaryOverText: '#9529d8',
     error: '#FF431A',
-    background: greys[50],
+    background: 'white',
     strong: greys[900],
     text: '#3d4852',
     textSubtle: greys[500],

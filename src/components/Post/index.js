@@ -16,6 +16,7 @@ import { A } from '../Utils/markdownParser/markdownElements'
 import { LinkColor } from '../shared/A'
 import Tags from './Tags'
 import PreviousNextPost from './PreviousNextPost'
+import { Section } from '../shared/Flex'
 
 const Social = styled.div`
   padding-bottom: 4rem 0;
@@ -88,6 +89,11 @@ export default ({ data, pageContext }) => {
       </Date>
       <Tags tags={tags}></Tags>
       {markdownParser(post.htmlAst)}
+      {post.frontmatter.lastRevision && (
+        <Section size={5}>
+          <Date>Updated: {post.frontmatter.lastRevision}</Date>
+        </Section>
+      )}
       <PreviousNextPost
         previous={pageContext.previous}
         next={pageContext.next}
@@ -124,6 +130,7 @@ export const query = graphql`
         hideImgTitle
         date
         tags
+        lastRevision
       }
       fields {
         slug

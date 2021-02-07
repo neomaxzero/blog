@@ -6,7 +6,7 @@ topic: 'Career'
 tags: ['developer career', 'dev thoughts']
 description: 'Why are titles like that? Why is it?'
 language: 'en'
-hideImgTitle: false
+featuredImage: 'role-titles-for-the-software-industry.png'
 ---
 
 Before I entered the job market I had a skew view of how titles work for jobs. I thought that the world was far more organized than how it is in this regard. My first job was a seasonal job in the food industry, and at this time I was really curious how that worked for the restaurant I was working on.

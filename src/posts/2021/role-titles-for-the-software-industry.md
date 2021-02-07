@@ -9,8 +9,6 @@ language: 'en'
 hideImgTitle: false
 ---
 
-> Disclaimer: Thoughts in progress. These are just that. Thoughts.
-
 Before I entered the job market I had a skew view of how titles work for jobs. I thought that the world was far more organized than how it is in this regard. My first job was a seasonal job in the food industry, and at this time I was really curious how that worked for the restaurant I was working on.
 
 I was surprised by the official titles we ran there. Titles like, "Soup specialist", "Main course chef", "Salad chef". It didn't make sense to me, but it did for the chef. It did for the people with those titles and apparently, it worked at a financial and responsibility separation level.

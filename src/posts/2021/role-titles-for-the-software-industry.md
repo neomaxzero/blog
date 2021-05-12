@@ -17,7 +17,7 @@ After 6 years in the software industry, I experienced how hard it is to judge yo
 
 If you are already working in the software industry, you currently have a level at work. Trainee, Junior, Semi-Senior, Senior, Principal, Staff, and so on and on. How does this level match your position today at a different company?
 
-# Seniority
+## Seniority
 
 I find it incredibly hard to associate titles to my persona. I experience on a daily basis the impact of titles in the ways I interact and how that changes my perspective about someone after I know their titles. Titles are powerful forces that work in an interesting way. They can completely change the weight behind opinions. Especially, where the amount of information you have about someone, it's limited. First impressions stick for a lot longer than we are aware of and knowing the titles set expectations.
 

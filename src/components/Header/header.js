@@ -34,9 +34,7 @@ const FixHeader = styled.div`
 const Header = () => {
   useEffect(() => {
     const onScroll = e => {
-      requestAnimationFrame(() => {
-        console.log(e)
-      })
+      requestAnimationFrame(() => {})
     }
 
     window.addEventListener('scroll', onScroll)

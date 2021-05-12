@@ -38,4 +38,4 @@ Thinking in public is scary...is a little less scary if the room is empty :D
 
 ## Reference
 
-- (Article)[https://dev.to/cher/sexism-racism-toxic-positivity-and-tailwindcss-cil]
+- [Dev.to article: Sexism racism toxic positivity](https://dev.to/cher/sexism-racism-toxic-positivity-and-tailwindcss-cil)

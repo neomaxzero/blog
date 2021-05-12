@@ -18,7 +18,7 @@ const theme = {
     primaryOverText: '#9529d8',
     error: '#FF431A',
     background: 'white',
-    strong: greys[900],
+    strong: 'black',
     text: '#3d4852',
     textSubtle: greys[500],
     greys,

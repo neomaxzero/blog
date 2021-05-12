@@ -4,7 +4,7 @@ export const LayoutSy = styled('div')`
   margin: 0 auto;
   max-width: 720px;
   padding: 0px 1.2rem;
-  padding-top: 0;
+  padding-top: ${({ pt }) => pt || 0};
 
   strong {
     font-weight: 500;

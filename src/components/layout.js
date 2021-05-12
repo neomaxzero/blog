@@ -50,13 +50,12 @@ const Layout = ({ children }) => {
             >
               <html lang="en" />
             </Helmet>
-            <LayoutSy>
-              <Header
-                author={data.site.siteMetadata.author}
-                siteTitle={data.site.siteMetadata.title}
-              />
-              {children}
-            </LayoutSy>
+            <Header
+              author={data.site.siteMetadata.author}
+              siteTitle={data.site.siteMetadata.title}
+            />
+
+            <LayoutSy pt={'5rem'}>{children}</LayoutSy>
           </ThemeProvider>
         </ThemeEmotionContext.Provider>
       )}

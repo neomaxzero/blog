@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 
 const Header = styled('header')`
-  height: 38px;
+  height: 5rem;
 `
 
 export const Logo = styled('img')`

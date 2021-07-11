@@ -30,6 +30,7 @@ const FixHeader = styled.div`
   left: 0;
   width: 100%;
   background-color: ${({ theme }) => theme.colors.background};
+  z-index: 1;
 `
 const Header = () => {
   useEffect(() => {

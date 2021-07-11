@@ -29,8 +29,9 @@ const FixHeader = styled.div`
   top: 0;
   left: 0;
   width: 100%;
-  background-color: ${({ theme }) => theme.colors.background};
+  background-color: ${({ theme }) => theme.colors.background70};
   z-index: 1;
+  backdrop-filter: saturate(180%) blur(20px);
 `
 const Header = () => {
   useEffect(() => {

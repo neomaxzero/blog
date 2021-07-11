@@ -19,6 +19,7 @@ const theme = {
     error: '#FF431A',
     secondary: '#D6303A',
     background: 'white',
+    background70: '#ffffffa6',
     strong: 'black',
     text: '#3d4852',
     textSubtle: greys[500],
@@ -43,6 +44,7 @@ export const darkTheme = {
   colors: {
     ...theme.colors,
     background: greys[900],
+    background70: '#000000a6',
     text: greys[100],
     textSubtle: greys[400],
     strong: greys[50],

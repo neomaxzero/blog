@@ -8,19 +8,19 @@ description: 'I am not sure if I want to make this explicit'
 language: 'en'
 ---
 
-When I joined my last company I already knew I was gonna leave. I knew that the day will come at some point. I have already switched companies a couple of times before and there were several things that made me pull the triggered. I was at a different stage in life and as I evolved in my career I noticed how different my thought process was every time. I'll try to give a peak on what was going on in my mind while evaluating my options.
+When I joined my last company I already knew I was gonna leave. I knew that the day will come at some point. I have already switched companies a couple of times before and there were several things that made me pull the trigger. I was at a different stage in life and as I evolved in my career I noticed how different my thought process was every time. I'll try to give a peak on what was going on in my mind while evaluating my options this time.
 
 ## Is not about if, it is about when
 
-Before I joined any company I had a mental model of what It would be to work there. How does it work inside? Am I ready for this new challenge? For every single company I had the same sorts of questions. Those questions started to be answered and in my experience that took _months_. A few questions were answered immediately and once I got to know how things were, I started wondering how fast does it change.
+Before I joined any of my previous companies I had a mental model of what It would be to work there. How does it work inside? Am I ready for the new challenge? For every single company I had the same sorts of questions. Those questions started to be answered soon enough and, in my experience, that took _months_. A few questions were answered immediately and once I got to know how things worked, I started wondering about a few different things and, especially, about how fast the company adapt to changes.
 
 What changes and at what pace was always an important factor I saw influence my decision on staying longer or shorter in a company. My expectations of how a company progress at multiple stages (processes, technology, people) change over time and the more involved I got into it, the more I felt I was able to estimate how things would be in the short term.
 
 When it is about jobs, I do not enjoy switching for the sake of switching. There are too many things to mention in a blog post that influence my decision. I don't take it lightly and I give time to my emotions to settle. (We all have bad and good days)
 
-Because staying at a company is not something with a deadline (unless you are in a temporary contract), there are different checkpoints where I evaluated if I was happy or not in the place I was. Although it is a pretty straight forward answer, the "what makes you happy" kind of question change per person and I can also tell you that It changed within me throughout the years.
+Because staying at a company is not something with a deadline (unless you are in a temporary contract), there are different checkpoints where I evaluated if I was happy or not in the place I was. Although it is a pretty straight forward answer, the "what makes you happy" kind of question change per person and I can also tell you that it changed within me throughout the years.
 
-I was very happy at my job, there were not red flags, I could have just stayed working there and accept the level of happiness I had. I also got to know what the company speed is at adapting and I could place myself into the equation and try to be a positive factor in it. There were some hints of progression what that was not enough.
+I was very happy at my job, there were not red flags, I could have just stayed working there and accept the level of happiness I had. I also got to know what the company speed is at adapting and I could place myself into the equation and try to be a positive factor in it. There were some hints of progression but that was not satisfying me.
 
 Personally, I needed things to move faster in several fronts. I just needed to be happier and that is what I am striving for.
 

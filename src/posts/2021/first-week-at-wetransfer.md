@@ -15,9 +15,9 @@ There are tons of information to gather in the first couple of days about everyt
 
 ## Syncs
 
-You need to get to know the people you are going to work week. Every day I had a chat with a new colleague and got to know a little bit about the company as well. In my head, 20-30 mins were gonna be enough but I was wrong I had to adjust it later on. 
+You need to get to know the people you are going to work with. Every day I had a chat with a new colleague and got to know a little bit about the company as well. In my head, 20-30 mins were gonna be enough but I was wrong and I had to adjust it later on. 
 
-This is a casual conversation where I was mostly interested in the persona rather than the company. We didn't have a "problem"/"issue" to talk about so it's quite common to de-rail from whatever we were talking about. It was fun, I enjoyed it and I think I can easily talk back to them when needed.
+These were casual conversations where I was mostly interested in the persona rather than the company. We didn't have a "problem"/"issue" to talk about so it's quite common to de-rail from whatever we were talking about. It was fun, I enjoyed it and I think I can easily talk back to them when needed.
 
 ## Tech Docs
 
@@ -25,7 +25,7 @@ Information overload is what I had. I was reading and reading docs because there
 
 ## Setup environment
 
-In an ideal world, you would open your laptop and start working on the feature/fix/app that you should right away. In the real world that was never the case for me, setting up environments is something that happens regularly and I wish went smoothly with what I had but it was not the case. I had the development environment by the end of the week but it was already too late for anything.
+In an ideal world, you would open your laptop and start working on the feature/fix/app that you should right away. In the real world that was never the case for me, setting up environments is something that happens regularly and I wish went smoothly with what I had but it was not the case. I had the development environment by the end of the week but it was already too late for anything else.
 
 ## Conclusion
 

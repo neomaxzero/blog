@@ -4,7 +4,7 @@ subtitle: 'Accepting the truth'
 date: '2021-11-22'
 topic: 'blog'
 tags: ['blog', 'write', 'suck']
-description: 'Simple as that. I really suck at writing... It's hard to put in words a chaotic brain. I constantly try to organise my thoughts and that process drains all the energy I have'
+description: 'Simple as that. I really suck at writing... It s hard to put in words a chaotic brain. I constantly try to organise my thoughts and that process drains all the energy I have'
 language: 'en'
 ---
 

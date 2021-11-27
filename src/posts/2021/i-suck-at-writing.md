@@ -1,5 +1,5 @@
 ---
-title: 'I suck at writing'
+title: 'I Suck at Writing'
 subtitle: 'Accepting the truth'
 date: '2021-11-22'
 topic: 'blog'

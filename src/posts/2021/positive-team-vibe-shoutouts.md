@@ -4,7 +4,7 @@ subtitle: 'How positive reinforcement help on creating a good vibe'
 date: '2021-11-27'
 topic: 'Feedback'
 tags: ['dev-thoughts', 'culture', 'feedback']
-description: 'Giving and receiving shoutouts regularly is something I'm experiencing more often since I joined WeTransfer. I noticed the difference to other companies I was is sutil but the impact it had in me is big'
+description: 'Giving and receiving shoutouts regularly is something I am experiencing more often since I joined WeTransfer. I noticed the difference to other companies I was is sutil but the impact it had in me is big'
 language: 'en'
 ---
 

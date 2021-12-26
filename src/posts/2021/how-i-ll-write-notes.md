@@ -1,7 +1,7 @@
 ---
 title: 'How I will Write Notes'
 subtitle: 'Review '
-date: '2021-26-12'
+date: '2021-12-26'
 topic: 'notes'
 tags: ['book review', 'writing']
 description: 'Review: How to take smart notes'
@@ -15,13 +15,11 @@ Sonke Ahrens.
 
 While going through the pages of the book I was constantly asking myself why? That doesn't really tell you anything about the book itself, but about how confused I was to some of the statements it has. 
 
-The method doesn't even have a memorable name. It does have a memorable subject around where "smart" notes are created. 
-
-A slip-box. 
+The method doesn't even have a memorable name. It does have a memorable subject around where "smart" notes are created: A slip-box. 
 
 ## That's all we need: A box
 
-The slip-box is the one place where you put all the notes about everything you want to use in the future. Sort of a second brain. Whatever you decide to include in the slip-box has your take on things. Your voice, your filter. 
+The slip-box is the one place where you put all the notes about everything you want to use in the future. Sort of a second brain. Whatever you decide to include in the slip-box will have your take on things, Your voice, your filter, it's an element to think with. 
 
 The book has 150 pages on exactly how to go around this box: How to make sure you use the box and you fill it with "smart" notes rather than fleeting ones.
 
@@ -54,7 +52,6 @@ These are the pillars of the book (my interpretation):
 - No read things twice
 - Don't copy authors.
 
-
 ## Some questions I still have
 
 - If multitasking is so bad? Why does the method force you to work on different publications at the same time?
@@ -81,6 +78,11 @@ These are the pillars of the book (my interpretation):
 And I think the most important learning:
 **- I'll share more. Talking about what you learn and how you interpret things helps me immesively.**
 
+## A fleeting post
+
+This post is the proof I'm writing a long fleeting note. The more filters I applied, the more I'll worry about all the mistakes: grammar horrors, semantic errors, contradictions and judgements that this post might cause to my persona. It is good to have filters, thinking in public can be scary. Writing things that might harm your career or your reputation are scary things. Today I can make public my fleeting post and it's ok. This post have achieved it's goal: It helped me think.
+
+I'm embracing my lack of popularity: [Low Profile vs High Profile](https://blog.m4x.io/2021/low-profile-high-profile/)
 
 ## Conclusion
 

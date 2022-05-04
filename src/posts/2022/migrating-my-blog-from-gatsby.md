@@ -2,8 +2,8 @@
 title: 'Migrating My Blog From Gatsby'
 subtitle: 'Gatsby is so old school :P'
 date: '2022-05-01'
-topic: 'meetings'
-tags: ['dev thoughts', 'blog']
+topic: 'migration'
+tags: ['dev thoughts', 'blog', 'migration-blog']
 description: 'I am migrating my blog from gatsby here are the reasons why:'
 language: 'en'
 ---

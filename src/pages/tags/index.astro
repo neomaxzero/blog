@@ -1,0 +1,62 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('posts');
+
+const tagCounts: Record<string, number> = {};
+posts.forEach((post) => {
+  (post.data.tags || []).forEach((tag: string) => {
+    tagCounts[tag] = (tagCounts[tag] || 0) + 1;
+  });
+});
+
+function kebabCase(str: string) {
+  return str.replace(/[A-Z\u00C0-\u00D6\u00D8-\u00DE]/g, (match) => '-' + match.toLowerCase());
+}
+
+const sortedTags = Object.entries(tagCounts).sort((a, b) => b[1] - a[1]);
+---
+<BaseLayout title="Tags" description="All tags">
+  <h1>Tags</h1>
+  <ul class="tag-list">
+    {sortedTags.map(([tag, count]) => (
+      <li>
+        <a href={`/tags/${kebabCase(tag)}/`} class="tag-link">
+          {tag} <span class="count">({count})</span>
+        </a>
+      </li>
+    ))}
+  </ul>
+</BaseLayout>
+
+<style>
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-top: 1rem;
+  }
+  li {
+    list-style: none;
+    margin-top: 0;
+  }
+  .tag-link {
+    display: inline-block;
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+    padding: 0.4rem 0.8rem;
+    border-radius: 3px;
+    font-size: 0.9rem;
+    transition: all 0.15s;
+  }
+  .tag-link:hover {
+    background-color: var(--color-primary);
+    color: white;
+    border-color: transparent;
+  }
+  .count {
+    font-size: 0.8rem;
+    opacity: 0.7;
+  }
+</style>

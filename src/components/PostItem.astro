@@ -1,0 +1,108 @@
+---
+interface Props {
+  title: string;
+  date: string;
+  subtitle?: string;
+  slug: string;
+  topic?: string;
+  readingTime?: number;
+}
+
+const { title, date, subtitle, slug, topic, readingTime } = Astro.props;
+
+const formattedDate = new Date(date).toLocaleDateString('en-US', {
+  month: 'short',
+  day: 'numeric',
+});
+const year = new Date(date).getFullYear();
+---
+<li>
+  <a href={`/${slug}/`} class="post-link">
+    <div class="post-row">
+      <div class="post-info">
+        <span class="post-title">{title}</span>
+        {subtitle && <span class="post-subtitle">{subtitle}</span>}
+      </div>
+      <div class="post-side">
+        {topic && <span class="topic">{topic}</span>}
+        <time datetime={date}>{formattedDate}, {year}</time>
+      </div>
+    </div>
+  </a>
+</li>
+
+<style>
+  li {
+    list-style: none;
+    margin-top: 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+  li:last-child {
+    border-bottom: none;
+  }
+  .post-link {
+    display: block;
+    padding: 0.85rem 0;
+    color: inherit;
+    text-decoration: none;
+    transition: padding-left 0.15s;
+  }
+  .post-link:hover {
+    padding-left: 0.25rem;
+  }
+  .post-link:hover .post-title {
+    color: var(--color-primary);
+  }
+  .post-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+  }
+  .post-info {
+    min-width: 0;
+    flex: 1;
+  }
+  .post-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-strong);
+    transition: color 0.15s;
+  }
+  .post-subtitle {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--color-text-subtle);
+    margin-top: 0.15rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .post-side {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    flex-shrink: 0;
+  }
+  .topic {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-weight: 600;
+    color: var(--color-primary);
+    white-space: nowrap;
+    display: none;
+  }
+  time {
+    font-size: 0.78rem;
+    color: var(--color-text-subtle);
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+  }
+
+  @media (min-width: 769px) {
+    .topic {
+      display: inline-block;
+    }
+  }
+</style>

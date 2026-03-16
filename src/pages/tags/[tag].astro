@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostItem from '../../components/PostItem.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts');
+
+  function kebabCase(str: string) {
+    return str.replace(/[A-Z\u00C0-\u00D6\u00D8-\u00DE]/g, (match) => '-' + match.toLowerCase());
+  }
+
+  const tagMap: Record<string, any[]> = {};
+  posts.forEach((post) => {
+    (post.data.tags || []).forEach((tag: string) => {
+      const key = kebabCase(tag);
+      if (!tagMap[key]) tagMap[key] = [];
+      tagMap[key].push({ tag, post });
+    });
+  });
+
+  return Object.entries(tagMap).map(([kebab, items]) => ({
+    params: { tag: kebab },
+    props: {
+      tag: items[0].tag,
+      posts: items.map((i) => i.post).sort(
+        (a: any, b: any) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+      ),
+    },
+  }));
+}
+
+const { tag, posts } = Astro.props;
+
+function getPostSlug(post: any) {
+  return post.data.lang === 'es' ? `es/${post.id}` : post.id;
+}
+---
+<BaseLayout title={`Tag: ${tag}`} description={`Find all the content related to ${tag}`}>
+  <h1>Tag: {tag} ({posts.length})</h1>
+  <ul>
+    {posts.map((post: any) => (
+      <PostItem
+        title={post.data.title}
+        date={post.data.date}
+        subtitle={post.data.subtitle}
+        slug={getPostSlug(post)}
+      />
+    ))}
+  </ul>
+</BaseLayout>

@@ -1,0 +1,117 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import TagBadge from '../components/TagBadge.astro';
+import PrevNextPost from '../components/PrevNextPost.astro';
+import NewsletterForm from '../components/NewsletterForm.astro';
+import Comments from '../components/Comments.astro';
+
+interface Props {
+  title: string;
+  date: string;
+  description?: string;
+  tags?: string[];
+  lang?: string;
+  featuredImage?: string;
+  lastRevision?: string;
+  previous?: { slug: string; title: string };
+  next?: { slug: string; title: string };
+  readingTime: number;
+  slug: string;
+}
+
+const {
+  title,
+  date,
+  description,
+  tags = [],
+  lang = 'en',
+  lastRevision,
+  previous,
+  next,
+  readingTime,
+  slug,
+} = Astro.props;
+
+const formattedDate = new Date(date).toLocaleDateString('en-GB', {
+  day: '2-digit',
+  month: '2-digit',
+  year: 'numeric',
+});
+---
+<BaseLayout title={title} description={description} type="article" publishedDate={date} lang={lang}>
+  <article>
+    <h1>{title}</h1>
+    <div class="post-meta">
+      By <a href="/about">Maxi</a> | <time datetime={date}>{formattedDate}</time> | {readingTime} min read
+    </div>
+
+    {tags.length > 0 && (
+      <div class="tags">
+        {tags.map((tag) => <TagBadge tag={tag} />)}
+      </div>
+    )}
+
+    <div class="content">
+      <slot />
+    </div>
+
+    {lastRevision && (
+      <div class="updated">Updated: {lastRevision}</div>
+    )}
+
+    <PrevNextPost previous={previous} next={next} />
+
+    <div class="toolbar">
+      <a
+        href={`https://github.com/neomaxzero/blog/edit/master/src/posts/${slug}.md`}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="suggest-link"
+      >
+        suggest changes
+      </a>
+    </div>
+
+    <NewsletterForm />
+    <Comments />
+  </article>
+</BaseLayout>
+
+<style>
+  h1 {
+    margin-bottom: 0.5rem;
+  }
+  .post-meta {
+    font-size: 0.8rem;
+    color: var(--color-text);
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .post-meta a {
+    color: var(--color-primary);
+  }
+  .tags {
+    margin: 1.125rem 0;
+  }
+  .content {
+    margin-top: 1rem;
+  }
+  .updated {
+    font-size: 0.8rem;
+    color: var(--color-text);
+    text-align: center;
+    margin: 1.5rem 0;
+  }
+  .toolbar {
+    display: flex;
+    margin-bottom: 2rem;
+    margin-top: 4rem;
+  }
+  .suggest-link {
+    color: var(--color-primary);
+    font-size: 0.8rem;
+  }
+  .suggest-link:hover {
+    text-decoration: underline;
+  }
+</style>

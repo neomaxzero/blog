@@ -1,0 +1,67 @@
+---
+import ThemeToggle from './ThemeToggle.astro';
+---
+<header>
+  <div class="header-inner">
+    <div class="header-content">
+      <div>
+        <a href="/">
+          <span class="logo">m4x</span>
+          <span class="logo-sub">blog</span>
+        </a>
+      </div>
+      <nav>
+        <a href="/tags" class="nav-link">Tags</a>
+        <a href="/about" class="nav-link">About</a>
+        <ThemeToggle />
+      </nav>
+    </div>
+  </div>
+</header>
+
+<style>
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-height, 52px);
+    background-color: var(--color-bg-70);
+    z-index: 10;
+    backdrop-filter: saturate(180%) blur(20px);
+  }
+  .header-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 0;
+  }
+  .logo {
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--color-strong);
+  }
+  .logo-sub {
+    font-weight: 300;
+    font-size: 0.8rem;
+    color: var(--color-text-subtle);
+    margin-left: 0.2rem;
+  }
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  .nav-link {
+    font-size: 0.9rem;
+    color: var(--color-text);
+  }
+  .nav-link:hover {
+    color: var(--color-primary);
+  }
+</style>

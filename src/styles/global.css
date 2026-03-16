@@ -1,0 +1,192 @@
+@font-face {
+  font-family: 'Inter';
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/Inter-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/Inter-SemiBold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/Inter-Bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-weight: 100;
+  font-display: swap;
+  src: url('/fonts/Inter-Thin.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-weight: 300;
+  font-display: swap;
+  src: url('/fonts/Inter-Light.woff2') format('woff2');
+}
+
+/* Fallback with matching metrics to prevent CLS during font swap */
+@font-face {
+  font-family: 'Inter Fallback';
+  src: local('Arial');
+  size-adjust: 107%;
+  ascent-override: 90%;
+  descent-override: 22%;
+  line-gap-override: 0%;
+}
+
+:root {
+  --color-primary: #ab2ff7;
+  --color-primary-16: rgba(171, 47, 247, 0.16);
+  --color-primary-over-text: #9529d8;
+  --color-error: #FF431A;
+  --color-bg: white;
+  --color-bg-70: #ffffffa6;
+  --color-text: #3d4852;
+  --color-text-subtle: #6B7280;
+  --color-strong: black;
+  --color-border: #E5E7EB;
+  --color-surface: #FAFAFA;
+  --max-width: 720px;
+  --header-height: 52px;
+}
+
+html.dark {
+  --color-bg: #111827;
+  --color-bg-70: #000000a6;
+  --color-text: #F3F4F6;
+  --color-text-subtle: #9CA3AF;
+  --color-strong: #F9FAFB;
+  --color-border: #1F2937;
+  --color-surface: #1a2332;
+}
+
+html, body {
+  margin: 0;
+  font-weight: 400;
+  letter-spacing: -0.004em;
+}
+
+* {
+  font-family: Inter, 'Inter Fallback', sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+h1, h2, h3, h4, strong {
+  color: var(--color-strong);
+  font-weight: 700;
+}
+
+h1 {
+  letter-spacing: -0.055em;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+  font-size: 18px;
+  line-height: 26px;
+}
+
+li:not(:first-child) {
+  margin-top: 0.8rem;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:visited {
+  color: inherit;
+}
+
+p {
+  font-size: 18px;
+  line-height: 26px;
+  padding-bottom: 16px;
+}
+
+/* Article content styles */
+article a {
+  color: var(--color-primary-over-text);
+  text-decoration: underline;
+}
+
+article a:hover {
+  color: var(--color-primary);
+}
+
+article img {
+  max-width: 100%;
+  height: auto;
+}
+
+article blockquote {
+  border-left: 3px solid var(--color-primary);
+  margin-left: 0;
+  padding-left: 1.5rem;
+  font-style: italic;
+  color: var(--color-text-subtle);
+}
+
+article ul, article ol {
+  padding-left: 1.5rem;
+}
+
+article li {
+  list-style-type: disc;
+}
+
+article ol li {
+  list-style-type: decimal;
+}
+
+/* Shiki dual theme support */
+.astro-code,
+.astro-code span {
+  color: var(--shiki-light) !important;
+  background-color: var(--shiki-light-bg) !important;
+}
+
+html.dark .astro-code,
+html.dark .astro-code span {
+  color: var(--shiki-dark) !important;
+  background-color: var(--shiki-dark-bg) !important;
+}
+
+pre.astro-code {
+  padding: 1rem;
+  border-radius: 4px;
+  overflow-x: auto;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+code {
+  font-size: 0.9em;
+}
+
+:not(pre) > code {
+  background-color: var(--color-primary-16);
+  padding: 0.15em 0.3em;
+  border-radius: 3px;
+}

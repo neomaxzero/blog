@@ -1,0 +1,158 @@
+---
+---
+<div id="newsletter-form" class="newsletter">
+  <div class="section-title">Join the Newsletter</div>
+  <form id="mc-form" class="news-form">
+    <label id="lbl-email" class="sr-only" for="emailEntry">Email address</label>
+    <input
+      type="email"
+      id="emailEntry"
+      aria-labelledby="lbl-email"
+      aria-label="Email Address:"
+      placeholder="Enter email address"
+      required
+    />
+    <button type="submit">Subscribe</button>
+  </form>
+  <p id="mc-message" class="message" hidden></p>
+</div>
+
+<div id="newsletter-success" class="success-box" hidden>
+  <div class="p-block"><strong id="success-email"></strong> thanks for subscribing!</div>
+  <div class="p-block">I'd love to hear what you want to know about.</div>
+  <div class="p-block">Leave a comment, you have 100% chances to hear back from me</div>
+  <div class="sign">Maxi</div>
+</div>
+
+<style>
+  .newsletter {
+    margin-bottom: 4rem;
+  }
+  .section-title {
+    margin-bottom: 1.2rem;
+  }
+  .news-form {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+  }
+  input {
+    background-color: var(--color-primary-16);
+    padding: 1rem;
+    border-radius: 2px;
+    border: none;
+    flex-grow: 1;
+    color: var(--color-text);
+    font-size: 1rem;
+  }
+  input::placeholder {
+    color: var(--color-primary);
+  }
+  button {
+    background-color: var(--color-primary);
+    padding: 1rem 3rem;
+    border: 1px solid var(--color-primary);
+    border-radius: 2px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+    margin-top: 1rem;
+    width: 100%;
+    font-size: 1rem;
+  }
+  button:hover {
+    background-color: white;
+    color: var(--color-primary);
+  }
+  @media (min-width: 769px) {
+    .news-form {
+      flex-wrap: nowrap;
+    }
+    input {
+      margin-right: 0.8rem;
+    }
+    button {
+      margin-top: 0;
+      width: auto;
+    }
+  }
+  .message {
+    margin-top: 0.8rem;
+  }
+  .message.error {
+    color: var(--color-error);
+  }
+  .message.ok {
+    color: var(--color-primary);
+  }
+  .success-box {
+    background-color: var(--color-primary-16);
+    border-radius: 2px;
+    padding: 2rem;
+    color: var(--color-primary);
+    margin-bottom: 4rem;
+  }
+  .p-block {
+    margin-bottom: 2.5rem;
+    text-align: center;
+  }
+  .sign {
+    text-align: right;
+  }
+</style>
+
+<script>
+  const form = document.getElementById('newsletter-form') as HTMLElement;
+  const successBox = document.getElementById('newsletter-success') as HTMLElement;
+
+  if (typeof localStorage !== 'undefined' && localStorage.getItem('subscribed')) {
+    form.hidden = true;
+  }
+
+  const mcForm = document.getElementById('mc-form') as HTMLFormElement;
+  const emailInput = document.getElementById('emailEntry') as HTMLInputElement;
+  const message = document.getElementById('mc-message') as HTMLElement;
+
+  mcForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = emailInput.value;
+    if (!/^\S+@\S+\.\S+$/.test(email)) {
+      message.textContent = 'Insert a valid email';
+      message.className = 'message error';
+      message.hidden = false;
+      return;
+    }
+
+    message.textContent = 'Sending...';
+    message.className = 'message ok';
+    message.hidden = false;
+
+    const url = 'https://m4x.us3.list-manage.com/subscribe/post-json?u=2bf66eacf7ab01b4b4930e813&id=5a763ca08e&c=callback&EMAIL=' + encodeURIComponent(email);
+
+    // JSONP approach for Mailchimp
+    const script = document.createElement('script');
+    (window as any).callback = (data: any) => {
+      if (data.result === 'success') {
+        form.hidden = true;
+        const successEmail = document.getElementById('success-email')!;
+        successEmail.textContent = email;
+        successBox.hidden = false;
+        localStorage.setItem('subscribed', 'true');
+      } else {
+        message.innerHTML = data.msg;
+        message.className = 'message error';
+      }
+      script.remove();
+      delete (window as any).callback;
+    };
+    script.src = url;
+    document.body.appendChild(script);
+  });
+</script>

@@ -1,59 +1,18 @@
 {
-  "name": "z3ro-blog",
-  "description": "neomaxzero's blog",
-  "version": "1.0.0",
+  "name": "m4x-blog",
+  "description": "m4x blog - Frontend, Performance, React, Javascript",
+  "version": "2.0.0",
   "author": "maxicespedes7@hotmail.com",
-  "dependencies": {
-    "@emotion/core": "^10.0.22",
-    "@emotion/styled": "^10.0.23",
-    "@fortawesome/fontawesome-svg-core": "^1.2.25",
-    "@fortawesome/free-brands-svg-icons": "^5.11.2",
-    "@fortawesome/free-solid-svg-icons": "^5.11.2",
-    "@fortawesome/react-fontawesome": "^0.1.7",
-    "debounce": "^1.2.0",
-    "emotion": "^9.2.8",
-    "emotion-server": "^9.2.8",
-    "emotion-theming": "^10.0.19",
-    "gatsby": "^2.0.85",
-    "gatsby-image": "^2.2.34",
-    "gatsby-plugin-canonical-urls": "^2.3.11",
-    "gatsby-plugin-emotion": "^4.1.15",
-    "gatsby-plugin-google-analytics": "^2.1.28",
-    "gatsby-plugin-manifest": "^2.2.28",
-    "gatsby-plugin-offline": "^3.0.21",
-    "gatsby-plugin-react-helmet": "^3.1.15",
-    "gatsby-plugin-sharp": "^2.3.5",
-    "gatsby-plugin-sitemap": "^2.0.5",
-    "gatsby-plugin-web-font-loader": "^1.0.4",
-    "gatsby-remark-prismjs": "^3.2.0",
-    "gatsby-source-filesystem": "^1.5.39",
-    "gatsby-transformer-remark": "^2.2.0",
-    "gatsby-transformer-sharp": "^2.3.6",
-    "lodash": "^4.17.15",
-    "prismjs": "^1.15.0",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-emotion": "^9.2.8",
-    "react-helmet": "^5.2.0",
-    "react-mailchimp-subscribe": "^2.1.0",
-    "rehype-react": "^3.1.0"
-  },
-  "keywords": [
-    "gatsby"
-  ],
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
-    "serve": "gatsby develop",
-    "serve:prod": "gatsby build && gatsby serve",
-    "format": "prettier --write '**/*.js'",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
   },
-  "devDependencies": {
-    "prettier": "^1.14.2"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+  "dependencies": {
+    "astro": "^5.7.10",
+    "@astrojs/mdx": "^4.3.0",
+    "@astrojs/sitemap": "^3.3.1",
+    "@astrojs/rss": "^4.0.12"
   }
 }

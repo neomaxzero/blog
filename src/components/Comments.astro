@@ -1,0 +1,20 @@
+---
+---
+<div id="utterances-container"></div>
+
+<script>
+  function loadComments() {
+    const container = document.getElementById('utterances-container');
+    if (!container) return;
+    const isDark = document.documentElement.classList.contains('dark');
+    const s = document.createElement('script');
+    s.src = 'https://utteranc.es/client.js';
+    s.setAttribute('repo', 'neomaxzero/blog-comments');
+    s.setAttribute('issue-term', 'pathname');
+    s.setAttribute('theme', isDark ? 'dark-blue' : 'github-light');
+    s.crossOrigin = 'anonymous';
+    s.async = true;
+    container.appendChild(s);
+  }
+  loadComments();
+</script>

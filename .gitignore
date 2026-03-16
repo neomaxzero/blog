@@ -1,8 +1,13 @@
-# Project dependencies
-.cache
+# Dependencies
 node_modules
-yarn-error.log
 
-# Build directory
-/public
+# Build
+dist/
+.astro/
+
+# OS
 .DS_Store
+
+# Logs
+yarn-error.log
+npm-debug.log*

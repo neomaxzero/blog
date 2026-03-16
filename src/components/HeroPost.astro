@@ -1,0 +1,118 @@
+---
+interface Props {
+  title: string;
+  date: string;
+  subtitle?: string;
+  description?: string;
+  slug: string;
+  featuredImage?: string;
+  topic?: string;
+  readingTime: number;
+}
+
+const { title, date, subtitle, description, slug, featuredImage, topic, readingTime } = Astro.props;
+
+const formattedDate = new Date(date).toLocaleDateString('en-US', {
+  month: 'short',
+  day: 'numeric',
+  year: 'numeric',
+});
+---
+<a href={`/${slug}/`} class="hero">
+  {featuredImage && (
+    <div class="hero-image">
+      <img src={`/images/posts/${featuredImage}`} alt={title} loading="eager" decoding="async" />
+    </div>
+  )}
+  <div class="hero-body">
+    {topic && <span class="topic">{topic}</span>}
+    <h1 class="hero-title">{title}</h1>
+    {(subtitle || description) && (
+      <p class="hero-desc">{subtitle || description}</p>
+    )}
+    <div class="hero-meta">
+      <time datetime={date}>{formattedDate}</time>
+      <span class="dot">&middot;</span>
+      <span>{readingTime} min read</span>
+    </div>
+  </div>
+</a>
+
+<style>
+  .hero {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-bottom: 2.5rem;
+  }
+  .hero:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  }
+  :global(html.dark) .hero:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  }
+  .hero-image {
+    width: 100%;
+    aspect-ratio: 16 / 8;
+    overflow: hidden;
+    background-color: var(--color-border);
+  }
+  .hero-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+  }
+  .hero:hover .hero-image img {
+    transform: scale(1.03);
+  }
+  .hero-body {
+    padding: 1.5rem;
+  }
+  .topic {
+    display: inline-block;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+  }
+  .hero-title {
+    font-size: 1.75rem;
+    line-height: 1.2;
+    margin: 0 0 0.5rem;
+    color: var(--color-strong);
+    letter-spacing: -0.03em;
+  }
+  .hero-desc {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--color-text-subtle);
+    margin: 0 0 1rem;
+    padding: 0;
+  }
+  .hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.8rem;
+    color: var(--color-text-subtle);
+  }
+  .dot {
+    opacity: 0.5;
+  }
+
+  @media (min-width: 769px) {
+    .hero-title {
+      font-size: 2rem;
+    }
+  }
+</style>

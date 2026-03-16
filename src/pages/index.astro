@@ -1,0 +1,123 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroPost from '../components/HeroPost.astro';
+import FeaturedCard from '../components/FeaturedCard.astro';
+import PostItem from '../components/PostItem.astro';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('posts');
+
+function getPostSlug(post: any) {
+  const lang = post.data.lang;
+  return lang === 'es' ? `es/${post.id}` : post.id;
+}
+
+function getReadingTime(post: any) {
+  const words = post.body ? post.body.split(/\s+/).length : 0;
+  return Math.max(1, Math.round(words / 200));
+}
+
+const sorted = posts.sort(
+  (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+);
+
+// Hero = latest post
+const hero = sorted[0];
+
+// Featured = next posts that have a real featured image (non-empty), up to 4
+const rest = sorted.slice(1);
+const withImages = rest.filter((p) => p.data.featuredImage && p.data.featuredImage.trim() !== '');
+const featured = withImages.slice(0, 4);
+const featuredIds = new Set(featured.map((p) => p.id));
+
+// Remaining posts (everything else except hero and featured)
+const remaining = rest.filter((p) => !featuredIds.has(p.id));
+---
+<BaseLayout title="Latest articles">
+  <!-- Hero -->
+  <section class="hero-section">
+    <HeroPost
+      title={hero.data.title}
+      date={hero.data.date}
+      subtitle={hero.data.subtitle}
+      description={hero.data.description}
+      slug={getPostSlug(hero)}
+      featuredImage={hero.data.featuredImage && hero.data.featuredImage.trim() !== '' ? hero.data.featuredImage : undefined}
+      topic={hero.data.topic}
+      readingTime={getReadingTime(hero)}
+    />
+  </section>
+
+  <!-- Featured with images -->
+  {featured.length > 0 && (
+    <section class="featured-section">
+      <h2 class="section-label">Featured</h2>
+      <div class="featured-grid">
+        {featured.map((post) => (
+          <FeaturedCard
+            title={post.data.title}
+            date={post.data.date}
+            subtitle={post.data.subtitle}
+            description={post.data.description}
+            slug={getPostSlug(post)}
+            featuredImage={post.data.featuredImage}
+            topic={post.data.topic}
+            readingTime={getReadingTime(post)}
+          />
+        ))}
+      </div>
+    </section>
+  )}
+
+  <!-- All posts -->
+  <section class="list-section">
+    <h2 class="section-label">All posts</h2>
+    <ul>
+      {remaining.map((post) => (
+        <PostItem
+          title={post.data.title}
+          date={post.data.date}
+          subtitle={post.data.subtitle}
+          slug={getPostSlug(post)}
+          topic={post.data.topic}
+        />
+      ))}
+    </ul>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero-section {
+    margin-top: 1rem;
+  }
+  .section-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-subtle);
+    font-weight: 600;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .featured-section {
+    margin-bottom: 2.5rem;
+  }
+  .featured-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  @media (min-width: 540px) {
+    .featured-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  .list-section {
+    margin-bottom: 2rem;
+  }
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+</style>

@@ -1,0 +1,57 @@
+---
+import PostLayout from '../layouts/PostLayout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts');
+
+  // Sort by date ASC for prev/next computation
+  const sorted = posts.sort(
+    (a, b) => new Date(a.data.date).getTime() - new Date(b.data.date).getTime()
+  );
+
+  function getSlug(post: any) {
+    const lang = post.data.lang;
+    return lang === 'es' ? `es/${post.id}` : post.id;
+  }
+
+  return sorted.map((post, i) => {
+    const prev = sorted[i - 1];
+    const next = sorted[i + 1];
+
+    return {
+      params: { slug: getSlug(post) },
+      props: {
+        post,
+        previous: prev ? { slug: getSlug(prev), title: prev.data.title } : null,
+        next: next ? { slug: getSlug(next), title: next.data.title } : null,
+      },
+    };
+  });
+}
+
+const { post, previous, next } = Astro.props;
+const { Content } = await render(post);
+
+const wordCount = post.body ? post.body.split(/\s+/).length : 0;
+const readingTime = Math.max(1, Math.round(wordCount / 200));
+
+function getSlug(p: any) {
+  const lang = p.data.lang;
+  return lang === 'es' ? `es/${p.id}` : p.id;
+}
+---
+<PostLayout
+  title={post.data.title}
+  date={post.data.date}
+  description={post.data.description}
+  tags={post.data.tags}
+  lang={post.data.lang}
+  lastRevision={post.data.lastRevision}
+  previous={previous}
+  next={next}
+  readingTime={readingTime}
+  slug={post.id}
+>
+  <Content />
+</PostLayout>

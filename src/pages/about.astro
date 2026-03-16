@@ -1,0 +1,75 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="About" description="About Maxi - Frontend, Performance, React, Javascript">
+  <h1>About</h1>
+  <p>
+    I'm Maxi. A friend, writer, reader. In that order. I spend the majority of
+    my day thinking about frontend and a little bit of it actually
+    frontending. I'm from Argentina and currently living in the Netherlands.
+  </p>
+  <div class="image-wrapper">
+    <img src="/images/posts/maxi.jpg" alt="Maxi" class="about-img" width="400" height="400" loading="eager" decoding="async" />
+  </div>
+  <h2>What do I do?</h2>
+  <ul>
+    <li>- Spend time with people I love</li>
+    <li>- Frontend & Chill</li>
+    <li>- Video-games</li>
+    <li>- <a href="https://500px.com/neomaxzero" target="_blank" rel="noopener noreferrer">Photography</a></li>
+    <li>- Read books</li>
+    <li>- Building an IT community for readers: <a href="https://pugmark.io/?ref=blog-maxi" target="_blank" rel="noopener noreferrer">pugmark</a></li>
+    <li><a href="https://www.github.com/neomaxzero/" target="_blank" rel="noopener noreferrer">- Open source</a></li>
+  </ul>
+  <h2>What is this blog about?</h2>
+  <p>
+    I write mostly about <strong>frontend</strong>. Sometimes you will also
+    encounter some reviews about books and I ocasionally spend some time open
+    sourcing small libraries I think you might like.
+  </p>
+  <p>
+    I like reflecting on things while writing. I feel sharing It's a risk I'm
+    willing to take. It is thrilling and at the same time rewarding to put
+    things live when you always feel like it's not good enough. I hope that
+    while refining my thoughts, we can help each other become a better version
+    of ourselves.
+  </p>
+  <p>
+    Writing is relaxing when you decide not to pay too much attention to
+    details that could prevent you from sharing some content. I'm sorry, a
+    little bit, about sometimes being off and hard to understand. I would love
+    you to message me if you feel like it.
+  </p>
+  <h2>What if I have more questions?</h2>
+  <p>I have a 100% reply ratio if you want to know more.</p>
+  <ul>
+    <li><a href="https://www.linkedin.com/in/neomaxzero/" target="_blank" rel="noopener noreferrer">Linkedin</a></li>
+    <li><a href="https://www.github.com/neomaxzero/" target="_blank" rel="noopener noreferrer">github</a></li>
+    <li><a href="mailto:maxicespedes7@hotmail.com">maxicespedes7@hotmail.com</a></li>
+  </ul>
+</BaseLayout>
+
+<style>
+  .image-wrapper {
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 0 auto 3rem;
+    width: 70%;
+  }
+  @media (min-width: 769px) {
+    .image-wrapper {
+      width: 35%;
+    }
+  }
+  .about-img {
+    width: 100%;
+    display: block;
+  }
+  a {
+    color: var(--color-primary-over-text);
+    text-decoration: underline;
+  }
+  a:hover {
+    color: var(--color-primary);
+  }
+</style>

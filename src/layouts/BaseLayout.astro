@@ -1,0 +1,51 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import SEO from '../components/SEO.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  type?: 'website' | 'article';
+  publishedDate?: string;
+  lang?: string;
+}
+
+const { title, description, type, publishedDate, lang = 'en' } = Astro.props;
+---
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <SEO
+      title={title}
+      description={description}
+      type={type}
+      publishedDate={publishedDate}
+      lang={lang}
+    />
+    <script is:inline>
+      (function() {
+        const theme = localStorage.getItem('theme');
+        if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style>
+  main {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: calc(var(--header-height) + 1rem) 1rem 2rem;
+  }
+</style>

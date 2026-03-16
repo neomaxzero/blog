@@ -1,0 +1,25 @@
+---
+const year = new Date().getFullYear();
+---
+<footer>
+  <span>&copy; {year} m4x</span>
+  <a href="/rss.xml">RSS</a>
+</footer>
+
+<style>
+  footer {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: var(--color-text-subtle);
+  }
+  a {
+    color: var(--color-primary);
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+</style>

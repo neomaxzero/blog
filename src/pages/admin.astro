@@ -1,0 +1,552 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('posts');
+const sorted = posts.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+
+function getSlug(post: any) {
+  return post.data.lang === 'es' ? `es/${post.id}` : post.id;
+}
+
+function getBody(post: any): string {
+  return post.body || '';
+}
+
+// --- Content Health Stats ---
+const totalPosts = posts.length;
+const missingDescription = posts.filter(p => !p.data.description || p.data.description.trim() === '');
+const missingImage = posts.filter(p => !p.data.featuredImage || p.data.featuredImage.trim() === '');
+const missingTags = posts.filter(p => !p.data.tags || p.data.tags.length === 0);
+const wordCounts = posts.map(p => getBody(p).split(/\s+/).length);
+const avgWordCount = Math.round(wordCounts.reduce((a, b) => a + b, 0) / totalPosts);
+const avgReadingTime = Math.round(avgWordCount / 200);
+const allTags = [...new Set(posts.flatMap(p => p.data.tags || []))];
+const postDates = posts.map(p => new Date(p.data.date)).sort((a, b) => a.getTime() - b.getTime());
+const dateRange = `${postDates[0].toLocaleDateString('en-US', { month: 'short', year: 'numeric' })} — ${postDates[postDates.length - 1].toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}`;
+
+// --- Posting Cadence Tracker ---
+const now = new Date();
+const latestPostDate = new Date(sorted[0].data.date);
+const daysSinceLastPost = Math.floor((now.getTime() - latestPostDate.getTime()) / (1000 * 60 * 60 * 24));
+
+const startOfWeek = new Date(now);
+startOfWeek.setDate(now.getDate() - now.getDay());
+startOfWeek.setHours(0, 0, 0, 0);
+const postsThisWeek = sorted.filter(p => new Date(p.data.date) >= startOfWeek).length;
+
+const startOfMonth = new Date(now.getFullYear(), now.getMonth(), 1);
+const postsThisMonth = sorted.filter(p => new Date(p.data.date) >= startOfMonth).length;
+
+let streakWeeks = 0;
+let checkDate = new Date(startOfWeek);
+for (let s = 0; s < 200; s++) {
+  const ws = new Date(checkDate);
+  const we = new Date(checkDate);
+  we.setDate(we.getDate() + 7);
+  const cnt = sorted.filter(p => { const d = new Date(p.data.date); return d >= ws && d < we; }).length;
+  if (cnt > 0) { streakWeeks++; checkDate.setDate(checkDate.getDate() - 7); }
+  else { break; }
+}
+
+const weeklyActivity: Array<{ weekLabel: string; count: number }> = [];
+for (let i = 25; i >= 0; i--) {
+  const ws = new Date(startOfWeek);
+  ws.setDate(ws.getDate() - i * 7);
+  const we = new Date(ws);
+  we.setDate(we.getDate() + 7);
+  const count = sorted.filter(p => { const d = new Date(p.data.date); return d >= ws && d < we; }).length;
+  weeklyActivity.push({ weekLabel: ws.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }), count });
+}
+
+const thirtyDaysAgo = new Date(now);
+thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
+const recentUpdates = sorted.filter(p => p.data.lastRevision && new Date(p.data.lastRevision) >= thirtyDaysAgo).length;
+
+// --- Content Gaps ---
+const gaps = sorted.map(p => {
+  const wc = getBody(p).split(/\s+/).length;
+  const desc = p.data.description || '';
+  const issues: string[] = [];
+  if (!desc || desc.trim() === '') issues.push('no-desc');
+  else if (desc.length < 50) issues.push('short-desc');
+  else if (desc.length > 160) issues.push('long-desc');
+  if (!p.data.featuredImage || p.data.featuredImage.trim() === '') issues.push('no-image');
+  if (!p.data.tags || p.data.tags.length === 0) issues.push('no-tags');
+  if (wc < 300) issues.push('short-post');
+  return { title: p.data.title, slug: getSlug(p), wordCount: wc, descLength: desc.length, hasDesc: !!desc && desc.trim() !== '', hasImage: !!(p.data.featuredImage && p.data.featuredImage.trim() !== ''), hasTags: !!(p.data.tags && p.data.tags.length > 0), issues };
+}).filter(p => p.issues.length > 0).sort((a, b) => b.issues.length - a.issues.length);
+
+// --- Publishing Timeline (quarterly) ---
+const quarterMap: Record<string, number> = {};
+posts.forEach(p => { const d = new Date(p.data.date); const q = Math.ceil((d.getMonth() + 1) / 3); const key = `${d.getFullYear()} Q${q}`; quarterMap[key] = (quarterMap[key] || 0) + 1; });
+const firstYear = postDates[0].getFullYear();
+const lastYear = postDates[postDates.length - 1].getFullYear();
+const allQuarters: Array<{ label: string; count: number }> = [];
+for (let y = firstYear; y <= lastYear; y++) { for (let q = 1; q <= 4; q++) { const key = `${y} Q${q}`; allQuarters.push({ label: key, count: quarterMap[key] || 0 }); } }
+const maxQuarterCount = Math.max(...allQuarters.map(q => q.count));
+
+// --- Tag Distribution ---
+const tagCounts: Record<string, number> = {};
+posts.forEach(p => (p.data.tags || []).forEach((t: string) => { tagCounts[t] = (tagCounts[t] || 0) + 1; }));
+const tagsSorted = Object.entries(tagCounts).sort((a, b) => b[1] - a[1]);
+const maxTagCount = tagsSorted.length > 0 ? tagsSorted[0][1] : 1;
+const orphanTags = tagsSorted.filter(([_, c]) => c === 1);
+
+// --- Topic Distribution ---
+const topicCounts: Record<string, number> = {};
+posts.forEach(p => { const t = p.data.topic || 'uncategorized'; topicCounts[t] = (topicCounts[t] || 0) + 1; });
+const topicsSorted = Object.entries(topicCounts).sort((a, b) => b[1] - a[1]);
+const maxTopicCount = topicsSorted.length > 0 ? topicsSorted[0][1] : 1;
+
+// --- SEO Checklist ---
+const seoChecks = [
+  { label: 'Sitemap present', ok: true, detail: '/sitemap-index.xml via @astrojs/sitemap' },
+  { label: 'RSS feed present', ok: true, detail: '/rss.xml via @astrojs/rss' },
+  { label: 'JSON-LD structured data', ok: true, detail: 'Article schema on posts, WebSite on homepage' },
+  { label: 'Canonical URLs', ok: true, detail: 'Set on every page via SEO component' },
+  { label: 'robots.txt', ok: true, detail: 'public/robots.txt with sitemap reference' },
+  { label: 'Meta descriptions', ok: missingDescription.length === 0, detail: missingDescription.length === 0 ? 'All posts have descriptions' : `${missingDescription.length} posts missing descriptions` },
+  { label: 'Featured images (OG)', ok: missingImage.length <= totalPosts * 0.3, detail: `${totalPosts - missingImage.length}/${totalPosts} posts have images` },
+  { label: 'Twitter card: summary_large_image', ok: true, detail: 'Posts with featured images use summary_large_image, others use summary' },
+  { label: 'og:image meta tag', ok: true, detail: 'Per-post featured image with fallback to default OG image' },
+];
+
+// --- Stale Content ---
+const threeYearsAgo = new Date();
+threeYearsAgo.setFullYear(threeYearsAgo.getFullYear() - 3);
+const staleContent = sorted.filter(p => new Date(p.data.date) < threeYearsAgo && !p.data.lastRevision);
+
+// --- Internal Linking ---
+const linkCounts: Record<string, number> = {};
+posts.forEach(p => { linkCounts[p.id] = 0; });
+for (const p of posts) {
+  const body = getBody(p);
+  if (body) {
+    for (const target of posts) {
+      if (body.includes('](/' + target.id + ')') || body.includes('](/' + target.id + '/)')) {
+        linkCounts[target.id] = (linkCounts[target.id] || 0) + 1;
+      }
+    }
+  }
+}
+const noInboundLinks = posts.filter(p => linkCounts[p.id] === 0)
+  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
+  .slice(0, 15);
+
+// --- Monthly Posting Pattern ---
+const monthCounts = Array(12).fill(0) as number[];
+posts.forEach(p => { monthCounts[new Date(p.data.date).getMonth()]++; });
+const monthNames = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const maxMonthCount = Math.max(...monthCounts);
+
+const lastPostDateISO = latestPostDate.toISOString();
+
+// Pre-compute template values to avoid <= in JSX (Astro parses < as tag)
+const daysStatusClass = daysSinceLastPost > 7 ? 'urgent' : daysSinceLastPost > 3 ? 'warn' : 'ok';
+const daysStatusHint = daysSinceLastPost === 0 ? 'Posted today' : daysSinceLastPost <= 3 ? 'On track' : daysSinceLastPost <= 7 ? 'Time to write' : 'Overdue';
+const streakHint = streakWeeks === 0 ? 'Start a new streak this week' : `${streakWeeks} consecutive weeks posting`;
+const weekClass = postsThisWeek >= 1 ? 'ok' : 'warn';
+const weekProgress = Math.min(postsThisWeek * 100, 100);
+const monthClass = postsThisMonth >= 4 ? 'ok' : 'warn';
+const monthProgress = Math.min(postsThisMonth / 4 * 100, 100);
+---
+<BaseLayout title="Admin" noindex>
+  <div id="admin-gate" class="gate">
+    <h1>Admin</h1>
+    <p>Enter the access key to continue.</p>
+    <form id="key-form">
+      <input type="password" id="key-input" placeholder="Access key" autocomplete="off" />
+      <button type="submit">Enter</button>
+    </form>
+    <p id="gate-error" class="error" hidden>Invalid key.</p>
+  </div>
+
+  <div id="admin-dashboard" style="display:none">
+    <div id="admin-data" hidden data-last-post={lastPostDateISO} data-days-since={String(daysSinceLastPost)}></div>
+
+    <!-- Posting Cadence Tracker -->
+    <div class="tracker-header">
+      <h1>Posting Tracker</h1>
+      <button id="notif-btn" class="notif-btn" type="button">Enable Reminders</button>
+    </div>
+
+    <div class="tracker-grid">
+      <div class={`tracker-card ${daysStatusClass}`}>
+        <div class="tracker-value">{daysSinceLastPost}</div>
+        <div class="tracker-label">Days Since Last Post</div>
+        <div class="tracker-hint">{daysStatusHint}</div>
+      </div>
+      <div class="tracker-card">
+        <div class="tracker-value">{streakWeeks}<span class="tracker-unit">wk</span></div>
+        <div class="tracker-label">Current Streak</div>
+        <div class="tracker-hint">{streakHint}</div>
+      </div>
+      <div class={`tracker-card ${weekClass}`}>
+        <div class="tracker-value">{postsThisWeek}<span class="tracker-unit">/1</span></div>
+        <div class="tracker-label">Posts This Week</div>
+        <div class="tracker-progress"><div class="tracker-progress-fill" style={`width: ${weekProgress}%`}></div></div>
+      </div>
+      <div class={`tracker-card ${monthClass}`}>
+        <div class="tracker-value">{postsThisMonth}<span class="tracker-unit">/4</span></div>
+        <div class="tracker-label">Posts This Month</div>
+        <div class="tracker-progress"><div class="tracker-progress-fill" style={`width: ${monthProgress}%`}></div></div>
+      </div>
+      <div class="tracker-card">
+        <div class="tracker-value">{recentUpdates}</div>
+        <div class="tracker-label">Posts Updated (30d)</div>
+        <div class="tracker-hint">Goal: 4/month</div>
+      </div>
+    </div>
+
+    <!-- Activity Heatmap -->
+    <h2 class="section-title">Weekly Activity (last 6 months)</h2>
+    <div class="heatmap-scroll">
+      <div class="heatmap">
+        {weeklyActivity.map(w => (
+          <div class="heatmap-col" title={`${w.weekLabel}: ${w.count} post${w.count !== 1 ? 's' : ''}`}>
+            <div class={`heatmap-cell ${w.count === 0 ? 'heat-0' : w.count === 1 ? 'heat-1' : w.count === 2 ? 'heat-2' : 'heat-3'}`}></div>
+            <div class="heatmap-label">{w.weekLabel}</div>
+          </div>
+        ))}
+      </div>
+      <div class="heatmap-legend">
+        <span class="heatmap-legend-label">Less</span>
+        <div class="heatmap-cell heat-0 legend-cell"></div>
+        <div class="heatmap-cell heat-1 legend-cell"></div>
+        <div class="heatmap-cell heat-2 legend-cell"></div>
+        <div class="heatmap-cell heat-3 legend-cell"></div>
+        <span class="heatmap-legend-label">More</span>
+      </div>
+    </div>
+
+    <!-- Notification Settings Panel -->
+    <div id="notif-panel" class="notif-panel" hidden>
+      <h3>Reminder Settings</h3>
+      <p class="hint">Browser notifications fire when you visit this page and haven't posted recently.</p>
+      <div class="notif-options">
+        <label>
+          <span>Remind if no post in:</span>
+          <select id="notif-interval">
+            <option value="3">3 days</option>
+            <option value="5">5 days</option>
+            <option value="7" selected>7 days</option>
+            <option value="14">14 days</option>
+          </select>
+        </label>
+        <label class="notif-toggle-label">
+          <input type="checkbox" id="notif-enabled" />
+          <span>Notifications enabled</span>
+        </label>
+      </div>
+      <p id="notif-status" class="notif-status"></p>
+    </div>
+
+    <!-- Content Health -->
+    <h1>Content Health</h1>
+    <div class="stat-grid">
+      <div class="stat-card"><div class="stat-value">{totalPosts}</div><div class="stat-label">Total Posts</div></div>
+      <div class="stat-card"><div class="stat-value">{avgWordCount}</div><div class="stat-label">Avg Words / Post</div></div>
+      <div class="stat-card"><div class="stat-value">{avgReadingTime} min</div><div class="stat-label">Avg Reading Time</div></div>
+      <div class="stat-card"><div class="stat-value">{allTags.length}</div><div class="stat-label">Unique Tags</div></div>
+      <div class="stat-card warn"><div class="stat-value">{missingDescription.length}</div><div class="stat-label">Missing Descriptions</div></div>
+      <div class="stat-card warn"><div class="stat-value">{missingImage.length}</div><div class="stat-label">Missing Images</div></div>
+      <div class="stat-card warn"><div class="stat-value">{missingTags.length}</div><div class="stat-label">Missing Tags</div></div>
+      <div class="stat-card"><div class="stat-value stat-value-sm">{dateRange}</div><div class="stat-label">Date Range</div></div>
+    </div>
+
+    <!-- SEO Checklist -->
+    <h2 class="section-title">SEO Checklist</h2>
+    <ul class="checklist">
+      {seoChecks.map(c => (
+        <li class={c.ok ? 'check-ok' : 'check-warn'}>
+          <span class="check-icon">{c.ok ? '\u2713' : '\u26A0'}</span>
+          <div><strong>{c.label}</strong><span class="check-detail">{c.detail}</span></div>
+        </li>
+      ))}
+    </ul>
+
+    <!-- Content Gaps -->
+    <h2 class="section-title">Content Gaps ({gaps.length} posts with issues)</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Post</th><th>Desc</th><th>Image</th><th>Tags</th><th>Words</th><th>Issues</th></tr></thead>
+        <tbody>
+          {gaps.slice(0, 30).map(g => (
+            <tr>
+              <td><a href={`/${g.slug}/`}>{g.title}</a></td>
+              <td class={g.hasDesc ? '' : 'cell-warn'}>{g.hasDesc ? `${g.descLength}ch` : 'none'}</td>
+              <td class={g.hasImage ? '' : 'cell-warn'}>{g.hasImage ? '\u2713' : '\u2717'}</td>
+              <td class={g.hasTags ? '' : 'cell-warn'}>{g.hasTags ? '\u2713' : '\u2717'}</td>
+              <td class={g.wordCount < 300 ? 'cell-warn' : ''}>{g.wordCount}</td>
+              <td>{g.issues.length}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Publishing Timeline -->
+    <h2 class="section-title">Publishing Timeline</h2>
+    <div class="chart-scroll">
+      <div class="bar-chart">
+        {allQuarters.map(q => (
+          <div class="bar-col">
+            <div class="bar-value">{q.count || ''}</div>
+            <div class="bar" style={`height: ${maxQuarterCount > 0 ? (q.count / maxQuarterCount) * 140 : 0}px`}></div>
+            <div class="bar-label">{q.label.replace(' ', '\n')}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Tag Distribution -->
+    <h2 class="section-title">Tag Distribution ({tagsSorted.length} tags)</h2>
+    <div class="h-bars">
+      {tagsSorted.map(([tag, count]) => (
+        <div class="h-bar-row">
+          <span class="h-bar-label">{tag}</span>
+          <div class="h-bar-track"><div class="h-bar-fill" style={`width: ${(count / maxTagCount) * 100}%`}></div></div>
+          <span class="h-bar-count">{count}</span>
+        </div>
+      ))}
+    </div>
+    {orphanTags.length > 0 && (
+      <p class="hint">{orphanTags.length} tags used only once — consider consolidating: <span class="orphan-list">{orphanTags.map(([t]) => t).join(', ')}</span></p>
+    )}
+
+    <!-- Topic Distribution -->
+    <h2 class="section-title">Topic Distribution</h2>
+    <div class="h-bars">
+      {topicsSorted.map(([topic, count]) => (
+        <div class="h-bar-row">
+          <span class="h-bar-label">{topic}</span>
+          <div class="h-bar-track"><div class="h-bar-fill" style={`width: ${(count / maxTopicCount) * 100}%`}></div></div>
+          <span class="h-bar-count">{count}</span>
+        </div>
+      ))}
+    </div>
+
+    <!-- Monthly Posting Pattern -->
+    <h2 class="section-title">Monthly Posting Pattern (all time)</h2>
+    <div class="bar-chart compact">
+      {monthCounts.map((count: number, i: number) => (
+        <div class="bar-col">
+          <div class="bar-value">{count || ''}</div>
+          <div class="bar" style={`height: ${maxMonthCount > 0 ? (count / maxMonthCount) * 100 : 0}px`}></div>
+          <div class="bar-label">{monthNames[i]}</div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Internal Linking -->
+    <h2 class="section-title">Posts with Zero Inbound Links</h2>
+    <p class="hint">These posts are not linked from any other post. Internal links improve crawlability and distribute page authority.</p>
+    <ul class="link-list">
+      {noInboundLinks.map(p => (
+        <li><a href={`/${getSlug(p)}/`}>{p.data.title}</a></li>
+      ))}
+    </ul>
+
+    <!-- Stale Content -->
+    <h2 class="section-title">Stale Content ({staleContent.length} posts older than 3 years, never revised)</h2>
+    <p class="hint">Updating old content with fresh info and a <code>lastRevision</code> date signals freshness to search engines.</p>
+    <ul class="link-list">
+      {staleContent.slice(0, 20).map(p => (
+        <li>
+          <a href={`/${getSlug(p)}/`}>{p.data.title}</a>
+          <span class="date-badge">{new Date(p.data.date).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+</BaseLayout>
+
+<style>
+  .gate { text-align: center; padding-top: 4rem; }
+  .gate input { padding: 0.6rem 1rem; border: 1px solid var(--color-border); border-radius: 4px; background: var(--color-surface); color: var(--color-text); font-size: 1rem; margin-right: 0.5rem; }
+  .gate button { padding: 0.6rem 1.5rem; background: var(--color-primary); color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 1rem; }
+  .error { color: var(--color-error); font-size: 0.85rem; }
+  #admin-dashboard { max-width: 960px; margin: 0 auto; }
+  h1 { margin-bottom: 1rem; }
+  .section-title { font-size: 1rem; margin-top: 2.5rem; margin-bottom: 0.75rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--color-border); }
+
+  /* Tracker */
+  .tracker-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+  .tracker-header h1 { margin: 0; }
+  .tracker-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; margin-bottom: 1.5rem; }
+  @media (min-width: 640px) { .tracker-grid { grid-template-columns: repeat(5, 1fr); } }
+  .tracker-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 10px; padding: 1rem; text-align: center; position: relative; overflow: hidden; }
+  .tracker-card.ok { border-color: #16a34a; }
+  .tracker-card.warn { border-color: #f59e0b; }
+  .tracker-card.urgent { border-color: var(--color-error); }
+  .tracker-card.ok::before, .tracker-card.warn::before, .tracker-card.urgent::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; }
+  .tracker-card.ok::before { background: #16a34a; }
+  .tracker-card.warn::before { background: #f59e0b; }
+  .tracker-card.urgent::before { background: var(--color-error); }
+  .tracker-value { font-size: 2rem; font-weight: 700; color: var(--color-strong); line-height: 1; }
+  .tracker-unit { font-size: 0.9rem; font-weight: 400; color: var(--color-text-subtle); }
+  .tracker-label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-subtle); margin-top: 0.4rem; }
+  .tracker-hint { font-size: 0.7rem; color: var(--color-text-subtle); margin-top: 0.3rem; font-style: italic; }
+  .tracker-progress { height: 4px; background: var(--color-border); border-radius: 2px; margin-top: 0.5rem; overflow: hidden; }
+  .tracker-progress-fill { height: 100%; background: #16a34a; border-radius: 2px; }
+  .tracker-card.warn .tracker-progress-fill { background: #f59e0b; }
+
+  /* Heatmap */
+  .heatmap-scroll { overflow-x: auto; }
+  .heatmap { display: flex; gap: 3px; min-width: max-content; padding-bottom: 0.25rem; }
+  .heatmap-col { display: flex; flex-direction: column; align-items: center; gap: 3px; }
+  .heatmap-cell { width: 24px; height: 24px; border-radius: 3px; border: 1px solid var(--color-border); }
+  .heat-0 { background: var(--color-surface); }
+  .heat-1 { background: rgba(171, 47, 247, 0.25); border-color: rgba(171, 47, 247, 0.3); }
+  .heat-2 { background: rgba(171, 47, 247, 0.55); border-color: rgba(171, 47, 247, 0.6); }
+  .heat-3 { background: var(--color-primary); border-color: var(--color-primary); }
+  .heatmap-label { font-size: 0.45rem; color: var(--color-text-subtle); writing-mode: vertical-rl; transform: rotate(180deg); height: 36px; overflow: hidden; }
+  .heatmap-legend { display: flex; align-items: center; gap: 3px; margin-top: 0.5rem; justify-content: flex-end; }
+  .heatmap-legend-label { font-size: 0.65rem; color: var(--color-text-subtle); }
+  .legend-cell { width: 14px; height: 14px; }
+
+  /* Notification controls */
+  .notif-btn { padding: 0.45rem 1rem; background: var(--color-primary); color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 0.8rem; white-space: nowrap; }
+  .notif-btn.active { background: #16a34a; }
+  .notif-panel { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 10px; padding: 1.25rem; margin-bottom: 2rem; }
+  .notif-panel h3 { margin: 0 0 0.5rem; font-size: 0.95rem; }
+  .notif-options { display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap; margin-top: 0.75rem; }
+  .notif-options label { font-size: 0.85rem; display: flex; align-items: center; gap: 0.4rem; }
+  .notif-options select { padding: 0.3rem 0.5rem; border: 1px solid var(--color-border); border-radius: 4px; background: var(--color-bg); color: var(--color-text); font-size: 0.85rem; margin-left: 0.3rem; }
+  .notif-toggle-label { cursor: pointer; }
+  .notif-status { font-size: 0.78rem; color: var(--color-text-subtle); margin-top: 0.5rem; margin-bottom: 0; padding: 0; }
+
+  /* Stat cards */
+  .stat-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+  @media (min-width: 540px) { .stat-grid { grid-template-columns: repeat(4, 1fr); } }
+  .stat-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 8px; padding: 1rem; text-align: center; }
+  .stat-card.warn .stat-value { color: var(--color-error); }
+  .stat-value { font-size: 1.75rem; font-weight: 700; color: var(--color-strong); }
+  .stat-value-sm { font-size: 0.9rem; }
+  .stat-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-subtle); margin-top: 0.25rem; }
+
+  /* Checklist */
+  .checklist { list-style: none; padding: 0; }
+  .checklist li { display: flex; align-items: flex-start; gap: 0.6rem; padding: 0.5rem 0; border-bottom: 1px solid var(--color-border); margin: 0; font-size: 0.9rem; }
+  .check-icon { font-size: 1rem; flex-shrink: 0; width: 1.2rem; text-align: center; }
+  .check-ok .check-icon { color: #16a34a; }
+  .check-warn .check-icon { color: var(--color-error); }
+  .check-detail { display: block; font-size: 0.78rem; color: var(--color-text-subtle); margin-top: 0.1rem; }
+
+  /* Table */
+  .table-wrap { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+  th { text-align: left; padding: 0.5rem 0.4rem; border-bottom: 2px solid var(--color-border); color: var(--color-text-subtle); font-weight: 600; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 0.03em; }
+  td { padding: 0.45rem 0.4rem; border-bottom: 1px solid var(--color-border); }
+  td a { color: var(--color-primary); }
+  .cell-warn { color: var(--color-error); font-weight: 600; }
+
+  /* Bar chart */
+  .chart-scroll { overflow-x: auto; }
+  .bar-chart { display: flex; align-items: flex-end; gap: 2px; min-width: max-content; padding-bottom: 0.5rem; }
+  .bar-chart.compact { min-width: 0; }
+  .bar-col { display: flex; flex-direction: column; align-items: center; min-width: 42px; }
+  .bar { width: 28px; background: var(--color-primary); border-radius: 3px 3px 0 0; min-height: 2px; }
+  .bar-value { font-size: 0.65rem; color: var(--color-text-subtle); margin-bottom: 2px; min-height: 1em; }
+  .bar-label { font-size: 0.55rem; color: var(--color-text-subtle); margin-top: 4px; text-align: center; white-space: pre-line; }
+
+  /* Horizontal bars */
+  .h-bars { display: flex; flex-direction: column; gap: 0.3rem; }
+  .h-bar-row { display: flex; align-items: center; gap: 0.5rem; }
+  .h-bar-label { width: 140px; font-size: 0.78rem; color: var(--color-text); text-align: right; flex-shrink: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .h-bar-track { flex: 1; height: 18px; background: var(--color-surface); border-radius: 3px; overflow: hidden; }
+  .h-bar-fill { height: 100%; background: var(--color-primary); border-radius: 3px; min-width: 2px; }
+  .h-bar-count { font-size: 0.72rem; color: var(--color-text-subtle); width: 24px; flex-shrink: 0; }
+
+  /* Lists */
+  .link-list { padding: 0; }
+  .link-list li { font-size: 0.85rem; margin-top: 0.4rem; list-style: none; display: flex; align-items: center; gap: 0.5rem; }
+  .link-list a { color: var(--color-primary); }
+  .date-badge { font-size: 0.7rem; color: var(--color-text-subtle); background: var(--color-surface); padding: 0.1rem 0.5rem; border-radius: 3px; }
+  .hint { font-size: 0.8rem; color: var(--color-text-subtle); margin-bottom: 0.75rem; }
+  .orphan-list { font-style: italic; }
+</style>
+
+<script is:inline>
+  var ADMIN_KEY = 'm4x-admin-2026';
+
+  function checkAccess() {
+    var params = new URLSearchParams(window.location.search);
+    if (params.get('key') === ADMIN_KEY) { grant(); return; }
+    if (sessionStorage.getItem('admin_granted') === '1') { grant(); return; }
+  }
+
+  function grant() {
+    document.getElementById('admin-gate').style.display = 'none';
+    document.getElementById('admin-dashboard').style.display = 'block';
+    sessionStorage.setItem('admin_granted', '1');
+    initNotifications();
+  }
+
+  document.getElementById('key-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    if (document.getElementById('key-input').value === ADMIN_KEY) { grant(); }
+    else { document.getElementById('gate-error').hidden = false; }
+  });
+
+  function initNotifications() {
+    var el = document.getElementById('admin-data');
+    var DAYS_SINCE = parseInt(el.dataset.daysSince, 10);
+    var btn = document.getElementById('notif-btn');
+    var panel = document.getElementById('notif-panel');
+    var checkbox = document.getElementById('notif-enabled');
+    var intervalSel = document.getElementById('notif-interval');
+    var status = document.getElementById('notif-status');
+
+    var prefs = JSON.parse(localStorage.getItem('m4x_notif_prefs') || '{}');
+    var enabled = prefs.enabled || false;
+    var interval = prefs.interval || 7;
+    checkbox.checked = enabled;
+    intervalSel.value = String(interval);
+    updateBtn(enabled);
+
+    btn.addEventListener('click', function() { panel.hidden = !panel.hidden; });
+
+    checkbox.addEventListener('change', function() {
+      if (checkbox.checked) {
+        if (!('Notification' in window)) { status.textContent = 'Browser does not support notifications.'; checkbox.checked = false; return; }
+        if (Notification.permission === 'granted') { enable(); }
+        else if (Notification.permission === 'denied') { status.textContent = 'Notifications blocked. Allow in browser settings.'; checkbox.checked = false; }
+        else { Notification.requestPermission().then(function(p) { if (p === 'granted') { enable(); } else { status.textContent = 'Permission denied.'; checkbox.checked = false; } }); }
+      } else { disable(); }
+    });
+
+    intervalSel.addEventListener('change', function() {
+      interval = parseInt(intervalSel.value, 10);
+      save();
+      if (enabled) status.textContent = 'Reminder: notify if no post in ' + interval + ' days.';
+    });
+
+    function enable() { enabled = true; save(); updateBtn(true); status.textContent = 'Reminders on! Notification when ' + interval + '+ days since last post.'; fireIfNeeded(); }
+    function disable() { enabled = false; save(); updateBtn(false); status.textContent = 'Reminders off.'; }
+    function save() { localStorage.setItem('m4x_notif_prefs', JSON.stringify({ enabled: enabled, interval: interval })); }
+    function updateBtn(on) { btn.textContent = on ? 'Reminders On' : 'Enable Reminders'; btn.className = on ? 'notif-btn active' : 'notif-btn'; }
+
+    function fireIfNeeded() {
+      if (!enabled || DAYS_SINCE < interval) {
+        if (DAYS_SINCE < interval) status.textContent = 'On track! Last post ' + DAYS_SINCE + ' day(s) ago.';
+        return;
+      }
+      var lastNotif = localStorage.getItem('m4x_last_notif');
+      var today = new Date().toDateString();
+      if (lastNotif === today) return;
+      localStorage.setItem('m4x_last_notif', today);
+      if (Notification.permission === 'granted') {
+        var n = new Notification(DAYS_SINCE + ' days since your last post!', { body: 'Time to write. Goal: 1 post/week.', icon: '/favicon.svg', tag: 'm4x-reminder' });
+        n.onclick = function() { window.focus(); n.close(); };
+      }
+      status.textContent = 'Reminder sent! ' + DAYS_SINCE + ' days since last post.';
+    }
+
+    if (enabled && Notification.permission === 'granted') { fireIfNeeded(); }
+    else if (enabled) { status.textContent = 'Notifications enabled but permission not granted.'; checkbox.checked = false; enabled = false; save(); updateBtn(false); }
+  }
+
+  checkAccess();
+</script>

@@ -52,6 +52,7 @@ function getSlug(p: any) {
   next={next}
   readingTime={readingTime}
   slug={post.id}
+  featuredImage={post.data.featuredImage ? `/images/posts/${post.data.featuredImage}` : undefined}
 >
   <Content />
 </PostLayout>

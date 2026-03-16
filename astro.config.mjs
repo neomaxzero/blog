@@ -4,7 +4,12 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://blog.m4x.io',
-  integrations: [mdx(), sitemap()],
+  integrations: [
+    mdx(),
+    sitemap({
+      filter: (page) => !page.includes('/admin'),
+    }),
+  ],
   markdown: {
     shikiConfig: {
       themes: {

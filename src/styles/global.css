@@ -44,9 +44,9 @@
 }
 
 :root {
-  --color-primary: #ab2ff7;
-  --color-primary-16: rgba(171, 47, 247, 0.16);
-  --color-primary-over-text: #9529d8;
+  --color-primary: #18181B;
+  --color-primary-16: rgba(24, 24, 27, 0.08);
+  --color-primary-over-text: #27272A;
   --color-error: #FF431A;
   --color-bg: white;
   --color-bg-70: #ffffffa6;
@@ -60,6 +60,9 @@
 }
 
 html.dark {
+  --color-primary: #E4E4E7;
+  --color-primary-16: rgba(228, 228, 231, 0.1);
+  --color-primary-over-text: #D4D4D8;
   --color-bg: #111827;
   --color-bg-70: #000000a6;
   --color-text: #F3F4F6;
@@ -88,11 +91,27 @@ body {
 
 h1, h2, h3, h4, strong {
   color: var(--color-strong);
-  font-weight: 700;
+  font-weight: 600;
 }
 
 h1 {
-  letter-spacing: -0.055em;
+  letter-spacing: -0.03em;
+  font-size: 1.75rem;
+  line-height: 1.3;
+}
+
+h2 {
+  font-size: 1.3rem;
+  letter-spacing: -0.02em;
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+h3 {
+  font-size: 1.1rem;
+  letter-spacing: -0.01em;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
 }
 
 ul {
@@ -101,12 +120,12 @@ ul {
 
 li {
   list-style-type: none;
-  font-size: 18px;
-  line-height: 26px;
+  font-size: 1rem;
+  line-height: 1.75;
 }
 
 li:not(:first-child) {
-  margin-top: 0.8rem;
+  margin-top: 0.4rem;
 }
 
 a {
@@ -119,9 +138,10 @@ a:visited {
 }
 
 p {
-  font-size: 18px;
-  line-height: 26px;
-  padding-bottom: 16px;
+  font-size: 1rem;
+  line-height: 1.75;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0;
 }
 
 /* Article content styles */

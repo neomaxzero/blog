@@ -5,6 +5,7 @@ topic: 'personal'
 tags: ['personal', 'career', 'thoughts']
 description: 'A couple of months into job hunting, a snapshot of someone figuring things out in the middle of a strange moment in the industry.'
 lang: 'en'
+featuredImage: '2026-a2.jpg'
 ---
 
 A couple of months into job hunting, I wake up every Monday with mixed feelings.

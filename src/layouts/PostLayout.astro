@@ -43,12 +43,18 @@ const formattedDate = new Date(date).toLocaleDateString('en-GB', {
   <article>
     <h1>{title}</h1>
     <div class="post-meta">
-      By <a href="/about">Maxi</a> | <time datetime={date}>{formattedDate}</time> | {readingTime} min read
+      By <a href="/about">Maxi</a> · <time datetime={date}>{formattedDate}</time> · {readingTime} min read
     </div>
 
     {tags.length > 0 && (
       <div class="tags">
         {tags.map((tag) => <TagBadge tag={tag} />)}
+      </div>
+    )}
+
+    {featuredImage && (
+      <div class="featured-image">
+        <img src={featuredImage} alt={title} />
       </div>
     )}
 
@@ -83,9 +89,9 @@ const formattedDate = new Date(date).toLocaleDateString('en-GB', {
     margin-bottom: 0.5rem;
   }
   .post-meta {
-    font-size: 0.8rem;
-    color: var(--color-text);
-    text-align: center;
+    font-size: 0.75rem;
+    color: var(--color-text-subtle);
+    text-align: left;
     margin-bottom: 1rem;
   }
   .post-meta a {
@@ -93,6 +99,13 @@ const formattedDate = new Date(date).toLocaleDateString('en-GB', {
   }
   .tags {
     margin: 1.125rem 0;
+  }
+  .featured-image {
+    margin: 1.5rem 0;
+  }
+  .featured-image img {
+    width: 100%;
+    border-radius: 8px;
   }
   .content {
     margin-top: 1rem;

@@ -1,50 +1,34 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
-<BaseLayout title="About" description="About Maxi - Frontend, Performance, React, Javascript">
+<BaseLayout title="About" description="About Maxi - Frontend Engineer turned Founder">
   <h1>About</h1>
   <p>
-    I'm Maxi. A friend, writer, reader. In that order. I spend the majority of
-    my day thinking about frontend and a little bit of it actually
-    frontending. I'm from Argentina and currently living in the Netherlands.
+    I'm Maxi. I'm an Argentinian 🇦🇷, and currently living in the Netherlands 🇳🇱.
   </p>
   <div class="image-wrapper">
-    <img src="/images/posts/maxi.jpg" alt="Maxi" class="about-img" width="400" height="400" loading="eager" decoding="async" />
+    <img src="/images/posts/maxi-2025.jpg" alt="Maxi" class="about-img" width="400" height="400" loading="eager" decoding="async" />
   </div>
-  <h2>What do I do?</h2>
-  <ul>
-    <li>- Spend time with people I love</li>
-    <li>- Frontend & Chill</li>
-    <li>- Video-games</li>
-    <li>- <a href="https://500px.com/neomaxzero" target="_blank" rel="noopener noreferrer">Photography</a></li>
-    <li>- Read books</li>
-    <li>- Building an IT community for readers: <a href="https://pugmark.io/?ref=blog-maxi" target="_blank" rel="noopener noreferrer">pugmark</a></li>
-    <li><a href="https://www.github.com/neomaxzero/" target="_blank" rel="noopener noreferrer">- Open source</a></li>
-  </ul>
+
   <h2>What is this blog about?</h2>
   <p>
-    I write mostly about <strong>frontend</strong>. Sometimes you will also
-    encounter some reviews about books and I ocasionally spend some time open
-    sourcing small libraries I think you might like.
+    I started my career as a fullstack engineer but quickly gravitated towards building interfaces, because I'm utterly curious about the psychology of what makes websites appealing and useful. Over the years I spent significant time thinking about what makes digital products succeed, with the quiet ambition of pouring all of that knowledge into products of my own.
   </p>
   <p>
-    I like reflecting on things while writing. I feel sharing It's a risk I'm
-    willing to take. It is thrilling and at the same time rewarding to put
-    things live when you always feel like it's not good enough. I hope that
-    while refining my thoughts, we can help each other become a better version
-    of ourselves.
+    I'm also a founder of many failed projects. Throughout the last 10 years I've attempted several times to create something that sticks. In the process I learned a lot about what kills products, and slowly, a couple of things started mildly working. Mostly because of the great partners I work with.
   </p>
   <p>
-    Writing is relaxing when you decide not to pay too much attention to
-    details that could prevent you from sharing some content. I'm sorry, a
-    little bit, about sometimes being off and hard to understand. I would love
-    you to message me if you feel like it.
+    This blog follows my transition from IC to founder, in the middle of the most disruptive moment our industry has seen. I write about what I'm building, what's failing, what AI tooling actually feels like from the inside, and the honest version of what it takes to make the leap.
   </p>
-  <h2>What if I have more questions?</h2>
+  <p>
+    If you're a frontend engineer sitting on ideas and wondering if this is your moment too, you're in the right place.
+  </p>
+
+  <h2>Want to talk?</h2>
   <p>I have a 100% reply ratio if you want to know more.</p>
   <ul>
-    <li><a href="https://www.linkedin.com/in/neomaxzero/" target="_blank" rel="noopener noreferrer">Linkedin</a></li>
-    <li><a href="https://www.github.com/neomaxzero/" target="_blank" rel="noopener noreferrer">github</a></li>
+    <li><a href="https://www.linkedin.com/in/neomaxzero/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+    <li><a href="https://www.github.com/neomaxzero/" target="_blank" rel="noopener noreferrer">GitHub</a></li>
     <li><a href="mailto:maxicespedes7@hotmail.com">maxicespedes7@hotmail.com</a></li>
   </ul>
 </BaseLayout>
@@ -63,6 +47,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   }
   .about-img {
     width: 100%;
+    height: auto;
+    object-fit: cover;
     display: block;
   }
   a {

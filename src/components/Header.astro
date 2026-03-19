@@ -5,9 +5,9 @@ import ThemeToggle from './ThemeToggle.astro';
   <div class="header-inner">
     <div class="header-content">
       <div>
-        <a href="/">
-          <span class="logo">m4x</span>
-          <span class="logo-sub">blog</span>
+        <a href="/" class="logo-link">
+          <img src="/logo.svg" alt="m4x blog" class="logo" />
+          <span class="logo-text">m4x</span>
         </a>
       </div>
       <nav>
@@ -41,16 +41,23 @@ import ThemeToggle from './ThemeToggle.astro';
     align-items: center;
     padding: 0.8rem 0;
   }
-  .logo {
-    font-weight: 700;
-    font-size: 1.25rem;
-    color: var(--color-strong);
+  .logo-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
   }
-  .logo-sub {
-    font-weight: 300;
+  .logo {
+    height: 28px;
+    width: auto;
+  }
+  .logo-text {
     font-size: 0.8rem;
+    font-weight: 300;
     color: var(--color-text-subtle);
-    margin-left: 0.2rem;
+    letter-spacing: 0.02em;
+  }
+  :global(html.dark) .logo {
+    filter: invert(1);
   }
   nav {
     display: flex;
@@ -58,8 +65,8 @@ import ThemeToggle from './ThemeToggle.astro';
     gap: 0.8rem;
   }
   .nav-link {
-    font-size: 0.9rem;
-    color: var(--color-text);
+    font-size: 0.8rem;
+    color: var(--color-text-subtle);
   }
   .nav-link:hover {
     color: var(--color-primary);

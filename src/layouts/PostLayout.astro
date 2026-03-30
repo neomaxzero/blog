@@ -128,6 +128,8 @@ const canonicalTags = getCanonicalTags(tags);
   .featured-image img {
     width: 100%;
     border-radius: 8px;
+    display: block;
+    margin: 0 auto;
   }
   .content {
     margin-top: 1rem;
@@ -149,5 +151,11 @@ const canonicalTags = getCanonicalTags(tags);
   }
   .suggest-link:hover {
     text-decoration: underline;
+  }
+
+  @media (min-width: 900px) {
+    .featured-image img {
+      width: min(86%, 760px);
+    }
   }
 </style>

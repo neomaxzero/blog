@@ -37,26 +37,29 @@ const remaining = rest.filter((p) => !featuredIds.has(p.id));
   title="Frontend Engineering Blog by Maxi Cespedes"
   description="Frontend engineering essays and practical notes on React, performance, architecture, testing, SEO, and AI-era product work."
 >
-  <section class="intro-section">
-    <p class="eyebrow">Frontend engineering by Maxi Cespedes</p>
-    <h1 class="page-title">Opinionated frontend writing for engineers who care about product, performance, and the AI-era workflow.</h1>
-    <p class="page-intro">
-      Essays and practical notes on React, UI performance, frontend architecture, testing, SEO, and how the job is shifting as AI changes the shape of software work.
-    </p>
-  </section>
+  <section class="hero-shell">
+    <section class="intro-section">
+      <p class="eyebrow">Frontend engineering by Maxi Cespedes</p>
+      <h1 class="page-title">Frontend notes on product, performance, and craft.</h1>
+      <p class="page-intro">
+        Essays and practical notes on React, frontend architecture, performance, testing, and the shape of modern product work.
+      </p>
+    </section>
 
-  <!-- Hero -->
-  <section class="hero-section">
-    <HeroPost
-      title={hero.data.title}
-      date={hero.data.date}
-      subtitle={hero.data.subtitle}
-      description={hero.data.description}
-      slug={getPostSlug(hero)}
-      featuredImage={hero.data.featuredImage && hero.data.featuredImage.trim() !== '' ? hero.data.featuredImage : undefined}
-      topic={hero.data.topic}
-      readingTime={getReadingTime(hero)}
-    />
+    <!-- Hero -->
+    <section class="hero-section">
+      <HeroPost
+        title={hero.data.title}
+        date={hero.data.date}
+        subtitle={hero.data.subtitle}
+        description={hero.data.description}
+        slug={getPostSlug(hero)}
+        featuredImage={hero.data.featuredImage && hero.data.featuredImage.trim() !== '' ? hero.data.featuredImage : undefined}
+        topic={hero.data.topic}
+        readingTime={getReadingTime(hero)}
+        variant="editorial"
+      />
+    </section>
   </section>
 
   <!-- Featured with images -->
@@ -98,9 +101,15 @@ const remaining = rest.filter((p) => !featuredIds.has(p.id));
 </BaseLayout>
 
 <style>
+  .hero-shell {
+    margin: 0 0 2.75rem;
+    padding: 0;
+  }
+
   .intro-section {
-    margin: 1rem 0 2rem;
-    max-width: 58rem;
+    margin: 0 0 1.2rem;
+    max-width: 56rem;
+    padding: 0;
   }
   .eyebrow {
     font-size: 0.72rem;
@@ -113,16 +122,18 @@ const remaining = rest.filter((p) => !featuredIds.has(p.id));
     font-size: clamp(2rem, 5vw, 3.4rem);
     line-height: 1.05;
     letter-spacing: -0.05em;
-    margin-bottom: 0.9rem;
-    max-width: 18ch;
+    margin-bottom: 0.7rem;
+    max-width: 16ch;
   }
   .page-intro {
-    max-width: 70ch;
+    max-width: 58ch;
     color: var(--color-text-subtle);
-    font-size: 1rem;
+    font-size: 0.98rem;
+    margin-bottom: 0;
   }
   .hero-section {
     margin-top: 0;
+    padding: 0;
   }
   .section-label {
     font-size: 0.7rem;
@@ -141,12 +152,35 @@ const remaining = rest.filter((p) => !featuredIds.has(p.id));
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.25rem;
+    opacity: 0.92;
   }
   @media (min-width: 540px) {
     .featured-grid {
       grid-template-columns: repeat(2, 1fr);
     }
   }
+
+  @media (min-width: 900px) {
+    .intro-section {
+      max-width: 52rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .page-title {
+      max-width: 18ch;
+    }
+
+    .page-intro {
+      max-width: 62ch;
+    }
+  }
+
+  @media (max-width: 599px) {
+    .intro-section {
+      margin-bottom: 1rem;
+    }
+  }
+
   .list-section {
     margin-bottom: 2rem;
   }

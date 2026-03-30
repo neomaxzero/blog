@@ -3,9 +3,12 @@ title: 'React Testing Library: On How To Assert Visibility'
 subtitle: 'QueryByTestId'
 date: '2021-10-15'
 topic: 'testing'
-tags: ['react']
+tags: ['react', 'testing']
 description: 'There are times where you want to assert that an element is not there. This is useful in cases where your component has specific logic that will make it "disappear".'
+seoTitle: 'React Testing Library: How to Assert Element Visibility'
+seoDescription: 'Learn how to assert visibility and absence with React Testing Library using query methods and DOM class checks.'
 lang: 'en'
+updatedDate: '2026-03-27'
 ---
 
 There are times where you want to assert that an element is not there. This is useful in cases where your component has specific logic that will make it "disappear".  There are two ways in which a component won't be displayed on the screen: The DOM element is not there or CSS classes were applied. Let's see how to test each scenario

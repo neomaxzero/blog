@@ -5,8 +5,10 @@ date: '2020-08-16'
 topic: 'performance'
 tags: ['performance', 'fonts']
 description: 'I was checking some performance audit tools and a common sign that every tool was giving was that the way I was requesting the fonts was hurting the speed.'
+seoTitle: 'How to Optimize Web Fonts for Better UX and Frontend Performance'
+seoDescription: 'A frontend performance guide to self-hosting fonts, choosing font-display strategies, and reducing the UX cost of slow font loading.'
 lang: 'en'
-featureImage: ''
+updatedDate: '2026-03-27'
 ---
 
 Lately, I have been interested in improving the speed of my blog. The main reason why I wanted to do that was because I love seeing the content instantly. I was checking some performance audit tools and a common sign that every tool was giving was that the way I was requesting the fonts was hurting the speed of my site.

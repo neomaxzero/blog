@@ -2,11 +2,14 @@
 title: 'A few words on SEO for client-side rendered apps'
 subtitle: 'How does SEO work with Single page applications?'
 date: '2020-07-16'
-topic: 'dev-blog'
-tags: ['seo', 'dev thoughts']
+topic: 'frontend SEO'
+tags: ['seo', 'frontend']
 description: 'How does SEO work with Single page applications?'
+seoTitle: 'SEO for Client-Side Rendered Apps: What Frontend Engineers Should Know'
+seoDescription: 'An explanation of how SEO works for client-side rendered apps, why rendering queues matter, and when SSR or pre-rendering becomes worth it.'
 lang: 'en'
 featuredImage: ''
+updatedDate: '2026-03-27'
 ---
 
 SEO and server-side rendering (SSR) work well together. Every search engine started by optimizing this technique.

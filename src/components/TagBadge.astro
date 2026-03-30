@@ -1,15 +1,14 @@
 ---
+import { getCanonicalTag } from '../utils/taxonomy.mjs';
+
 interface Props {
   tag: string;
 }
 
 const { tag } = Astro.props;
-
-function kebabCase(str: string) {
-  return str.replace(/[A-Z\u00C0-\u00D6\u00D8-\u00DE]/g, (match) => '-' + match.toLowerCase());
-}
+const canonicalTag = getCanonicalTag(tag);
 ---
-<a href={`/tags/${kebabCase(tag)}/`} class="tag-badge">{tag}</a>
+<a href={`/tags/${canonicalTag.slug}/`} class="tag-badge">{canonicalTag.label}</a>
 
 <style>
   .tag-badge {

@@ -1,6 +1,7 @@
 ---
 import PostLayout from '../layouts/PostLayout.astro';
 import { getCollection, render } from 'astro:content';
+import { getCanonicalTags } from '../utils/taxonomy.mjs';
 
 export async function getStaticPaths() {
   const posts = await getCollection('posts');
@@ -40,16 +41,48 @@ function getSlug(p: any) {
   const lang = p.data.lang;
   return lang === 'es' ? `es/${p.id}` : p.id;
 }
+
+const currentTags = getCanonicalTags(post.data.tags || []).map((tag) => tag.slug);
+const currentTopic = (post.data.topic || '').toLowerCase();
+const allPosts = await getCollection('posts');
+
+const relatedPosts = allPosts
+  .filter((candidate) => candidate.id !== post.id && candidate.data.lang === post.data.lang)
+  .map((candidate) => {
+    const candidateTags = getCanonicalTags(candidate.data.tags || []).map((tag) => tag.slug);
+    const sharedTags = candidateTags.filter((tag) => currentTags.includes(tag)).length;
+    const topicScore =
+      currentTopic &&
+      candidate.data.topic &&
+      candidate.data.topic.toLowerCase() === currentTopic
+        ? 1
+        : 0;
+
+    return {
+      slug: getSlug(candidate),
+      title: candidate.data.title,
+      description: candidate.data.seoDescription || candidate.data.description || candidate.data.subtitle,
+      score: sharedTags * 3 + topicScore,
+      date: new Date(candidate.data.date).getTime(),
+    };
+  })
+  .filter((candidate) => candidate.score > 0)
+  .sort((a, b) => b.score - a.score || b.date - a.date)
+  .slice(0, 3);
 ---
 <PostLayout
   title={post.data.title}
   date={post.data.date}
   description={post.data.description}
+  seoTitle={post.data.seoTitle}
+  seoDescription={post.data.seoDescription}
   tags={post.data.tags}
   lang={post.data.lang}
   lastRevision={post.data.lastRevision}
+  updatedDate={post.data.updatedDate}
   previous={previous}
   next={next}
+  relatedPosts={relatedPosts}
   readingTime={readingTime}
   slug={post.id}
   featuredImage={post.data.featuredImage ? `/images/posts/${post.data.featuredImage}` : undefined}

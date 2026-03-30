@@ -33,7 +33,18 @@ const featuredIds = new Set(featured.map((p) => p.id));
 // Remaining posts (everything else except hero and featured)
 const remaining = rest.filter((p) => !featuredIds.has(p.id));
 ---
-<BaseLayout title="Latest articles">
+<BaseLayout
+  title="Frontend Engineering Blog by Maxi Cespedes"
+  description="Frontend engineering essays and practical notes on React, performance, architecture, testing, SEO, and AI-era product work."
+>
+  <section class="intro-section">
+    <p class="eyebrow">Frontend engineering by Maxi Cespedes</p>
+    <h1 class="page-title">Opinionated frontend writing for engineers who care about product, performance, and the AI-era workflow.</h1>
+    <p class="page-intro">
+      Essays and practical notes on React, UI performance, frontend architecture, testing, SEO, and how the job is shifting as AI changes the shape of software work.
+    </p>
+  </section>
+
   <!-- Hero -->
   <section class="hero-section">
     <HeroPost
@@ -87,8 +98,31 @@ const remaining = rest.filter((p) => !featuredIds.has(p.id));
 </BaseLayout>
 
 <style>
+  .intro-section {
+    margin: 1rem 0 2rem;
+    max-width: 58rem;
+  }
+  .eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-text-subtle);
+    margin-bottom: 0.5rem;
+  }
+  .page-title {
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.05;
+    letter-spacing: -0.05em;
+    margin-bottom: 0.9rem;
+    max-width: 18ch;
+  }
+  .page-intro {
+    max-width: 70ch;
+    color: var(--color-text-subtle);
+    font-size: 1rem;
+  }
   .hero-section {
-    margin-top: 1rem;
+    margin-top: 0;
   }
   .section-label {
     font-size: 0.7rem;

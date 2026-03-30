@@ -9,12 +9,24 @@ interface Props {
   description?: string;
   type?: 'website' | 'article';
   publishedDate?: string;
+  updatedDate?: string;
   lang?: string;
   noindex?: boolean;
   image?: string;
+  tags?: string[];
 }
 
-const { title, description, type, publishedDate, lang = 'en', noindex = false, image } = Astro.props;
+const {
+  title,
+  description,
+  type,
+  publishedDate,
+  updatedDate,
+  lang = 'en',
+  noindex = false,
+  image,
+  tags = [],
+} = Astro.props;
 ---
 <!doctype html>
 <html lang={lang}>
@@ -24,10 +36,12 @@ const { title, description, type, publishedDate, lang = 'en', noindex = false, i
       description={description}
       type={type}
       publishedDate={publishedDate}
+      updatedDate={updatedDate}
       lang={lang}
       image={image}
+      tags={tags}
+      noindex={noindex}
     />
-    {noindex && <meta name="robots" content="noindex, nofollow" />}
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-3NCYQQ6YEJ" is:inline></script>
     <script is:inline>
       window.dataLayer = window.dataLayer || [];

@@ -5,18 +5,24 @@ interface Props {
   canonicalURL?: string;
   type?: 'website' | 'article';
   publishedDate?: string;
+  updatedDate?: string;
   lang?: string;
   image?: string;
+  tags?: string[];
+  noindex?: boolean;
 }
 
 const {
   title,
-  description = 'Another day to Frontend, Performance, React, Javascript',
+  description = 'Frontend engineering essays and practical notes on React, performance, architecture, testing, and AI-era product work by Maxi Cespedes.',
   canonicalURL = Astro.url.href,
   type = 'website',
   publishedDate,
+  updatedDate,
   lang = 'en',
   image,
+  tags = [],
+  noindex = false,
 } = Astro.props;
 
 const ogImage = image
@@ -24,40 +30,82 @@ const ogImage = image
   : new URL('/images/posts/maxi.jpg', Astro.site).href;
 const twitterCardType = image ? 'summary_large_image' : 'summary';
 
-const siteName = 'm4x blog';
-const fullTitle = `${title} | M4X`;
+const siteName = 'Maxi Cespedes';
+const siteTitle = 'Maxi Cespedes Frontend Blog';
+const fullTitle = `${title} | Maxi Cespedes`;
 
-const jsonLd = type === 'article'
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  '@id': 'https://blog.m4x.io/about#author',
+  name: 'Maxi Cespedes',
+  url: 'https://blog.m4x.io/about',
+  sameAs: [
+    'https://www.linkedin.com/in/neomaxzero/',
+    'https://github.com/neomaxzero/',
+  ],
+  jobTitle: 'Frontend Engineer',
+};
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': 'https://blog.m4x.io/#website',
+  name: siteTitle,
+  url: 'https://blog.m4x.io',
+  description,
+  inLanguage: lang,
+  author: {
+    '@id': personSchema['@id'],
+  },
+};
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: title,
+  description,
+  datePublished: publishedDate,
+  dateModified: updatedDate || publishedDate,
+  inLanguage: lang,
+  image: [ogImage],
+  keywords: tags,
+  author: {
+    '@id': personSchema['@id'],
+  },
+  publisher: {
+    '@id': personSchema['@id'],
+  },
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': canonicalURL,
+  },
+};
+
+const breadcrumbSchema = type === 'article'
   ? {
       '@context': 'https://schema.org',
-      '@type': 'Article',
-      headline: title,
-      description,
-      datePublished: publishedDate,
-      author: {
-        '@type': 'Person',
-        name: 'Maxi',
-        url: 'https://blog.m4x.io/about',
-      },
-      publisher: {
-        '@type': 'Person',
-        name: 'Maxi',
-      },
-      mainEntityOfPage: {
-        '@type': 'WebPage',
-        '@id': canonicalURL,
-      },
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: 'https://blog.m4x.io/',
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: title,
+          item: canonicalURL,
+        },
+      ],
     }
-  : {
-      '@context': 'https://schema.org',
-      '@type': 'WebSite',
-      name: siteName,
-      url: 'https://blog.m4x.io',
-      author: {
-        '@type': 'Person',
-        name: 'Maxi',
-      },
-    };
+  : null;
+
+const jsonLd = type === 'article'
+  ? [personSchema, websiteSchema, articleSchema, breadcrumbSchema].filter(Boolean)
+  : [personSchema, websiteSchema];
 ---
 
 <meta charset="utf-8" />
@@ -67,6 +115,7 @@ const jsonLd = type === 'article'
 <title>{fullTitle}</title>
 <meta name="title" content={fullTitle} />
 <meta name="description" content={description} />
+<meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow'} />
 <link rel="canonical" href={canonicalURL} />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="sitemap" href="/sitemap-index.xml" />
@@ -80,11 +129,13 @@ const jsonLd = type === 'article'
 <meta property="og:image" content={ogImage} />
 <meta property="og:site_name" content={siteName} />
 {publishedDate && <meta property="article:published_time" content={publishedDate} />}
+{updatedDate && <meta property="article:modified_time" content={updatedDate} />}
 
 <!-- Twitter -->
 <meta name="twitter:card" content={twitterCardType} />
 <meta name="twitter:title" content={fullTitle} />
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={ogImage} />
+<meta name="twitter:creator" content="@neomaxzero" />
 
 <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />

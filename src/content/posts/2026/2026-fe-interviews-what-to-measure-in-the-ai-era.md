@@ -2,10 +2,13 @@
 title: 'Frontend Interviews Should Measure Judgment, Not Memory, in the AI Era'
 date: '2026-03-26'
 topic: 'frontend hiring'
-tags: ['frontend', 'interviews', 'AI', 'hiring', 'engineering']
+tags: ['frontend', 'interviews', 'ai', 'hiring']
 description: 'A case for updating frontend interviews to measure judgment, conflict skill, adaptability, and AI-aware workflows instead of memorized coding fluency.'
+seoTitle: 'Frontend Interviews in the AI Era Should Measure Judgment, Not Memory'
+seoDescription: 'Why senior frontend interviews should evaluate judgment, conflict handling, adaptability, and AI-aware workflows instead of memorized live-coding speed.'
 lang: 'en'
 featuredImage: '2026-3.jpg'
+updatedDate: '2026-03-27'
 ---
 
 I’ve had around ten frontend interviews lately, and too many of them felt like they were designed for a job that no longer exists.

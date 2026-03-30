@@ -1,10 +1,13 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
-<BaseLayout title="About" description="About Maxi - Frontend Engineer turned Founder">
+<BaseLayout
+  title="About Maxi Cespedes"
+  description="About Maxi, a frontend engineer writing about React, performance, architecture, testing, SEO, and AI-era product work."
+>
   <h1>About</h1>
-  <p>
-    I'm Maxi. I'm an Argentinian 🇦🇷, and currently living in the Netherlands 🇳🇱.
+  <p class="lead">
+    I’m Maxi Cespedes 🇦🇷,, a frontend engineer based in the Netherlands🇳🇱. This site is where I publish opinionated writing about frontend engineering, product taste, performance, AI-assisted workflows, and the parts of software work that sit between code and judgment.
   </p>
   <div class="image-wrapper">
     <img src="/images/posts/maxi-2025.jpg" alt="Maxi" class="about-img" width="400" height="400" loading="eager" decoding="async" />
@@ -12,16 +15,21 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   <h2>What is this blog about?</h2>
   <p>
-    I started my career as a fullstack engineer but quickly gravitated towards building interfaces, because I'm utterly curious about the psychology of what makes websites appealing and useful. Over the years I spent significant time thinking about what makes digital products succeed, with the quiet ambition of pouring all of that knowledge into products of my own.
+    I started my career as a fullstack engineer but quickly gravitated toward frontend engineering, because I care deeply about how interfaces feel, how fast they behave, and how product decisions show up in the browser. Over the years I have spent a lot of time thinking about what makes digital products useful, legible, and commercially viable.
   </p>
   <p>
-    I'm also a founder of many failed projects. Throughout the last 10 years I've attempted several times to create something that sticks. In the process I learned a lot about what kills products, and slowly, a couple of things started mildly working. Mostly because of the great partners I work with.
+    The writing here sits at the intersection of React, UI performance, frontend architecture, testing, SEO, and the more political side of engineering work: priorities, tradeoffs, and the way product reality bends technical ideals.
   </p>
   <p>
-    This blog follows my transition from IC to founder, in the middle of the most disruptive moment our industry has seen. I write about what I'm building, what's failing, what AI tooling actually feels like from the inside, and the honest version of what it takes to make the leap.
+    I am also a founder of many failed projects. That matters because it changed how I think about frontend work. I care less about framework tribalism and more about whether a product is understandable, reliable, and worth using.
   </p>
   <p>
-    If you're a frontend engineer sitting on ideas and wondering if this is your moment too, you're in the right place.
+    Lately the blog also follows my transition through the AI era: what changes when agents can write code, what still requires experience, and where frontend engineers should widen their scope without losing rigor.
+  </p>
+
+  <h2>Who this is for</h2>
+  <p>
+    If you are a frontend engineer who cares about product quality, performance, architecture, testing, and the future of the role, you are in the right place.
   </p>
 
   <h2>Want to talk?</h2>
@@ -34,6 +42,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 </BaseLayout>
 
 <style>
+  .lead {
+    max-width: 68ch;
+    font-size: 1.05rem;
+    color: var(--color-text-subtle);
+  }
   .image-wrapper {
     border-radius: 10px;
     overflow: hidden;

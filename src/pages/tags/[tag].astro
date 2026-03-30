@@ -2,18 +2,15 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PostItem from '../../components/PostItem.astro';
 import { getCollection } from 'astro:content';
+import { getCanonicalTag, getCanonicalTags, isIndexableTagArchive } from '../../utils/taxonomy.mjs';
 
 export async function getStaticPaths() {
   const posts = await getCollection('posts');
 
-  function kebabCase(str: string) {
-    return str.replace(/[A-Z\u00C0-\u00D6\u00D8-\u00DE]/g, (match) => '-' + match.toLowerCase());
-  }
-
   const tagMap: Record<string, any[]> = {};
   posts.forEach((post) => {
-    (post.data.tags || []).forEach((tag: string) => {
-      const key = kebabCase(tag);
+    getCanonicalTags(post.data.tags || []).forEach((tag) => {
+      const key = tag.slug;
       if (!tagMap[key]) tagMap[key] = [];
       tagMap[key].push({ tag, post });
     });
@@ -31,13 +28,24 @@ export async function getStaticPaths() {
 }
 
 const { tag, posts } = Astro.props;
+const canonicalTag = getCanonicalTag(tag.label || tag);
+const indexable = isIndexableTagArchive(canonicalTag, posts.length);
 
 function getPostSlug(post: any) {
   return post.data.lang === 'es' ? `es/${post.id}` : post.id;
 }
 ---
-<BaseLayout title={`Tag: ${tag}`} description={`Find all the content related to ${tag}`}>
-  <h1>Tag: {tag} ({posts.length})</h1>
+<BaseLayout
+  title={`${canonicalTag.label} articles`}
+  description={`Browse ${posts.length} article${posts.length === 1 ? '' : 's'} about ${canonicalTag.label} on Maxi Cespedes' frontend engineering blog.`}
+  noindex={!indexable}
+>
+  <h1>{canonicalTag.label} ({posts.length})</h1>
+  <p class="intro">
+    {indexable
+      ? `This topic hub groups ${canonicalTag.label} articles that contribute to the core frontend knowledge base on the site.`
+      : `This archive groups ${canonicalTag.label} posts for navigation, but it is intentionally kept out of search indexing because the topic is still too small or too broad.`}
+  </p>
   <ul>
     {posts.map((post: any) => (
       <PostItem
@@ -49,3 +57,10 @@ function getPostSlug(post: any) {
     ))}
   </ul>
 </BaseLayout>
+
+<style>
+  .intro {
+    max-width: 68ch;
+    color: var(--color-text-subtle);
+  }
+</style>

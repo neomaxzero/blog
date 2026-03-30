@@ -5,9 +5,12 @@ date: '2020-11-22'
 topic: 'Performance'
 tags: ['performance']
 description: 'The list of metrics the browser provides is longer than what I thought and hopefully I can summarise in here what they represent. TLDR; Web-core-vitals.'
+seoTitle: 'Frontend Performance Metrics Explained: A Curated Guide'
+seoDescription: 'A practical frontend performance guide to TTFB, FCP, LCP, TTI, CLS, and the metrics that matter when you want a faster website.'
 lang: 'en'
 featuredImage: 'performance-ui-metrics-list.png'
 hideImgTitle: false
+updatedDate: '2026-03-27'
 ---
 
 Your site is slow and you want to make it faster. You go out there and start gathering a list of available UI metrics that could help you in this endeavor. A few moments later you are overwhelm. The list of metrics the browser provides is longer than what you thought. I've been there and because of that I've made this cheatsheet to summarise what they represent.

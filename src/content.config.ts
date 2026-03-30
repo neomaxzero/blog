@@ -12,8 +12,11 @@ const posts = defineCollection({
     subtitle: z.string().optional(),
     lang: z.string().optional(),
     featuredImage: z.string().optional(),
+    seoTitle: z.string().optional(),
+    seoDescription: z.string().optional(),
     hideImgTitle: z.boolean().optional(),
     lastRevision: z.string().optional(),
+    updatedDate: z.string().optional(),
   }),
 });
 

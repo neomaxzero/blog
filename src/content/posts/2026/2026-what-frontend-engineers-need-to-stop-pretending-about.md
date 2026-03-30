@@ -2,10 +2,13 @@
 title: 'What Frontend Engineers Need to Stop Pretending About in the AI Era'
 date: '2026-03-23'
 topic: 'frontend engineering, AI, role boundaries'
-tags: ['frontend', 'ai', 'engineering', 'career', 'generalist']
+tags: ['frontend', 'ai', 'career', 'generalist']
 description: 'A short essay about the uneasy shift in frontend engineering as AI makes it easier to work across the stack, and why verification matters as much as expansion.'
+seoTitle: 'What Frontend Engineers Need to Stop Pretending About in the AI Era'
+seoDescription: 'A frontend engineering essay about AI, role boundaries, verification, and why frontend value no longer stops at the UI layer.'
 lang: 'en'
 featuredImage: '23-03-2026.jpg'
+updatedDate: '2026-03-27'
 ---
 
 Frontend engineers need to stop pretending their job ends at the UI.

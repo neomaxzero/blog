@@ -4,17 +4,23 @@ import TagBadge from '../components/TagBadge.astro';
 import PrevNextPost from '../components/PrevNextPost.astro';
 import NewsletterForm from '../components/NewsletterForm.astro';
 import Comments from '../components/Comments.astro';
+import RelatedPosts from '../components/RelatedPosts.astro';
+import { getCanonicalTags } from '../utils/taxonomy.mjs';
 
 interface Props {
   title: string;
   date: string;
   description?: string;
+  seoTitle?: string;
+  seoDescription?: string;
   tags?: string[];
   lang?: string;
   featuredImage?: string;
   lastRevision?: string;
+  updatedDate?: string;
   previous?: { slug: string; title: string };
   next?: { slug: string; title: string };
+  relatedPosts?: { slug: string; title: string; description?: string }[];
   readingTime: number;
   slug: string;
 }
@@ -23,12 +29,16 @@ const {
   title,
   date,
   description,
+  seoTitle,
+  seoDescription,
   tags = [],
   lang = 'en',
   featuredImage,
   lastRevision,
+  updatedDate,
   previous,
   next,
+  relatedPosts = [],
   readingTime,
   slug,
 } = Astro.props;
@@ -38,17 +48,27 @@ const formattedDate = new Date(date).toLocaleDateString('en-GB', {
   month: '2-digit',
   year: 'numeric',
 });
+const canonicalTags = getCanonicalTags(tags);
 ---
-<BaseLayout title={title} description={description} type="article" publishedDate={date} lang={lang} image={featuredImage}>
+<BaseLayout
+  title={seoTitle || title}
+  description={seoDescription || description}
+  type="article"
+  publishedDate={date}
+  updatedDate={updatedDate}
+  lang={lang}
+  image={featuredImage}
+  tags={canonicalTags.map((tag) => tag.label)}
+>
   <article>
     <h1>{title}</h1>
     <div class="post-meta">
       By <a href="/about">Maxi</a> · <time datetime={date}>{formattedDate}</time> · {readingTime} min read
     </div>
 
-    {tags.length > 0 && (
+    {canonicalTags.length > 0 && (
       <div class="tags">
-        {tags.map((tag) => <TagBadge tag={tag} />)}
+        {canonicalTags.map((tag) => <TagBadge tag={tag.label} />)}
       </div>
     )}
 
@@ -65,6 +85,8 @@ const formattedDate = new Date(date).toLocaleDateString('en-GB', {
     {lastRevision && (
       <div class="updated">Updated: {lastRevision}</div>
     )}
+
+    <RelatedPosts posts={relatedPosts} />
 
     <PrevNextPost previous={previous} next={next} />
 
